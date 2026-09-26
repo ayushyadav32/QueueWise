@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import {
   X,
   User,
@@ -34,20 +34,20 @@ export default function ProfileModal({
 
   return (
     <div className="fixed inset-0 z-[120] flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs anim-fade-in">
-      <div className="w-full max-w-md bg-white rounded-xl border border-[#E4E7EC] shadow-lg overflow-hidden anim-scale-up">
+      <div className="w-full max-w-md bg-white rounded-xl border border-[#CBD5E1] shadow-lg overflow-hidden anim-scale-up">
         {/* Header */}
-        <div className="p-6 border-b border-[#E4E7EC] bg-white relative">
+        <div className="p-6 border-b border-[#CBD5E1] bg-white relative">
           <button
             type="button"
             onClick={onClose}
-            className="absolute top-5 right-5 h-8 w-8 rounded-md bg-[#F6F8FB] hover:bg-[#E4E7EC] text-[#667085] hover:text-[#172033] flex items-center justify-center transition-colors focus-ring"
+            className="absolute top-5 right-5 h-8 w-8 rounded-md bg-[#EEF3F8] hover:bg-[#CBD5E1] text-[#475467] hover:text-[#0F172A] flex items-center justify-center transition-colors focus-ring"
             aria-label="Close modal"
           >
             <X className="h-4 w-4" />
           </button>
 
           <div className="flex items-center gap-3.5">
-            <div className="h-12 w-12 rounded-xl bg-[#0B5CAD] text-white flex items-center justify-center text-base font-bold shadow-xs">
+            <div className="h-12 w-12 rounded-xl bg-[#0757A6] text-white flex items-center justify-center text-base font-bold shadow-xs">
               {initials}
             </div>
             <div>
@@ -56,10 +56,10 @@ export default function ProfileModal({
                   Active Citizen Profile
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-[#172033] tracking-tight leading-snug">
+              <h3 className="text-lg font-bold text-[#0F172A] tracking-tight leading-snug">
                 {user.name}
               </h3>
-              <p className="text-xs text-[#667085]">{user.email}</p>
+              <p className="text-xs text-[#475467]">{user.email}</p>
             </div>
           </div>
         </div>
@@ -67,20 +67,20 @@ export default function ProfileModal({
         {/* Profile Details */}
         <div className="p-6 space-y-4">
           <div className="grid grid-cols-2 gap-3 text-xs">
-            <div className="p-3 rounded-lg bg-[#F6F8FB] border border-[#E4E7EC]">
-              <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider block">
+            <div className="p-3 rounded-lg bg-[#EEF3F8] border border-[#CBD5E1]">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 Citizen Account ID
               </span>
-              <p className="font-mono font-bold text-[#172033] mt-0.5 truncate">
+              <p className="font-mono font-bold text-[#0F172A] mt-0.5 truncate">
                 {user.id || 'usr_registered'}
               </p>
             </div>
 
-            <div className="p-3 rounded-lg bg-[#F6F8FB] border border-[#E4E7EC]">
-              <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider block">
+            <div className="p-3 rounded-lg bg-[#EEF3F8] border border-[#CBD5E1]">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 Member Since
               </span>
-              <p className="font-semibold text-[#172033] mt-0.5">
+              <p className="font-semibold text-[#0F172A] mt-0.5">
                 {user.createdAt || 'Today'}
               </p>
             </div>
@@ -98,9 +98,9 @@ export default function ProfileModal({
           </div>
 
           {/* Quick Stats */}
-          <div className="flex items-center justify-between p-3 rounded-lg bg-[#F6F8FB] border border-[#E4E7EC] text-xs">
-            <span className="text-[#667085] font-medium">Active Saved Visit Passes:</span>
-            <span className="font-bold text-[#0B5CAD] bg-white px-2 py-0.5 rounded border border-[#E4E7EC]">
+          <div className="flex items-center justify-between p-3 rounded-lg bg-[#EEF3F8] border border-[#CBD5E1] text-xs">
+            <span className="text-[#475467] font-medium">Active Saved Visit Passes:</span>
+            <span className="font-bold text-[#0757A6] bg-white px-2 py-0.5 rounded border border-[#CBD5E1]">
               {savedVisitsCount} Passes
             </span>
           </div>
@@ -152,3 +152,5 @@ export default function ProfileModal({
     </div>
   )
 }
+
+

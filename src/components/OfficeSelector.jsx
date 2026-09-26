@@ -1,4 +1,4 @@
-import { offices, analyticsData, getQueueStatus } from '../data/mockData'
+﻿import { offices, analyticsData, getQueueStatus } from '../data/mockData'
 import { calculateQueuePrediction } from '../utils/predictionEngine'
 import { MapPin, Clock, ChevronRight, Search, ShieldCheck } from 'lucide-react'
 import { useState, useMemo } from 'react'
@@ -20,7 +20,7 @@ function StarRating({ rating }) {
           </svg>
         ))}
       </div>
-      <span className="text-xs text-slate-500 font-medium">{rating}</span>
+      <span className="text-xs text-[#344054] font-medium">{rating}</span>
     </div>
   )
 }
@@ -59,17 +59,17 @@ export default function OfficeSelector({ onSelect }) {
         <div>
           <span className="journey-step-tag">1. Destination</span>
           <h1 className="text-2xl font-bold text-slate-900 mt-1">WHERE ARE YOU GOING?</h1>
-          <p className="mt-0.5 text-xs text-slate-500">
+          <p className="mt-0.5 text-xs text-[#344054]">
             Select a verified government department center to inspect real-time line occupancy.
           </p>
         </div>
 
         {/* Quick Search */}
         <div className="relative w-full sm:w-64">
-          <Search className="h-4 w-4 text-slate-400 absolute left-3 top-3" />
+          <Search className="h-4 w-4 text-[#475467] absolute left-3 top-3" />
           <input
             type="text"
-            placeholder="Search by office or service…"
+            placeholder="Search by office or serviceâ€¦"
             value={searchTerm}
             onChange={e => setSearchTerm(e.target.value)}
             className="form-input pl-9 text-xs"
@@ -80,7 +80,7 @@ export default function OfficeSelector({ onSelect }) {
       {/* Office Table Grid */}
       <div className="card overflow-hidden bg-white border-slate-200 shadow-sm">
         {/* Table Column Headers */}
-        <div className="grid grid-cols-12 items-center gap-4 bg-slate-50 border-b border-slate-200 px-6 py-3 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+        <div className="grid grid-cols-12 items-center gap-4 bg-[#E8F0F8] border-b border-slate-200 px-6 py-3 text-[11px] font-bold text-[#344054] uppercase tracking-wider">
           <div className="col-span-5">Government Center</div>
           <div className="col-span-2 text-center hidden sm:block">Current Queue</div>
           <div className="col-span-2 text-center hidden md:block">Est. Wait</div>
@@ -97,26 +97,26 @@ export default function OfficeSelector({ onSelect }) {
             <button
               key={office.id}
               onClick={() => onSelect(office)}
-              className={`w-full grid grid-cols-12 items-center gap-4 px-6 py-4 text-left transition-colors hover:bg-slate-50/80 focus-ring cursor-pointer ${
+              className={`w-full grid grid-cols-12 items-center gap-4 px-6 py-4 text-left transition-colors hover:bg-[#E8F0F8]/80 focus-ring cursor-pointer ${
                 i < filtered.length - 1 ? 'border-b border-slate-100' : ''
               }`}
             >
               {/* Office Details */}
               <div className="col-span-11 sm:col-span-5 flex items-center gap-3.5 min-w-0">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-slate-100 border border-slate-200 text-2xl">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#DCE7F2] border border-slate-200 text-2xl">
                   {office.emoji}
                 </div>
                 <div className="min-w-0">
                   <div className="flex items-center gap-2">
                     <p className="text-sm font-bold text-slate-900 truncate">{office.name}</p>
-                    <span className="text-[10px] font-bold bg-slate-100 text-slate-600 px-1.5 py-0.2 rounded border border-slate-200">
+                    <span className="text-[10px] font-bold bg-[#DCE7F2] text-[#1D2939] px-1.5 py-0.2 rounded border border-slate-200">
                       {office.category}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-500 truncate mt-0.5">{office.address}, {office.city}</p>
+                  <p className="text-xs text-[#344054] truncate mt-0.5">{office.address}, {office.city}</p>
                   <div className="flex items-center gap-2 mt-1">
                     <StarRating rating={office.rating} />
-                    <span className="text-[10px] text-slate-400">({office.totalReviews} visits logged)</span>
+                    <span className="text-[10px] text-[#475467]">({office.totalReviews} visits logged)</span>
                   </div>
                 </div>
               </div>
@@ -126,10 +126,10 @@ export default function OfficeSelector({ onSelect }) {
                 {s?.isOpen ? (
                   <div>
                     <span className="text-2xl font-extrabold text-slate-900 tabular-nums">{s.count}</span>
-                    <span className="text-[10px] text-slate-400 block font-medium">waiting in line</span>
+                    <span className="text-[10px] text-[#475467] block font-medium">waiting in line</span>
                   </div>
                 ) : (
-                  <span className="text-xs font-semibold text-slate-400">Closed Today</span>
+                  <span className="text-xs font-semibold text-[#475467]">Closed Today</span>
                 )}
               </div>
 
@@ -140,19 +140,19 @@ export default function OfficeSelector({ onSelect }) {
                     <span className="text-base font-bold text-slate-800 tabular-nums">
                       ~{s.wait} min
                     </span>
-                    <span className="text-[10px] text-slate-400 block font-medium">projected delay</span>
+                    <span className="text-[10px] text-[#475467] block font-medium">projected delay</span>
                   </div>
-                ) : '—'}
+                ) : 'â€”'}
               </div>
 
               {/* Status Badge */}
               <div className="col-span-2 hidden lg:block">
-                {cfg ? <span className={cfg.badge}>{cfg.label} Congestion</span> : '—'}
+                {cfg ? <span className={cfg.badge}>{cfg.label} Congestion</span> : 'â€”'}
               </div>
 
               {/* Select Chevron */}
               <div className="col-span-1 flex justify-end">
-                <span className="h-8 w-8 rounded-lg bg-slate-100 text-slate-600 hover:bg-blue-900 hover:text-white flex items-center justify-center transition-colors">
+                <span className="h-8 w-8 rounded-lg bg-[#DCE7F2] text-[#1D2939] hover:bg-blue-900 hover:text-white flex items-center justify-center transition-colors">
                   <ChevronRight className="h-4 w-4" />
                 </span>
               </div>
@@ -161,7 +161,7 @@ export default function OfficeSelector({ onSelect }) {
         })}
       </div>
 
-      <div className="p-4 bg-slate-50 rounded-xl border border-slate-200 flex items-center justify-between text-xs text-slate-500">
+      <div className="p-4 bg-[#E8F0F8] rounded-xl border border-slate-200 flex items-center justify-between text-xs text-[#344054]">
         <span className="flex items-center gap-2">
           <ShieldCheck className="h-4 w-4 text-emerald-600" />
           Verified telemetry from Lucknow District Public Service Division
@@ -171,3 +171,5 @@ export default function OfficeSelector({ onSelect }) {
     </div>
   )
 }
+
+

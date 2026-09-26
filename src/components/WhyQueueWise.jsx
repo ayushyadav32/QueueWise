@@ -1,4 +1,4 @@
-import React from 'react'
+﻿import React from 'react'
 import {
   Users,
   Building2,
@@ -147,7 +147,7 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
   return (
     <section id="why-queuewise" className={`${isStandalone ? 'py-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8' : 'pt-16 pb-6'}`}>
       
-      {/* ── SECTION HEADER ────────────────────────────────────────── */}
+      {/* â”€â”€ SECTION HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="text-center max-w-3xl mx-auto mb-10">
         <div className="inline-flex items-center gap-2 rounded-md bg-blue-50 border border-blue-200 px-3 py-1 text-xs font-semibold text-blue-900 mb-3">
           <Sparkles className="h-3.5 w-3.5 text-blue-700" />
@@ -156,35 +156,35 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
         <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
           Why QueueWise?
         </h2>
-        <p className="mt-2 text-sm sm:text-base text-slate-600">
+        <p className="mt-2 text-sm sm:text-base text-[#1D2939]">
           A modern civic-tech platform designed to eliminate waiting anxiety for citizens while giving public administrators the tools to operate dignified, crowd-resilient service centers.
         </p>
       </div>
 
-      {/* ── PRODUCT MISSION STATEMENT BANNER ────────────────────────── */}
-      <div className="card p-6 sm:p-8 bg-white border border-[#E4E7EC] shadow-xs mb-12 relative overflow-hidden">
+      {/* â”€â”€ PRODUCT MISSION STATEMENT BANNER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <div className="card p-6 sm:p-8 bg-white border border-[#CBD5E1] shadow-xs mb-12 relative overflow-hidden">
         <div className="relative z-10 text-center max-w-3xl mx-auto">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-[#0B5CAD] block mb-2">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-[#0757A6] block mb-2">
             CORE VALUE PROPOSITION
           </span>
-          <blockquote className="text-xl sm:text-2xl lg:text-[26px] font-black tracking-tight text-[#172033] leading-snug">
-            “QueueWise turns unpredictable government visits into planned visits.”
+          <blockquote className="text-xl sm:text-2xl lg:text-[26px] font-black tracking-tight text-[#0F172A] leading-snug">
+            â€œQueueWise turns unpredictable government visits into planned visits.â€
           </blockquote>
-          <p className="mt-3 text-xs sm:text-sm text-[#667085] max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-3 text-xs sm:text-sm text-[#475467] max-w-2xl mx-auto leading-relaxed">
             By turning raw crowdsourced field updates into actionable queue predictions and verified document readiness checklists, public offices shift from chaotic first-come bottlenecks to smooth, predictable appointments.
           </p>
         </div>
       </div>
 
-      {/* ── VISUAL FLOW PIPELINE ────────────────────────────────────── */}
+      {/* â”€â”€ VISUAL FLOW PIPELINE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="card p-6 sm:p-7 bg-white border-slate-200 mb-12 shadow-xs">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 pb-4 border-b border-slate-100">
           <div>
             <span className="journey-step-tag">End-to-End Pipeline</span>
             <h3 className="text-base font-bold text-slate-900 mt-1">How QueueWise Transforms Civic Data into Calm Visits</h3>
           </div>
-          <span className="text-xs font-medium text-slate-500">
-            Field Telemetry → Algorithmic Certainty
+          <span className="text-xs font-medium text-[#344054]">
+            Field Telemetry â†’ Algorithmic Certainty
           </span>
         </div>
 
@@ -198,10 +198,10 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
               return (
                 <div key={step.num} className="relative flex flex-col">
                   {/* Step Card */}
-                  <div className="h-full p-4 rounded-xl border border-slate-200/90 bg-slate-50/60 hover:bg-white hover:border-blue-300 hover:shadow-xs transition-all flex flex-col justify-between group">
+                  <div className="h-full p-4 rounded-xl border border-slate-200/90 bg-[#E8F0F8]/60 hover:bg-white hover:border-blue-300 hover:shadow-xs transition-all flex flex-col justify-between group">
                     <div>
                       <div className="flex items-center justify-between gap-2 mb-2.5">
-                        <span className="text-[10px] font-mono font-bold text-slate-400">
+                        <span className="text-[10px] font-mono font-bold text-[#475467]">
                           {step.num}
                         </span>
                         <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-slate-200/70 text-slate-700">
@@ -218,21 +218,21 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
                         </h4>
                       </div>
 
-                      <p className="text-[11px] text-slate-600 leading-snug mt-1.5">
+                      <p className="text-[11px] text-[#1D2939] leading-snug mt-1.5">
                         {step.desc}
                       </p>
                     </div>
 
-                    <div className="mt-3 pt-2 border-t border-slate-200/50 flex items-center justify-between text-[10px] text-slate-400">
+                    <div className="mt-3 pt-2 border-t border-slate-200/50 flex items-center justify-between text-[10px] text-[#475467]">
                       <span>Phase {idx + 1}</span>
-                      <span className="font-semibold text-emerald-700">✓ Verified</span>
+                      <span className="font-semibold text-emerald-700">âœ“ Verified</span>
                     </div>
                   </div>
 
                   {/* Desktop Right Connector Arrow */}
                   {!isLast && (
-                    <div className="hidden md:flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 text-slate-400 bg-white rounded-full p-0.5 border border-slate-200 shadow-2xs">
-                      <ArrowRight className="h-3 w-3 text-slate-500" />
+                    <div className="hidden md:flex absolute -right-2.5 top-1/2 -translate-y-1/2 z-10 text-[#475467] bg-white rounded-full p-0.5 border border-slate-200 shadow-2xs">
+                      <ArrowRight className="h-3 w-3 text-[#344054]" />
                     </div>
                   )}
 
@@ -249,14 +249,14 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
         </div>
       </div>
 
-      {/* ── THREE STAKEHOLDERS SECTION ──────────────────────────────── */}
+      {/* â”€â”€ THREE STAKEHOLDERS SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="mb-10">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 mb-6">
           <div>
             <span className="journey-step-tag">Stakeholder Impact</span>
             <h3 className="text-xl font-bold text-slate-900 mt-1">Value for Every Civic Participant</h3>
           </div>
-          <p className="text-xs text-slate-500 max-w-md">
+          <p className="text-xs text-[#344054] max-w-md">
             Solving the public service dilemma requires creating simultaneous value for citizens arriving at the desk, counter officers handling cases, and district executives overseeing regional governance.
           </p>
         </div>
@@ -281,14 +281,14 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
                         <h4 className="text-base font-extrabold text-slate-900 tracking-tight leading-tight">
                           {sh.title}
                         </h4>
-                        <span className="text-[11px] font-semibold text-slate-500">
+                        <span className="text-[11px] font-semibold text-[#344054]">
                           {sh.subtitle}
                         </span>
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-xs text-slate-600 mb-5 pb-3 border-b border-slate-100 leading-relaxed font-medium">
+                  <p className="text-xs text-[#1D2939] mb-5 pb-3 border-b border-slate-100 leading-relaxed font-medium">
                     {sh.tagline}
                   </p>
 
@@ -303,7 +303,7 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
                           <strong className="font-bold text-slate-900 block leading-tight">
                             {pt.name}
                           </strong>
-                          <span className="text-slate-500 text-[11px] leading-snug mt-0.5 block">
+                          <span className="text-[#344054] text-[11px] leading-snug mt-0.5 block">
                             {pt.desc}
                           </span>
                         </div>
@@ -313,7 +313,7 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
                 </div>
 
                 {/* Footer contextual stat/badge */}
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#344054]">
                   <span className="font-semibold text-slate-700">4 Core Advantages</span>
                   <span className="text-emerald-700 font-bold">100% Civic Grounded</span>
                 </div>
@@ -323,7 +323,7 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
         </div>
       </div>
 
-      {/* ── ACTION BANNER ───────────────────────────────────────────── */}
+      {/* â”€â”€ ACTION BANNER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-900 via-blue-950 to-slate-900 text-white border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
         <div>
           <h4 className="text-base font-bold tracking-tight text-white">
@@ -360,3 +360,5 @@ export default function WhyQueueWise({ onGetStarted, onNavigate, isStandalone = 
     </section>
   )
 }
+
+

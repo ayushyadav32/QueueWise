@@ -1,4 +1,4 @@
-// ─── QueueWise Centralized Local Data Architecture ───────────────────────────
+﻿// â”€â”€â”€ QueueWise Centralized Local Data Architecture â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 // Structured User Data Storage & Single Authenticated-User Session Management
 
 export const USERS_DB_KEY = 'queuewise_users_database'
@@ -269,7 +269,7 @@ export function loginAccount(email, password) {
   return safeUser
 }
 
-// ─── Centralized User Data CRUD Helper Functions ─────────────────────────────
+// â”€â”€â”€ Centralized User Data CRUD Helper Functions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 /**
  * 2. getUserData(userId?)
@@ -395,8 +395,8 @@ export function addVisit(userId = null, visit) {
       serviceId: visit.serviceId || '',
       date: visit.date || 'Today',
       status: visit.status || 'Upcoming',
-      recommendedSlot: visit.recommendedSlot || 'Today · 2:00 – 3:00 PM',
-      expectedWait: visit.expectedWait || '18–22 min',
+      recommendedSlot: visit.recommendedSlot || 'Today Â· 2:00 â€“ 3:00 PM',
+      expectedWait: visit.expectedWait || '18â€“22 min',
       docsReady: visit.docsReady || 'Verified 100%',
       reminderActive: visit.reminderActive !== false,
       reminderTime: visit.reminderTime || '1 hour before',
@@ -413,7 +413,7 @@ export function addVisit(userId = null, visit) {
       title: `Planned & saved visit for ${userPass.serviceName}`,
       office: userPass.officeName,
       service: userPass.serviceName,
-      details: `Pass ${userPass.id} · Slot: ${userPass.recommendedSlot}`,
+      details: `Pass ${userPass.id} Â· Slot: ${userPass.recommendedSlot}`,
       timestamp: new Date().toISOString(),
     }
     const updatedActivities = [activityEntry, ...(user.activityHistory || [])].slice(0, 100)
@@ -532,7 +532,7 @@ export function addQueueReport(userId = null, report) {
       title: `Submitted community queue report`,
       office: newReport.officeName,
       service: newReport.serviceName,
-      details: `${newReport.waitingRange} waiting · ${newReport.estimatedWait}`,
+      details: `${newReport.waitingRange} waiting Â· ${newReport.estimatedWait}`,
       timestamp: new Date().toISOString(),
     }
     const updatedActivities = [activityEntry, ...(user.activityHistory || [])].slice(0, 100)
@@ -779,7 +779,7 @@ export function clearActivityHistory(userId = null) {
   }))
 }
 
-// ─── Legacy & Backwards-Compatible Accessors ──────────────────────────────────
+// â”€â”€â”€ Legacy & Backwards-Compatible Accessors â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function getRegisteredUsers() {
   const db = getAllUsersDatabase()
@@ -897,4 +897,6 @@ export function groupActivitiesByTime(activities) {
     items: groups[key],
   }))
 }
+
+
 

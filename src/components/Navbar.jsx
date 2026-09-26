@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+﻿import { useState, useRef, useEffect } from 'react'
 import {
   Bell,
   Menu,
@@ -69,39 +69,39 @@ export default function Navbar({
   const firstName = currentUser?.name ? currentUser.name.trim().split(' ')[0] : 'Citizen'
 
   return (
-    <header className="sticky top-0 z-40 bg-white border-b border-[#E4E7EC]">
+    <header className="sticky top-0 z-40 bg-white border-b border-[#CBD5E1]">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between gap-4">
 
-          {/* ── Left: Brand Logo ────────────────────────────────────── */}
+          {/* â”€â”€ Left: Brand Logo â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
           <div className="flex items-center gap-8">
             <button
               type="button"
               onClick={onHome}
               className="flex items-center gap-2.5 focus-ring rounded-lg p-1 -ml-1 text-left"
             >
-              <div className="h-9 w-9 rounded-lg bg-[#0B5CAD] text-white flex items-center justify-center font-bold text-sm shadow-xs">
+              <div className="h-9 w-9 rounded-lg bg-[#0757A6] text-white flex items-center justify-center font-bold text-sm shadow-xs">
                 QW
               </div>
               <div>
-                <span className="text-base font-bold text-[#172033] tracking-tight block leading-tight">
+                <span className="text-base font-bold text-[#0F172A] tracking-tight block leading-tight">
                   QueueWise
                 </span>
-                <span className="text-[10px] font-semibold text-[#667085] uppercase tracking-wider block">
+                <span className="text-[10px] font-semibold text-[#475467] uppercase tracking-wider block">
                   Civic Queue Portal
                 </span>
               </div>
             </button>
 
-            {/* ── Primary Top Navigation Links ──────────────────────── */}
+            {/* â”€â”€ Primary Top Navigation Links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <nav className="hidden md:flex items-center gap-1">
               <button
                 type="button"
                 onClick={onHome}
                 className={`px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
                   step === 'landing'
-                    ? 'text-[#0B5CAD] bg-[#EFF6FC]'
-                    : 'text-[#667085] hover:text-[#172033] hover:bg-slate-50'
+                    ? 'text-[#0757A6] bg-[#EFF6FC]'
+                    : 'text-[#475467] hover:text-[#0F172A] hover:bg-[#E8F0F8]'
                 }`}
               >
                 Home
@@ -112,8 +112,8 @@ export default function Navbar({
                 onClick={() => onNavigate('office')}
                 className={`px-3 py-2 text-sm font-semibold rounded-md transition-colors ${
                   step === 'office' || step === 'service' || step === 'dashboard'
-                    ? 'text-[#0B5CAD] bg-[#EFF6FC]'
-                    : 'text-[#667085] hover:text-[#172033] hover:bg-slate-50'
+                    ? 'text-[#0757A6] bg-[#EFF6FC]'
+                    : 'text-[#475467] hover:text-[#0F172A] hover:bg-[#E8F0F8]'
                 }`}
               >
                 Find Services
@@ -135,13 +135,13 @@ export default function Navbar({
                 }}
                 className={`px-3 py-2 text-sm font-semibold rounded-md transition-colors flex items-center gap-1.5 ${
                   step === 'my-visits'
-                    ? 'text-[#0B5CAD] bg-[#EFF6FC]'
-                    : 'text-[#667085] hover:text-[#172033] hover:bg-slate-50'
+                    ? 'text-[#0757A6] bg-[#EFF6FC]'
+                    : 'text-[#475467] hover:text-[#0F172A] hover:bg-[#E8F0F8]'
                 }`}
               >
                 <span>My Visits</span>
                 {savedVisitsCount > 0 && (
-                  <span className="px-1.5 py-0.2 text-[11px] font-bold rounded-full bg-[#0B5CAD] text-white">
+                  <span className="px-1.5 py-0.2 text-[11px] font-bold rounded-full bg-[#0757A6] text-white">
                     {savedVisitsCount}
                   </span>
                 )}
@@ -149,7 +149,7 @@ export default function Navbar({
             </nav>
           </div>
 
-          {/* ── Right Side: Notifications & Profile ──────────────────── */}
+          {/* â”€â”€ Right Side: Notifications & Profile â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
           <div className="flex items-center gap-3">
 
             {/* Notifications Popover */}
@@ -168,7 +168,7 @@ export default function Navbar({
                   }
                   setShowNotifications(v => !v)
                 }}
-                className="relative p-2 rounded-md text-[#667085] hover:text-[#172033] hover:bg-slate-100 transition-colors focus-ring"
+                className="relative p-2 rounded-md text-[#475467] hover:text-[#0F172A] hover:bg-[#DCE7F2] transition-colors focus-ring"
                 aria-label="View notifications"
               >
                 <Bell className="h-5 w-5" />
@@ -179,13 +179,13 @@ export default function Navbar({
 
               {/* Notification Center Dropdown */}
               {showNotifications && (
-                <div className="absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-lg border border-[#E4E7EC] shadow-lg anim-scale-in overflow-hidden z-50">
-                  <div className="px-4 py-3 bg-[#F9FAFB] border-b border-[#E4E7EC] flex items-center justify-between">
+                <div className="absolute right-0 mt-2 w-80 sm:w-96 bg-white rounded-lg border border-[#CBD5E1] shadow-lg anim-scale-in overflow-hidden z-50">
+                  <div className="px-4 py-3 bg-[#F9FAFB] border-b border-[#CBD5E1] flex items-center justify-between">
                     <div>
-                      <h3 className="text-xs font-bold text-[#172033] uppercase tracking-wider">
+                      <h3 className="text-xs font-bold text-[#0F172A] uppercase tracking-wider">
                         Civic Notifications
                       </h3>
-                      <p className="text-[11px] text-[#667085]">
+                      <p className="text-[11px] text-[#475467]">
                         {unreadCount > 0 ? `${unreadCount} unread update(s)` : 'All caught up'}
                       </p>
                     </div>
@@ -193,16 +193,16 @@ export default function Navbar({
                       <button
                         type="button"
                         onClick={onMarkAllAsRead}
-                        className="text-[11px] font-semibold text-[#0B5CAD] hover:underline"
+                        className="text-[11px] font-semibold text-[#0757A6] hover:underline"
                       >
                         Mark all read
                       </button>
                     )}
                   </div>
 
-                  <div className="max-h-80 overflow-y-auto divide-y divide-[#E4E7EC]">
+                  <div className="max-h-80 overflow-y-auto divide-y divide-[#CBD5E1]">
                     {notifications.length === 0 ? (
-                      <div className="p-6 text-center text-xs text-[#667085]">
+                      <div className="p-6 text-center text-xs text-[#475467]">
                         No active alerts or queue notifications.
                       </div>
                     ) : (
@@ -216,19 +216,19 @@ export default function Navbar({
                           <div className="min-w-0 flex-1">
                             <div className="flex items-center gap-1.5">
                               {!notif.read && (
-                                <span className="h-1.5 w-1.5 rounded-full bg-[#0B5CAD] shrink-0" />
+                                <span className="h-1.5 w-1.5 rounded-full bg-[#0757A6] shrink-0" />
                               )}
-                              <h4 className="text-xs font-bold text-[#172033] truncate">
+                              <h4 className="text-xs font-bold text-[#0F172A] truncate">
                                 {notif.title}
                               </h4>
                             </div>
-                            <p className="text-[11px] text-[#172033] font-medium mt-0.5">
+                            <p className="text-[11px] text-[#0F172A] font-medium mt-0.5">
                               {notif.officeName}
                             </p>
-                            <p className="text-[11px] text-[#667085] mt-0.5">
+                            <p className="text-[11px] text-[#475467] mt-0.5">
                               {notif.message}
                             </p>
-                            <span className="text-[10px] text-[#667085] mt-1 block">
+                            <span className="text-[10px] text-[#475467] mt-1 block">
                               {notif.timeAgo || 'Recently'}
                             </span>
                           </div>
@@ -238,7 +238,7 @@ export default function Navbar({
                               <button
                                 type="button"
                                 onClick={() => onMarkAsRead(notif.id)}
-                                className="p-1 text-[#667085] hover:text-[#0B5CAD] rounded"
+                                className="p-1 text-[#475467] hover:text-[#0757A6] rounded"
                                 title="Mark read"
                               >
                                 <CheckCheck className="h-3.5 w-3.5" />
@@ -248,7 +248,7 @@ export default function Navbar({
                               <button
                                 type="button"
                                 onClick={() => onDeleteNotification(notif.id)}
-                                className="p-1 text-[#667085] hover:text-[#DC2626] rounded"
+                                className="p-1 text-[#475467] hover:text-[#DC2626] rounded"
                                 title="Dismiss"
                               >
                                 <Trash2 className="h-3.5 w-3.5" />
@@ -261,11 +261,11 @@ export default function Navbar({
                   </div>
 
                   {notifications.length > 0 && onClearNotifications && (
-                    <div className="p-2.5 bg-[#F9FAFB] border-t border-[#E4E7EC] text-center">
+                    <div className="p-2.5 bg-[#F9FAFB] border-t border-[#CBD5E1] text-center">
                       <button
                         type="button"
                         onClick={onClearNotifications}
-                        className="text-xs font-semibold text-[#667085] hover:text-[#172033]"
+                        className="text-xs font-semibold text-[#475467] hover:text-[#0F172A]"
                       >
                         Clear all notifications
                       </button>
@@ -281,23 +281,23 @@ export default function Navbar({
                 <button
                   type="button"
                   onClick={() => setShowProfileMenu(v => !v)}
-                  className="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-lg border border-[#E4E7EC] hover:bg-slate-50 transition-colors focus-ring"
+                  className="flex items-center gap-2 pl-2 pr-3 py-1.5 rounded-lg border border-[#CBD5E1] hover:bg-[#E8F0F8] transition-colors focus-ring"
                 >
-                  <div className="h-7 w-7 rounded-md bg-[#0B5CAD] text-white flex items-center justify-center font-bold text-xs">
+                  <div className="h-7 w-7 rounded-md bg-[#0757A6] text-white flex items-center justify-center font-bold text-xs">
                     {userInitials}
                   </div>
-                  <span className="text-xs font-semibold text-[#172033] hidden sm:inline">
+                  <span className="text-xs font-semibold text-[#0F172A] hidden sm:inline">
                     {firstName}
                   </span>
-                  <ChevronDown className="h-3.5 w-3.5 text-[#667085]" />
+                  <ChevronDown className="h-3.5 w-3.5 text-[#475467]" />
                 </button>
 
                 {/* Profile Dropdown Menu */}
                 {showProfileMenu && (
-                  <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg border border-[#E4E7EC] shadow-lg anim-scale-in py-1 z-50">
-                    <div className="px-4 py-2.5 border-b border-[#E4E7EC]">
-                      <p className="text-xs font-bold text-[#172033]">{currentUser.name}</p>
-                      <p className="text-[11px] text-[#667085] truncate">{currentUser.email}</p>
+                  <div className="absolute right-0 mt-2 w-56 bg-white rounded-lg border border-[#CBD5E1] shadow-lg anim-scale-in py-1 z-50">
+                    <div className="px-4 py-2.5 border-b border-[#CBD5E1]">
+                      <p className="text-xs font-bold text-[#0F172A]">{currentUser.name}</p>
+                      <p className="text-[11px] text-[#475467] truncate">{currentUser.email}</p>
                     </div>
 
                     <button
@@ -306,9 +306,9 @@ export default function Navbar({
                         setShowProfileMenu(false)
                         onNavigate('my-visits')
                       }}
-                      className="w-full px-4 py-2 text-left text-xs font-medium text-[#172033] hover:bg-slate-50 flex items-center gap-2"
+                      className="w-full px-4 py-2 text-left text-xs font-medium text-[#0F172A] hover:bg-[#E8F0F8] flex items-center gap-2"
                     >
-                      <Calendar className="h-4 w-4 text-[#667085]" />
+                      <Calendar className="h-4 w-4 text-[#475467]" />
                       <span>My Visits & Passes</span>
                     </button>
 
@@ -319,13 +319,13 @@ export default function Navbar({
                         if (onNavigateHistory) onNavigateHistory()
                         else onNavigate('history')
                       }}
-                      className="w-full px-4 py-2 text-left text-xs font-medium text-[#172033] hover:bg-slate-50 flex items-center gap-2"
+                      className="w-full px-4 py-2 text-left text-xs font-medium text-[#0F172A] hover:bg-[#E8F0F8] flex items-center gap-2"
                     >
-                      <History className="h-4 w-4 text-[#667085]" />
+                      <History className="h-4 w-4 text-[#475467]" />
                       <span>Activity History</span>
                     </button>
 
-                    <div className="border-t border-[#E4E7EC] my-1" />
+                    <div className="border-t border-[#CBD5E1] my-1" />
 
                     <button
                       type="button"
@@ -346,7 +346,7 @@ export default function Navbar({
                 <button
                   type="button"
                   onClick={() => onOpenAuth('login')}
-                  className="px-3 py-1.5 text-xs font-semibold text-[#172033] hover:text-[#0B5CAD] transition-colors"
+                  className="px-3 py-1.5 text-xs font-semibold text-[#0F172A] hover:text-[#0757A6] transition-colors"
                 >
                   Sign In
                 </button>
@@ -364,7 +364,7 @@ export default function Navbar({
             <button
               type="button"
               onClick={() => setMobileOpen(v => !v)}
-              className="md:hidden p-2 rounded-md text-[#667085] hover:text-[#172033] hover:bg-slate-100"
+              className="md:hidden p-2 rounded-md text-[#475467] hover:text-[#0F172A] hover:bg-[#DCE7F2]"
               aria-label="Toggle navigation menu"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -375,18 +375,18 @@ export default function Navbar({
 
         {/* Mobile Navigation Drawer */}
         {mobileOpen && (
-          <div className="md:hidden py-3 border-t border-[#E4E7EC] space-y-1">
+          <div className="md:hidden py-3 border-t border-[#CBD5E1] space-y-1">
             <button
               type="button"
               onClick={() => { setMobileOpen(false); onHome(); }}
-              className="w-full px-3 py-2 text-left text-sm font-semibold text-[#172033] hover:bg-slate-50 rounded-md"
+              className="w-full px-3 py-2 text-left text-sm font-semibold text-[#0F172A] hover:bg-[#E8F0F8] rounded-md"
             >
               Home
             </button>
             <button
               type="button"
               onClick={() => { setMobileOpen(false); onNavigate('office'); }}
-              className="w-full px-3 py-2 text-left text-sm font-semibold text-[#172033] hover:bg-slate-50 rounded-md"
+              className="w-full px-3 py-2 text-left text-sm font-semibold text-[#0F172A] hover:bg-[#E8F0F8] rounded-md"
             >
               Find Services
             </button>
@@ -405,11 +405,11 @@ export default function Navbar({
                   onNavigate('my-visits')
                 }
               }}
-              className="w-full px-3 py-2 text-left text-sm font-semibold text-[#172033] hover:bg-slate-50 rounded-md flex items-center justify-between"
+              className="w-full px-3 py-2 text-left text-sm font-semibold text-[#0F172A] hover:bg-[#E8F0F8] rounded-md flex items-center justify-between"
             >
               <span>My Visits</span>
               {savedVisitsCount > 0 && (
-                <span className="px-1.5 py-0.2 text-[10px] font-bold rounded-full bg-[#0B5CAD] text-white">
+                <span className="px-1.5 py-0.2 text-[10px] font-bold rounded-full bg-[#0757A6] text-white">
                   {savedVisitsCount}
                 </span>
               )}
@@ -420,3 +420,5 @@ export default function Navbar({
     </header>
   )
 }
+
+

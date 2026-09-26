@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import {
   X,
   Lock,
@@ -60,7 +60,7 @@ export default function AuthModal({
         const user = registerAccount({ name, email, password })
         setLoading(false)
         if (showToast) {
-          showToast(`✓ Account created successfully! Welcome, ${user.name}.`, 'success')
+          showToast(`âœ“ Account created successfully! Welcome, ${user.name}.`, 'success')
         }
         if (onSuccess) {
           onSuccess(user, { isRegistration: true })
@@ -76,7 +76,7 @@ export default function AuthModal({
         const user = loginAccount(email, password)
         setLoading(false)
         if (showToast) {
-          showToast(`✓ Welcome back, ${user.name}!`, 'success')
+          showToast(`âœ“ Welcome back, ${user.name}!`, 'success')
         }
         if (onSuccess) {
           onSuccess(user, { isRegistration: false })
@@ -97,14 +97,14 @@ export default function AuthModal({
   const displaySubtitle = subtitle || (mode === 'register' ? defaultRegisterSubtitle : defaultLoginSubtitle)
 
   const content = (
-    <div className="w-full max-w-md bg-white rounded-xl border border-[#E4E7EC] shadow-lg overflow-hidden anim-scale-up">
+    <div className="w-full max-w-md bg-white rounded-xl border border-[#CBD5E1] shadow-lg overflow-hidden anim-scale-up">
       {/* Modal Header */}
-      <div className="p-6 border-b border-[#E4E7EC] bg-white relative">
+      <div className="p-6 border-b border-[#CBD5E1] bg-white relative">
         {!isPage && onClose && (
           <button
             type="button"
             onClick={onClose}
-            className="absolute top-5 right-5 h-8 w-8 rounded-md bg-[#F6F8FB] hover:bg-[#E4E7EC] text-[#667085] hover:text-[#172033] flex items-center justify-center transition-colors focus-ring"
+            className="absolute top-5 right-5 h-8 w-8 rounded-md bg-[#EEF3F8] hover:bg-[#CBD5E1] text-[#475467] hover:text-[#0F172A] flex items-center justify-center transition-colors focus-ring"
             aria-label="Close dialog"
           >
             <X className="h-4 w-4" />
@@ -112,23 +112,23 @@ export default function AuthModal({
         )}
 
         <div className="flex items-center gap-2 mb-2">
-          <div className="h-6 w-6 rounded bg-[#0B5CAD] text-white flex items-center justify-center font-bold text-xs">
+          <div className="h-6 w-6 rounded bg-[#0757A6] text-white flex items-center justify-center font-bold text-xs">
             QW
           </div>
-          <span className="text-[11px] font-bold tracking-wider text-[#0B5CAD] uppercase">
+          <span className="text-[11px] font-bold tracking-wider text-[#0757A6] uppercase">
             District Citizen Portal
           </span>
         </div>
 
-        <h2 className="text-xl font-bold tracking-tight text-[#172033]">
+        <h2 className="text-xl font-bold tracking-tight text-[#0F172A]">
           {displayTitle}
         </h2>
-        <p className="text-xs text-[#667085] mt-1">
+        <p className="text-xs text-[#475467] mt-1">
           {displaySubtitle}
         </p>
 
         {/* Tab Toggle Bar: [Create Account] and [Login] */}
-        <div className="mt-4 grid grid-cols-2 p-1 rounded-lg bg-[#F6F8FB] border border-[#E4E7EC] text-xs font-semibold">
+        <div className="mt-4 grid grid-cols-2 p-1 rounded-lg bg-[#EEF3F8] border border-[#CBD5E1] text-xs font-semibold">
           <button
             type="button"
             onClick={() => {
@@ -137,8 +137,8 @@ export default function AuthModal({
             }}
             className={`py-1.5 rounded-md transition-all ${
               mode === 'register'
-                ? 'bg-[#0B5CAD] text-white shadow-xs font-bold'
-                : 'text-[#667085] hover:text-[#172033]'
+                ? 'bg-[#0757A6] text-white shadow-xs font-bold'
+                : 'text-[#475467] hover:text-[#0F172A]'
             }`}
           >
             Create Account
@@ -151,8 +151,8 @@ export default function AuthModal({
             }}
             className={`py-1.5 rounded-md transition-all ${
               mode === 'login'
-                ? 'bg-[#0B5CAD] text-white shadow-xs font-bold'
-                : 'text-[#667085] hover:text-[#172033]'
+                ? 'bg-[#0757A6] text-white shadow-xs font-bold'
+                : 'text-[#475467] hover:text-[#0F172A]'
             }`}
           >
             Login
@@ -184,7 +184,7 @@ export default function AuthModal({
                 Full Name
               </label>
               <div className="relative">
-                <User className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+                <User className="absolute left-3 top-2.5 h-4 w-4 text-[#475467]" />
                 <input
                   type="text"
                   required
@@ -204,7 +204,7 @@ export default function AuthModal({
               Email Address
             </label>
             <div className="relative">
-              <Mail className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+              <Mail className="absolute left-3 top-2.5 h-4 w-4 text-[#475467]" />
               <input
                 type="email"
                 required
@@ -224,15 +224,15 @@ export default function AuthModal({
                 Password
               </label>
               {mode === 'register' && (
-                <span className="text-[10px] text-slate-400">Min 6 characters</span>
+                <span className="text-[10px] text-[#475467]">Min 6 characters</span>
               )}
             </div>
             <div className="relative">
-              <Lock className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+              <Lock className="absolute left-3 top-2.5 h-4 w-4 text-[#475467]" />
               <input
                 type="password"
                 required
-                placeholder="••••••••"
+                placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="form-input pl-9 text-sm"
@@ -247,11 +247,11 @@ export default function AuthModal({
                 Confirm Password
               </label>
               <div className="relative">
-                <Lock className="absolute left-3 top-2.5 h-4 w-4 text-slate-400" />
+                <Lock className="absolute left-3 top-2.5 h-4 w-4 text-[#475467]" />
                 <input
                   type="password"
                   required
-                  placeholder="••••••••"
+                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="form-input pl-9 text-sm"
@@ -261,7 +261,7 @@ export default function AuthModal({
           )}
 
           {/* Data Privacy Guarantee */}
-          <div className="p-3 bg-slate-50 border border-slate-200/80 rounded-lg text-[11px] text-slate-500 space-y-1">
+          <div className="p-3 bg-[#E8F0F8] border border-slate-200/80 rounded-lg text-[11px] text-[#344054] space-y-1">
             <div className="flex items-center gap-1.5 text-slate-700 font-bold">
               <ShieldCheck className="h-3.5 w-3.5 text-emerald-600" />
               Strict User Data Isolation
@@ -277,13 +277,13 @@ export default function AuthModal({
             disabled={loading}
             className="btn-primary w-full py-2.5 text-sm font-bold justify-center shadow-xs"
           >
-            <span>{loading ? 'Processing…' : mode === 'register' ? 'Create Account' : 'Login'}</span>
+            <span>{loading ? 'Processingâ€¦' : mode === 'register' ? 'Create Account' : 'Login'}</span>
             <ArrowRight className="h-4 w-4" />
           </button>
         </form>
 
         {/* Footer switch */}
-        <div className="mt-4 pt-4 border-t border-[#E4E7EC] text-center text-xs text-[#667085]">
+        <div className="mt-4 pt-4 border-t border-[#CBD5E1] text-center text-xs text-[#475467]">
           {mode === 'register' ? (
             <p>
               Already have an account?{' '}
@@ -293,7 +293,7 @@ export default function AuthModal({
                   setMode('login')
                   setError(null)
                 }}
-                className="text-[#0B5CAD] font-bold hover:underline"
+                className="text-[#0757A6] font-bold hover:underline"
               >
                 Log In
               </button>
@@ -307,7 +307,7 @@ export default function AuthModal({
                   setMode('register')
                   setError(null)
                 }}
-                className="text-[#0B5CAD] font-bold hover:underline"
+                className="text-[#0757A6] font-bold hover:underline"
               >
                 Create an account
               </button>
@@ -332,3 +332,5 @@ export default function AuthModal({
     </div>
   )
 }
+
+

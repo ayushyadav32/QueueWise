@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+﻿import { useState, useMemo } from 'react'
 import { analyticsData, offices } from '../data/mockData'
 import {
   TrendingUp, TrendingDown, Minus, AlertTriangle, ShieldAlert,
@@ -42,13 +42,13 @@ export default function AnalyticsDashboard({ showToast }) {
   const handleDeployRelief = (alertId) => {
     setDispatchedActions(prev => ({ ...prev, [alertId]: true }))
     if (showToast) {
-      showToast(`✓ Relief counter dispatched for ${alertId.toUpperCase()}! Station throughput augmented.`, 'success')
+      showToast(`âœ“ Relief counter dispatched for ${alertId.toUpperCase()}! Station throughput augmented.`, 'success')
     }
   }
 
   const handleBroadcast = (officeName) => {
     if (showToast) {
-      showToast(`✓ Public advisory broadcast sent to QueueWise citizen mobile users for ${officeName}.`, 'info')
+      showToast(`âœ“ Public advisory broadcast sent to QueueWise citizen mobile users for ${officeName}.`, 'info')
     }
   }
 
@@ -64,7 +64,7 @@ export default function AnalyticsDashboard({ showToast }) {
     setTimeout(() => {
       setIsSyncing(false)
       if (showToast) {
-        showToast(`✓ Telemetry synchronized across all 5 district administrative hubs.`, 'success')
+        showToast(`âœ“ Telemetry synchronized across all 5 district administrative hubs.`, 'success')
       }
     }, 450)
   }
@@ -72,8 +72,8 @@ export default function AnalyticsDashboard({ showToast }) {
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-8 anim-slide-up">
 
-      {/* ── DISTRICT OPERATIONS COMMAND HEADER ──────────────────────── */}
-      <div className="card p-6 bg-white border border-[#E4E7EC] shadow-xs">
+      {/* â”€â”€ DISTRICT OPERATIONS COMMAND HEADER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <div className="card p-6 bg-white border border-[#CBD5E1] shadow-xs">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1.5">
@@ -82,19 +82,19 @@ export default function AnalyticsDashboard({ showToast }) {
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#059669]"></span>
               </span>
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#059669]">
-                District Operations Control Room · Live Command
+                District Operations Control Room Â· Live Command
               </span>
             </div>
-            <h1 className="text-2xl font-bold tracking-tight text-[#172033]">DISTRICT SERVICE MONITOR</h1>
-            <p className="text-xs text-[#667085] mt-1">
-              Lucknow Central Administration · Real-time civic queue telemetry, throughput analytics & congestion response
+            <h1 className="text-2xl font-bold tracking-tight text-[#0F172A]">DISTRICT SERVICE MONITOR</h1>
+            <p className="text-xs text-[#475467] mt-1">
+              Lucknow Central Administration Â· Real-time civic queue telemetry, throughput analytics & congestion response
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-2.5">
             <div className="bg-[#ECFDF5] px-3 py-1.5 rounded-lg border border-[#A7F3D0] text-right">
               <span className="text-[9px] font-bold text-[#065F46] uppercase block leading-none">SYSTEM UPTIME</span>
-              <span className="text-xs font-bold text-[#059669] leading-normal">99.98% · 5 of 5 Hubs Online</span>
+              <span className="text-xs font-bold text-[#059669] leading-normal">99.98% Â· 5 of 5 Hubs Online</span>
             </div>
             <button
               type="button"
@@ -102,24 +102,24 @@ export default function AnalyticsDashboard({ showToast }) {
               disabled={isSyncing}
               className="btn-secondary py-2 px-3 text-xs font-bold flex items-center gap-1.5"
             >
-              <RefreshCw className={`h-3.5 w-3.5 ${isSyncing ? 'animate-spin text-[#0B5CAD]' : ''}`} />
+              <RefreshCw className={`h-3.5 w-3.5 ${isSyncing ? 'animate-spin text-[#0757A6]' : ''}`} />
               <span>Sync Telemetry</span>
             </button>
           </div>
         </div>
 
-        {/* ── FILTER CONTROLS BAR ─────────────────────────────────────── */}
-        <div className="mt-6 pt-5 border-t border-[#E4E7EC] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+        {/* â”€â”€ FILTER CONTROLS BAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        <div className="mt-6 pt-5 border-t border-[#CBD5E1] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
           {/* Time Filter: Today | This Week */}
-          <div className="flex items-center gap-1 bg-[#F6F8FB] p-1 rounded-lg border border-[#E4E7EC]">
-            <span className="text-[10px] uppercase font-bold text-[#667085] px-2">TIMEFRAME:</span>
+          <div className="flex items-center gap-1 bg-[#EEF3F8] p-1 rounded-lg border border-[#CBD5E1]">
+            <span className="text-[10px] uppercase font-bold text-[#475467] px-2">TIMEFRAME:</span>
             <button
               type="button"
               onClick={() => setTimeFilter('today')}
               className={`px-3 py-1 rounded text-xs font-bold transition-all ${
                 timeFilter === 'today'
-                  ? 'bg-[#0B5CAD] text-white shadow-xs'
-                  : 'text-[#667085] hover:text-[#172033]'
+                  ? 'bg-[#0757A6] text-white shadow-xs'
+                  : 'text-[#475467] hover:text-[#0F172A]'
               }`}
             >
               Today
@@ -129,8 +129,8 @@ export default function AnalyticsDashboard({ showToast }) {
               onClick={() => setTimeFilter('week')}
               className={`px-3 py-1 rounded text-xs font-bold transition-all ${
                 timeFilter === 'week'
-                  ? 'bg-[#0B5CAD] text-white shadow-xs'
-                  : 'text-[#667085] hover:text-[#172033]'
+                  ? 'bg-[#0757A6] text-white shadow-xs'
+                  : 'text-[#475467] hover:text-[#0F172A]'
               }`}
             >
               This Week
@@ -139,12 +139,12 @@ export default function AnalyticsDashboard({ showToast }) {
 
           {/* Office Filter Dropdown */}
           <div className="flex items-center gap-2">
-            <Filter className="h-3.5 w-3.5 text-[#667085] shrink-0" />
-            <span className="text-[10px] font-bold text-[#667085] uppercase">OFFICE SCOPE:</span>
+            <Filter className="h-3.5 w-3.5 text-[#475467] shrink-0" />
+            <span className="text-[10px] font-bold text-[#475467] uppercase">OFFICE SCOPE:</span>
             <select
               value={officeFilter}
               onChange={e => setOfficeFilter(e.target.value)}
-              className="bg-white border border-[#E4E7EC] rounded-lg px-2.5 py-1 text-xs font-semibold text-[#172033] focus-ring cursor-pointer"
+              className="bg-white border border-[#CBD5E1] rounded-lg px-2.5 py-1 text-xs font-semibold text-[#0F172A] focus-ring cursor-pointer"
             >
               <option value="all">All Offices (District-Wide)</option>
               {offices.map(o => (
@@ -154,31 +154,31 @@ export default function AnalyticsDashboard({ showToast }) {
           </div>
         </div>
 
-        {/* ── EXACT 4 KPI CARDS BAR ──────────────────────────────────── */}
+        {/* â”€â”€ EXACT 4 KPI CARDS BAR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-5">
           {/* KPI 1: OFFICES MONITORED */}
-          <div className="bg-[#F6F8FB] p-4 rounded-xl border border-[#E4E7EC]">
+          <div className="bg-[#EEF3F8] p-4 rounded-xl border border-[#CBD5E1]">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 OFFICES MONITORED
               </span>
-              <Building2 className="h-4 w-4 text-[#0B5CAD]" />
+              <Building2 className="h-4 w-4 text-[#0757A6]" />
             </div>
             <div className="flex items-baseline gap-2 mt-1.5">
-              <span className="text-3xl font-black text-[#172033] tabular-nums tracking-tight">
+              <span className="text-3xl font-black text-[#0F172A] tabular-nums tracking-tight">
                 {currentSummary.officesMonitored}
               </span>
               <span className="text-xs text-[#059669] font-bold">All Connected</span>
             </div>
-            <span className="text-[10px] text-[#667085] block mt-1">
+            <span className="text-[10px] text-[#475467] block mt-1">
               RTO, DM, Municipal, Tehsil, Passport
             </span>
           </div>
 
           {/* KPI 2: ACTIVE QUEUE ALERTS */}
-          <div className="bg-[#F6F8FB] p-4 rounded-xl border border-[#E4E7EC]">
+          <div className="bg-[#EEF3F8] p-4 rounded-xl border border-[#CBD5E1]">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 ACTIVE QUEUE ALERTS
               </span>
               <AlertTriangle className="h-4 w-4 text-[#DC2626]" />
@@ -189,64 +189,64 @@ export default function AnalyticsDashboard({ showToast }) {
               </span>
               <span className="text-xs text-[#DC2626] font-bold">Surge Level</span>
             </div>
-            <span className="text-[10px] text-[#667085] block mt-1">
+            <span className="text-[10px] text-[#475467] block mt-1">
               Passport Seva & RTO Office flagged
             </span>
           </div>
 
           {/* KPI 3: AVERAGE WAIT */}
-          <div className="bg-[#F6F8FB] p-4 rounded-xl border border-[#E4E7EC]">
+          <div className="bg-[#EEF3F8] p-4 rounded-xl border border-[#CBD5E1]">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 AVERAGE WAIT
               </span>
-              <Clock className="h-4 w-4 text-[#0F766E]" />
+              <Clock className="h-4 w-4 text-[#087F75]" />
             </div>
             <div className="flex items-baseline gap-2 mt-1.5">
-              <span className="text-3xl font-black text-[#172033] tabular-nums tracking-tight">
+              <span className="text-3xl font-black text-[#0F172A] tabular-nums tracking-tight">
                 {currentSummary.averageWait}
               </span>
-              <span className="text-xs text-[#667085] font-semibold">District Mean</span>
+              <span className="text-xs text-[#475467] font-semibold">District Mean</span>
             </div>
-            <span className="text-[10px] text-[#667085] block mt-1">
+            <span className="text-[10px] text-[#475467] block mt-1">
               Target SLA benchmark: &lt;45 min
             </span>
           </div>
 
           {/* KPI 4: COMMUNITY REPORTS */}
-          <div className="bg-[#F6F8FB] p-4 rounded-xl border border-[#E4E7EC]">
+          <div className="bg-[#EEF3F8] p-4 rounded-xl border border-[#CBD5E1]">
             <div className="flex items-center justify-between">
-              <span className="text-[10px] font-bold text-[#667085] uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 COMMUNITY REPORTS
               </span>
-              <Users className="h-4 w-4 text-[#0B5CAD]" />
+              <Users className="h-4 w-4 text-[#0757A6]" />
             </div>
             <div className="flex items-baseline gap-2 mt-1.5">
-              <span className="text-3xl font-black text-[#172033] tabular-nums tracking-tight">
+              <span className="text-3xl font-black text-[#0F172A] tabular-nums tracking-tight">
                 {currentSummary.communityReports}
               </span>
               <span className="text-xs text-[#059669] font-bold">Verified Today</span>
             </div>
-            <span className="text-[10px] text-[#667085] block mt-1">
+            <span className="text-[10px] text-[#475467] block mt-1">
               Crowdsourced queue calibrations
             </span>
           </div>
         </div>
       </div>
 
-      {/* ── "ATTENTION REQUIRED" SECTION ─────────────────────────────── */}
+      {/* â”€â”€ "ATTENTION REQUIRED" SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="space-y-3">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <ShieldAlert className="h-5 w-5 text-red-600" />
             <h2 className="text-base font-bold text-slate-900 uppercase tracking-wide">
-              ATTENTION REQUIRED · OPERATIONAL CONGESTION ALERTS
+              ATTENTION REQUIRED Â· OPERATIONAL CONGESTION ALERTS
             </h2>
             <span className="badge badge-critical text-[10px] py-0.5 px-2">
               {filteredAlerts.length} Flagged
             </span>
           </div>
-          <span className="text-[11px] text-slate-500 font-medium">Automatic Threshold Triggers</span>
+          <span className="text-[11px] text-[#344054] font-medium">Automatic Threshold Triggers</span>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -272,29 +272,29 @@ export default function AnalyticsDashboard({ showToast }) {
                       </span>
                       <h3 className="text-base font-bold text-slate-900 mt-1">{item.office}</h3>
                     </div>
-                    <span className="text-[11px] font-mono text-slate-400 font-semibold">{item.reportedAt}</span>
+                    <span className="text-[11px] font-mono text-[#475467] font-semibold">{item.reportedAt}</span>
                   </div>
 
                   {/* Specific Required Alert Issue Description */}
-                  <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 mb-3">
+                  <div className="p-2.5 rounded-lg bg-[#E8F0F8] border border-slate-200 mb-3">
                     <p className="text-xs font-bold text-slate-900 leading-snug">{item.issue}</p>
-                    <span className="text-[10px] font-semibold text-slate-500 mt-1 block">Trend: {item.trend}</span>
+                    <span className="text-[10px] font-semibold text-[#344054] mt-1 block">Trend: {item.trend}</span>
                   </div>
 
                   {/* Telemetry numbers */}
                   <div className="grid grid-cols-2 gap-2 mb-3">
-                    <div className="p-2 bg-slate-50 rounded border border-slate-200">
-                      <span className="text-[9px] font-bold text-slate-400 uppercase block">Active In-Line</span>
+                    <div className="p-2 bg-[#E8F0F8] rounded border border-slate-200">
+                      <span className="text-[9px] font-bold text-[#475467] uppercase block">Active In-Line</span>
                       <span className="text-base font-black text-slate-900 tabular-nums">{item.queueCount}</span>
-                      <span className="text-[10px] text-slate-500 ml-1">citizens</span>
+                      <span className="text-[10px] text-[#344054] ml-1">citizens</span>
                     </div>
-                    <div className="p-2 bg-slate-50 rounded border border-slate-200">
-                      <span className="text-[9px] font-bold text-slate-400 uppercase block">Estimated Wait</span>
+                    <div className="p-2 bg-[#E8F0F8] rounded border border-slate-200">
+                      <span className="text-[9px] font-bold text-[#475467] uppercase block">Estimated Wait</span>
                       <span className="text-base font-black text-red-700 tabular-nums">{item.estWait}</span>
                     </div>
                   </div>
 
-                  <p className="text-[11px] text-slate-600 mb-4 leading-relaxed">
+                  <p className="text-[11px] text-[#1D2939] mb-4 leading-relaxed">
                     <strong className="text-slate-800">Dispatch Protocol:</strong> {item.actionNeeded}
                   </p>
                 </div>
@@ -309,7 +309,7 @@ export default function AnalyticsDashboard({ showToast }) {
                       isDispatched ? 'bg-emerald-700 cursor-default' : ''
                     }`}
                   >
-                    {isDispatched ? '✓ Counter Deployed' : 'Deploy Relief Counter'}
+                    {isDispatched ? 'âœ“ Counter Deployed' : 'Deploy Relief Counter'}
                   </button>
 
                   <button
@@ -318,7 +318,7 @@ export default function AnalyticsDashboard({ showToast }) {
                     className="btn-secondary py-1.5 px-2.5 text-xs font-bold"
                     title="Broadcast delay advisory to citizen apps"
                   >
-                    <Send className="h-3.5 w-3.5 text-slate-600" />
+                    <Send className="h-3.5 w-3.5 text-[#1D2939]" />
                   </button>
 
                   <button
@@ -339,21 +339,21 @@ export default function AnalyticsDashboard({ showToast }) {
         </div>
       </section>
 
-      {/* ── OFFICE MONITORING TABLE ─────────────────────────────────── */}
+      {/* â”€â”€ OFFICE MONITORING TABLE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="card bg-white border-slate-200 shadow-xs overflow-hidden">
         <div className="px-6 py-4 border-b border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h2 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
-              OFFICE MONITORING TABLE · DISTRICT STATIONS
+              OFFICE MONITORING TABLE Â· DISTRICT STATIONS
             </h2>
-            <p className="text-xs text-slate-500 mt-0.5">
+            <p className="text-xs text-[#344054] mt-0.5">
               Live status, wait estimates, counter utilization, and crowd trends across monitored offices
             </p>
           </div>
 
           <div className="flex items-center gap-2 text-xs">
-            <span className="text-[11px] font-semibold text-slate-500">Filter Scope:</span>
-            <span className="bg-slate-100 text-slate-800 font-bold px-2 py-0.5 rounded border border-slate-200">
+            <span className="text-[11px] font-semibold text-[#344054]">Filter Scope:</span>
+            <span className="bg-[#DCE7F2] text-slate-800 font-bold px-2 py-0.5 rounded border border-slate-200">
               {officeFilter === 'all' ? 'All 5 Offices' : offices.find(o => o.id === officeFilter)?.name || officeFilter}
             </span>
           </div>
@@ -362,7 +362,7 @@ export default function AnalyticsDashboard({ showToast }) {
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-xs">
             <thead>
-              <tr className="bg-slate-50 border-b border-slate-200 text-[11px] font-bold text-slate-500 uppercase tracking-wider">
+              <tr className="bg-[#E8F0F8] border-b border-slate-200 text-[11px] font-bold text-[#344054] uppercase tracking-wider">
                 <th className="py-3.5 px-6">Office</th>
                 <th className="py-3.5 px-4 text-center">Queue</th>
                 <th className="py-3.5 px-4 text-center">Wait</th>
@@ -376,16 +376,16 @@ export default function AnalyticsDashboard({ showToast }) {
                 const badgeCfg = CROWD_BADGES[row.crowdLevel] || CROWD_BADGES.low
 
                 return (
-                  <tr key={row.id} className="hover:bg-slate-50/80 transition-colors">
+                  <tr key={row.id} className="hover:bg-[#E8F0F8]/80 transition-colors">
                     {/* Office */}
                     <td className="py-3.5 px-6">
                       <div className="flex items-center gap-3">
-                        <div className="h-8 w-8 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 flex items-center justify-center font-bold shrink-0">
-                          {row.id === 'rto' ? '🚗' : row.id === 'passport' ? '✈️' : row.id === 'municipal' ? '🏙️' : row.id === 'tehsil' ? '📋' : '🏛️'}
+                        <div className="h-8 w-8 rounded-lg bg-[#DCE7F2] border border-slate-200 text-slate-800 flex items-center justify-center font-bold shrink-0">
+                          {row.id === 'rto' ? 'ðŸš—' : row.id === 'passport' ? 'âœˆï¸' : row.id === 'municipal' ? 'ðŸ™ï¸' : row.id === 'tehsil' ? 'ðŸ“‹' : 'ðŸ›ï¸'}
                         </div>
                         <div>
                           <p className="font-bold text-slate-900 text-sm leading-tight">{row.name}</p>
-                          <span className="text-[11px] text-slate-400 font-normal">{row.category}</span>
+                          <span className="text-[11px] text-[#475467] font-normal">{row.category}</span>
                         </div>
                       </div>
                     </td>
@@ -395,7 +395,7 @@ export default function AnalyticsDashboard({ showToast }) {
                       <span className="font-black text-slate-900 text-base tabular-nums">
                         {row.queue}
                       </span>
-                      <span className="text-[10px] text-slate-400 block font-semibold">citizens</span>
+                      <span className="text-[10px] text-[#475467] block font-semibold">citizens</span>
                     </td>
 
                     {/* Wait */}
@@ -403,7 +403,7 @@ export default function AnalyticsDashboard({ showToast }) {
                       <span className="font-bold text-slate-900 text-sm tabular-nums">
                         {row.wait}
                       </span>
-                      <span className="text-[10px] text-slate-400 block font-normal">est. window</span>
+                      <span className="text-[10px] text-[#475467] block font-normal">est. window</span>
                     </td>
 
                     {/* Crowd */}
@@ -418,16 +418,16 @@ export default function AnalyticsDashboard({ showToast }) {
                       <div className="inline-flex items-center gap-1 font-bold">
                         <span className={`text-sm ${
                           row.trendDirection === 'up' ? 'text-red-600' :
-                          row.trendDirection === 'down' ? 'text-emerald-600' : 'text-slate-500'
+                          row.trendDirection === 'down' ? 'text-emerald-600' : 'text-[#344054]'
                         }`}>
                           {row.trend}
                         </span>
-                        <span className="text-[11px] text-slate-600 font-semibold">{row.trendText}</span>
+                        <span className="text-[11px] text-[#1D2939] font-semibold">{row.trendText}</span>
                       </div>
                     </td>
 
                     {/* Last Updated */}
-                    <td className="py-3.5 px-6 text-right font-medium text-slate-500 tabular-nums">
+                    <td className="py-3.5 px-6 text-right font-medium text-[#344054] tabular-nums">
                       {row.lastUpdated}
                     </td>
                   </tr>
@@ -438,7 +438,7 @@ export default function AnalyticsDashboard({ showToast }) {
         </div>
       </section>
 
-      {/* ── 4 KEY OPERATIONS VISUALIZATIONS GRID ─────────────────────── */}
+      {/* â”€â”€ 4 KEY OPERATIONS VISUALIZATIONS GRID â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <div className="grid lg:grid-cols-12 gap-6 items-start">
 
         {/* 1. HOURLY QUEUE TREND CHART */}
@@ -451,9 +451,9 @@ export default function AnalyticsDashboard({ showToast }) {
                   HOURLY QUEUE TREND CHART
                 </h3>
               </div>
-              <p className="text-[11px] text-slate-500 mt-0.5">District queue surge curve from 09:00 AM to 05:00 PM</p>
+              <p className="text-[11px] text-[#344054] mt-0.5">District queue surge curve from 09:00 AM to 05:00 PM</p>
             </div>
-            <span className="text-[10px] font-bold bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200">
+            <span className="text-[10px] font-bold bg-[#DCE7F2] text-slate-700 px-2 py-0.5 rounded border border-slate-200">
               Capacity Limit: 40 citizens
             </span>
           </div>
@@ -480,7 +480,7 @@ export default function AnalyticsDashboard({ showToast }) {
                     <span className={`text-[10px] font-bold tabular-nums ${isOver ? 'text-red-700' : 'text-slate-700'}`}>
                       {item.queue}
                     </span>
-                    <div className="w-full flex items-end justify-center h-32 bg-slate-100/70 rounded overflow-hidden">
+                    <div className="w-full flex items-end justify-center h-32 bg-[#DCE7F2]/70 rounded overflow-hidden">
                       <div
                         className={`w-full rounded-t transition-all duration-500 ${barColor} ${
                           item.isCurrent ? 'ring-2 ring-blue-900 ring-offset-1' : ''
@@ -490,7 +490,7 @@ export default function AnalyticsDashboard({ showToast }) {
                       />
                     </div>
                     <span className={`text-[10px] font-bold whitespace-nowrap ${
-                      item.isCurrent ? 'text-blue-900 bg-blue-50 px-1 rounded' : 'text-slate-500'
+                      item.isCurrent ? 'text-blue-900 bg-blue-50 px-1 rounded' : 'text-[#344054]'
                     }`}>
                       {item.time.replace(':00', '')}
                     </span>
@@ -500,7 +500,7 @@ export default function AnalyticsDashboard({ showToast }) {
             </div>
           </div>
 
-          <div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-[11px] text-slate-500">
+          <div className="mt-4 pt-3 border-t border-slate-100 flex flex-wrap items-center justify-between text-[11px] text-[#344054]">
             <span className="flex items-center gap-1">
               <span className="h-2 w-2 rounded-full bg-blue-900" />
               <strong>Current Period:</strong> 02:00 PM (~42 in queue, 68m wait)
@@ -519,9 +519,9 @@ export default function AnalyticsDashboard({ showToast }) {
                   AVERAGE WAIT BY OFFICE
                 </h3>
               </div>
-              <p className="text-[11px] text-slate-500 mt-0.5">Comparative waiting duration across all 5 centers</p>
+              <p className="text-[11px] text-[#344054] mt-0.5">Comparative waiting duration across all 5 centers</p>
             </div>
-            <span className="text-[10px] font-bold text-slate-400">Mean: 42 min</span>
+            <span className="text-[10px] font-bold text-[#475467]">Mean: 42 min</span>
           </div>
 
           <div className="space-y-3 pt-1">
@@ -539,13 +539,13 @@ export default function AnalyticsDashboard({ showToast }) {
                     <span className="text-slate-800">{row.name}</span>
                     <span className="tabular-nums font-black text-slate-900">{row.wait}</span>
                   </div>
-                  <div className="h-3 w-full bg-slate-100 rounded-full overflow-hidden">
+                  <div className="h-3 w-full bg-[#DCE7F2] rounded-full overflow-hidden">
                     <div
                       className={`h-full rounded-full transition-all duration-500 ${barColor}`}
                       style={{ width: `${pct}%` }}
                     />
                   </div>
-                  <div className="flex items-center justify-between text-[10px] text-slate-400">
+                  <div className="flex items-center justify-between text-[10px] text-[#475467]">
                     <span>{row.counters}</span>
                     <span>Status: {row.crowd}</span>
                   </div>
@@ -554,7 +554,7 @@ export default function AnalyticsDashboard({ showToast }) {
             })}
           </div>
 
-          <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-slate-500 flex items-center justify-between">
+          <div className="mt-4 pt-3 border-t border-slate-100 text-[11px] text-[#344054] flex items-center justify-between">
             <span>SLA Standard: &lt;35 min</span>
             <span className="text-red-700 font-bold">3 of 5 exceed standard</span>
           </div>
@@ -570,14 +570,14 @@ export default function AnalyticsDashboard({ showToast }) {
                   CROWD DISTRIBUTION
                 </h3>
               </div>
-              <p className="text-[11px] text-slate-500 mt-0.5">District-wide congestion breakdown by severity tier</p>
+              <p className="text-[11px] text-[#344054] mt-0.5">District-wide congestion breakdown by severity tier</p>
             </div>
-            <span className="text-[10px] font-bold text-slate-500">5 Monitored Centers</span>
+            <span className="text-[10px] font-bold text-[#344054]">5 Monitored Centers</span>
           </div>
 
           {/* Segmented Multi-Tier Bar Meter */}
           <div className="space-y-4">
-            <div className="h-4 w-full bg-slate-100 rounded-full overflow-hidden flex shadow-2xs">
+            <div className="h-4 w-full bg-[#DCE7F2] rounded-full overflow-hidden flex shadow-2xs">
               <div style={{ width: '20%' }} className="bg-red-500 h-full" title="Critical: 1 Office (20%)" />
               <div style={{ width: '40%' }} className="bg-orange-500 h-full" title="High: 2 Offices (40%)" />
               <div style={{ width: '20%' }} className="bg-amber-400 h-full" title="Moderate: 1 Office (20%)" />
@@ -589,29 +589,29 @@ export default function AnalyticsDashboard({ showToast }) {
               <div className="p-2.5 rounded-lg bg-red-50 border border-red-200/80 text-center">
                 <span className="text-[10px] font-extrabold text-red-900 uppercase block">CRITICAL</span>
                 <span className="text-lg font-black text-red-700 tabular-nums">1 (20%)</span>
-                <span className="text-[10px] text-slate-600 block truncate">Passport Seva</span>
+                <span className="text-[10px] text-[#1D2939] block truncate">Passport Seva</span>
               </div>
 
               <div className="p-2.5 rounded-lg bg-orange-50 border border-orange-200/80 text-center">
                 <span className="text-[10px] font-extrabold text-orange-900 uppercase block">HIGH</span>
                 <span className="text-lg font-black text-orange-700 tabular-nums">2 (40%)</span>
-                <span className="text-[10px] text-slate-600 block truncate">RTO & Tehsil</span>
+                <span className="text-[10px] text-[#1D2939] block truncate">RTO & Tehsil</span>
               </div>
 
               <div className="p-2.5 rounded-lg bg-amber-50 border border-amber-200/80 text-center">
                 <span className="text-[10px] font-extrabold text-amber-900 uppercase block">MODERATE</span>
                 <span className="text-lg font-black text-amber-700 tabular-nums">1 (20%)</span>
-                <span className="text-[10px] text-slate-600 block truncate">Municipal Corp</span>
+                <span className="text-[10px] text-[#1D2939] block truncate">Municipal Corp</span>
               </div>
 
               <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200/80 text-center">
                 <span className="text-[10px] font-extrabold text-emerald-900 uppercase block">LOW</span>
                 <span className="text-lg font-black text-emerald-700 tabular-nums">1 (20%)</span>
-                <span className="text-[10px] text-slate-600 block truncate">DM Office</span>
+                <span className="text-[10px] text-[#1D2939] block truncate">DM Office</span>
               </div>
             </div>
 
-            <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-600 leading-relaxed">
+            <div className="p-2.5 rounded-lg bg-[#E8F0F8] border border-slate-200 text-xs text-[#1D2939] leading-relaxed">
               <strong>District Operations Index:</strong> 60% of district administrative locations are currently operating above recommended counter capacity limits.
             </div>
           </div>
@@ -627,7 +627,7 @@ export default function AnalyticsDashboard({ showToast }) {
                   QUEUE ALERT LIST
                 </h3>
               </div>
-              <p className="text-[11px] text-slate-500 mt-0.5">Active automated threshold triggers & dispatch queue</p>
+              <p className="text-[11px] text-[#344054] mt-0.5">Active automated threshold triggers & dispatch queue</p>
             </div>
             <span className="badge badge-high text-[10px] py-0.5 px-2">2 Pending Action</span>
           </div>
@@ -655,13 +655,13 @@ export default function AnalyticsDashboard({ showToast }) {
                       </span>
                       <strong className="text-slate-900 text-xs">{alert.office}</strong>
                     </div>
-                    <span className="text-[10px] font-mono text-slate-400">{alert.timestamp}</span>
+                    <span className="text-[10px] font-mono text-[#475467]">{alert.timestamp}</span>
                   </div>
 
                   <p className="text-slate-800 font-medium mb-2 leading-snug">{alert.message}</p>
 
                   <div className="flex items-center justify-between pt-2 border-t border-slate-200/60 text-[11px]">
-                    <span className="text-slate-500">
+                    <span className="text-[#344054]">
                       Line: <strong className="text-slate-900">{alert.queue} citizens</strong> (Cap: {alert.threshold})
                     </span>
                     <button
@@ -671,10 +671,10 @@ export default function AnalyticsDashboard({ showToast }) {
                       className={`text-[11px] font-bold px-2 py-0.5 rounded border transition-colors ${
                         isAck
                           ? 'bg-emerald-50 text-emerald-800 border-emerald-300'
-                          : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-100'
+                          : 'bg-white text-slate-700 border-slate-300 hover:bg-[#DCE7F2]'
                       }`}
                     >
-                      {isAck ? '✓ Acknowledged' : 'Acknowledge'}
+                      {isAck ? 'âœ“ Acknowledged' : 'Acknowledge'}
                     </button>
                   </div>
                 </div>
@@ -682,20 +682,22 @@ export default function AnalyticsDashboard({ showToast }) {
             })}
           </div>
 
-          <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+          <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-[#344054]">
             <span>Automated real-time threshold polling</span>
-            <span className="text-emerald-700 font-semibold">Active monitor · Zero delay</span>
+            <span className="text-emerald-700 font-semibold">Active monitor Â· Zero delay</span>
           </div>
         </div>
 
       </div>
 
       {/* Operational Footer Advisory */}
-      <div className="p-3 bg-slate-100/70 border border-slate-200/80 rounded-xl text-center text-[12px] text-slate-500">
+      <div className="p-3 bg-[#DCE7F2]/70 border border-slate-200/80 rounded-xl text-center text-[12px] text-[#344054]">
         <strong>Operational Advisory:</strong> Relief shifts should be staged at 10:00 AM across all major civic centers.
       </div>
 
     </div>
   )
 }
+
+
 

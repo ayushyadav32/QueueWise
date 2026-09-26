@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react'
+﻿import { useState, useCallback, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import LandingHero from './components/LandingHero'
 import OfficeSelector from './components/OfficeSelector'
@@ -22,7 +22,7 @@ export default function App() {
   const [selectedService, setSelectedService] = useState(null)
   const [toasts, setToasts] = useState([])
 
-  // ─── Centralized User Data Hook ───────────────────────────────────────────
+  // â”€â”€â”€ Centralized User Data Hook â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const {
     currentUser,
     savedVisits,
@@ -52,11 +52,11 @@ export default function App() {
     refreshUserData,
   } = useUserData()
 
-  // ─── First-Time Citizen Onboarding State ──────────────────────────────────
+  // â”€â”€â”€ First-Time Citizen Onboarding State â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const [showOnboarding, setShowOnboarding] = useState(false)
   const [pendingPostAuth, setPendingPostAuth] = useState(null)
 
-  // ─── Ephemeral Guest Fallback States (Used ONLY when unauthenticated) ──────
+  // â”€â”€â”€ Ephemeral Guest Fallback States (Used ONLY when unauthenticated) â”€â”€â”€â”€â”€â”€
   const [guestVisits, setGuestVisits] = useState([])
   const [guestNotifications, setGuestNotifications] = useState([])
   const [guestActivities, setGuestActivities] = useState([])
@@ -68,7 +68,7 @@ export default function App() {
   const activeActivities = currentUser ? activityHistory : guestActivities
   const activeWatchers = currentUser ? (preferences.watchers || {}) : guestWatchers
 
-  // ─── Authentication Popover & Modal State ──────────────────────────────────
+  // â”€â”€â”€ Authentication Popover & Modal State â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const [authModal, setAuthModal] = useState({
     isOpen: false,
     mode: 'register',
@@ -78,10 +78,10 @@ export default function App() {
     onPostAuth: null,
   })
 
-  // ─── Profile Dialog State ──────────────────────────────────────────────────
+  // â”€â”€â”€ Profile Dialog State â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const [profileModalOpen, setProfileModalOpen] = useState(false)
 
-  // ─── My Visits Subtab ('overview' | 'visits' | 'history') ─────────────────
+  // â”€â”€â”€ My Visits Subtab ('overview' | 'visits' | 'history') â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const [myVisitsTab, setMyVisitsTab] = useState('overview')
 
   // Toast Helpers
@@ -89,7 +89,7 @@ export default function App() {
     setToasts(t => [...t, { id: Date.now() + Math.random(), message, type }]), [])
   const removeToast = id => setToasts(t => t.filter(x => x.id !== id))
 
-  // ─── Authentication Handlers ──────────────────────────────────────────────
+  // â”€â”€â”€ Authentication Handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const handleOpenAuth = useCallback((paramsOrMode = 'register', message = null, onPostAuth = null) => {
     if (typeof paramsOrMode === 'object' && paramsOrMode !== null) {
       setAuthModal({
@@ -112,13 +112,13 @@ export default function App() {
     }
   }, [])
 
-  // ─── Reusable Auth Guard ──────────────────────────────────────────────────
+  // â”€â”€â”€ Reusable Auth Guard â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const { requireAuth } = useAuthGuard({
     currentUser,
     onOpenAuth: handleOpenAuth,
   })
 
-  // ─── Route Guard: Prevent Direct Unauthorized Access to Protected Steps ─
+  // â”€â”€â”€ Route Guard: Prevent Direct Unauthorized Access to Protected Steps â”€
   useEffect(() => {
     if (!currentUser) {
       if (step === 'plan') {
@@ -167,7 +167,7 @@ export default function App() {
   const handleCompleteOnboarding = () => {
     setShowOnboarding(false)
     completeOnboarding()
-    addToast('✓ Welcome to QueueWise! Let’s plan your first government visit.', 'success')
+    addToast('âœ“ Welcome to QueueWise! Letâ€™s plan your first government visit.', 'success')
 
     if (pendingPostAuth) {
       pendingPostAuth()
@@ -187,10 +187,10 @@ export default function App() {
     setGuestWatchers({})
     setProfileModalOpen(false)
     setStep('landing')
-    addToast('✓ Logged out successfully. Personal session closed.', 'info')
+    addToast('âœ“ Logged out successfully. Personal session closed.', 'info')
   }
 
-  // ─── User Activity Logger ─────────────────────────────────────────────────
+  // â”€â”€â”€ User Activity Logger â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const handleLogActivity = useCallback((type, title, office = null, service = null, details = null) => {
     if (currentUser) {
       logActivity(type, title, office, service, details)
@@ -208,7 +208,7 @@ export default function App() {
     }
   }, [currentUser, logActivity])
 
-  // ─── Navigation Handlers ──────────────────────────────────────────────────
+  // â”€â”€â”€ Navigation Handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const handleGetStarted = (office = null, service = null) => {
     requireAuth(() => {
       setSelectedOffice(office || null)
@@ -287,7 +287,7 @@ export default function App() {
     setStep('landing')
   }
 
-  // ─── Visit Plan Actions ───────────────────────────────────────────────────
+  // â”€â”€â”€ Visit Plan Actions â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const handleSaveVisit = (pass) => {
     requireAuth((user) => {
       const userPass = {
@@ -297,7 +297,7 @@ export default function App() {
         status: pass.status || 'Upcoming',
       }
       addVisit(userPass)
-      addToast(`✓ Visit pass saved to your portfolio, ${user.name}!`, 'success')
+      addToast(`âœ“ Visit pass saved to your portfolio, ${user.name}!`, 'success')
     }, {
       title: 'Create your free QueueWise account',
       subtitle: 'Save visits, track your history, and get personalized queue alerts.',
@@ -328,7 +328,7 @@ export default function App() {
     }
 
     if (newStatus === 'Completed') {
-      addToast(`✓ Appointment marked as Completed!`, 'success')
+      addToast(`âœ“ Appointment marked as Completed!`, 'success')
     } else if (newStatus === 'Cancelled') {
       addToast(`Appointment marked as Cancelled.`, 'info')
     } else {
@@ -380,7 +380,7 @@ export default function App() {
     } else {
       setGuestNotifications(prev => [newNotif, ...prev])
     }
-    addToast(`🔔 Queue is getting shorter at ${pass.officeName}! Current queue: 14 people (17 min wait). Now may be a good time to visit.`, 'success')
+    addToast(`ðŸ”” Queue is getting shorter at ${pass.officeName}! Current queue: 14 people (17 min wait). Now may be a good time to visit.`, 'success')
   }
 
   const handlePlanNew = () => {
@@ -389,7 +389,7 @@ export default function App() {
     setStep('plan')
   }
 
-  // ─── Notification Handlers ────────────────────────────────────────────────
+  // â”€â”€â”€ Notification Handlers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
   const handleMarkAsRead = (id) => {
     if (currentUser) {
       markNotificationRead(id)
@@ -404,7 +404,7 @@ export default function App() {
     } else {
       setGuestNotifications(prev => prev.map(n => ({ ...n, read: true })))
     }
-    addToast('✓ All notifications marked as read', 'info')
+    addToast('âœ“ All notifications marked as read', 'info')
   }
 
   const handleDeleteNotification = (id) => {
@@ -447,7 +447,7 @@ export default function App() {
     } else {
       setGuestNotifications(prev => [newNotif, ...prev])
     }
-    addToast(`🔔 ${newNotif.title}: ${newNotif.officeName} · ${newNotif.message}`, 'alert')
+    addToast(`ðŸ”” ${newNotif.title}: ${newNotif.officeName} Â· ${newNotif.message}`, 'alert')
   }, [currentUser, addNotification, addToast])
 
   // Realistic queue change simulation (queue drops below threshold)
@@ -474,7 +474,7 @@ export default function App() {
     } else {
       setGuestNotifications(prev => [newNotif, ...prev.filter(n => n.id !== newNotif.id)])
     }
-    addToast(`🔔 Queue is getting shorter: ${targetOffice.name} queue dropped to 14 people (17 min wait). Now may be a good time to visit.`, 'success')
+    addToast(`ðŸ”” Queue is getting shorter: ${targetOffice.name} queue dropped to 14 people (17 min wait). Now may be a good time to visit.`, 'success')
   }, [selectedOffice, currentUser, addNotification, addToast])
 
   // Toggle watcher for an office
@@ -485,7 +485,7 @@ export default function App() {
       const nextState = !current?.enabled
 
       if (nextState) {
-        addToast(`✓ Alert active: We will notify you when the queue at ${targetOffice.name} drops below ${threshold} people.`, 'success')
+        addToast(`âœ“ Alert active: We will notify you when the queue at ${targetOffice.name} drops below ${threshold} people.`, 'success')
         handleLogActivity('reminder', `Subscribed to queue drop alerts`, targetOffice.name, null, `Alert threshold: < ${threshold} people`)
         setTimeout(() => {
           handleSimulateQueueDrop(officeId)
@@ -526,7 +526,7 @@ export default function App() {
       if (currentUser) {
         addQueueReport(report)
       }
-      addToast('✓ Queue report submitted to community feed', 'success')
+      addToast('âœ“ Queue report submitted to community feed', 'success')
     }, {
       title: 'Create your free QueueWise account',
       subtitle: 'Save visits, track your history, and get personalized queue alerts.',
@@ -539,7 +539,7 @@ export default function App() {
   const navPadding = showBreadcrumbs ? 'pt-[97px]' : 'pt-16'
 
   return (
-    <div className="min-h-screen bg-slate-100/70 text-slate-900 font-sans">
+    <div className="min-h-screen bg-[#DCE7F2]/70 text-slate-900 font-sans">
       <Navbar
         step={step}
         selectedOffice={selectedOffice}
@@ -657,36 +657,36 @@ export default function App() {
         )}
       </main>
 
-      {/* ─── Civic Minimalist Footer ────────────────────────────────────── */}
-      <footer className="mt-auto border-t border-[#E4E7EC] bg-white">
+      {/* â”€â”€â”€ Civic Minimalist Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <footer className="mt-auto border-t border-[#CBD5E1] bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {/* Col 1: Brand & Purpose */}
             <div className="md:col-span-2 space-y-3">
               <div className="flex items-center gap-2">
-                <div className="h-7 w-7 rounded bg-[#0B5CAD] text-white flex items-center justify-center font-bold text-xs">
+                <div className="h-7 w-7 rounded bg-[#0757A6] text-white flex items-center justify-center font-bold text-xs">
                   QW
                 </div>
-                <span className="font-bold text-base text-[#172033] tracking-tight">QueueWise</span>
-                <span className="text-[10px] font-bold tracking-wider text-[#0B5CAD] bg-[#F6F8FB] border border-[#E4E7EC] px-1.5 py-0.5 rounded uppercase">
+                <span className="font-bold text-base text-[#0F172A] tracking-tight">QueueWise</span>
+                <span className="text-[10px] font-bold tracking-wider text-[#0757A6] bg-[#EEF3F8] border border-[#CBD5E1] px-1.5 py-0.5 rounded uppercase">
                   Lucknow District
                 </span>
               </div>
-              <p className="text-xs text-[#667085] leading-relaxed max-w-md">
+              <p className="text-xs text-[#475467] leading-relaxed max-w-md">
                 District civic queue management prototype. Empowers citizens to plan government office visits with real-time crowd estimates, smart document readiness checks, and optimal arrival recommendations.
               </p>
               <div className="flex items-center gap-2 text-[11px] text-[#059669] font-medium pt-1">
                 <span className="h-2 w-2 rounded-full bg-[#059669] inline-block"></span>
-                <span>District Service Network Online · 5 Major Public Centers Active</span>
+                <span>District Service Network Online Â· 5 Major Public Centers Active</span>
               </div>
             </div>
 
             {/* Col 2: Citizen Services */}
             <div>
-              <h4 className="text-xs font-bold text-[#172033] uppercase tracking-wider mb-3">
+              <h4 className="text-xs font-bold text-[#0F172A] uppercase tracking-wider mb-3">
                 Citizen Services
               </h4>
-              <ul className="space-y-2 text-xs text-[#667085]">
+              <ul className="space-y-2 text-xs text-[#475467]">
                 <li>
                   <button
                     type="button"
@@ -696,7 +696,7 @@ export default function App() {
                       setStep('landing')
                       window.scrollTo({ top: 0, behavior: 'smooth' })
                     }}
-                    className="hover:text-[#0B5CAD] transition-colors"
+                    className="hover:text-[#0757A6] transition-colors"
                   >
                     Home Overview
                   </button>
@@ -714,7 +714,7 @@ export default function App() {
                         initialMode: 'register',
                       })
                     }}
-                    className="hover:text-[#0B5CAD] transition-colors"
+                    className="hover:text-[#0757A6] transition-colors"
                   >
                     Plan a Visit
                   </button>
@@ -733,7 +733,7 @@ export default function App() {
                         initialMode: 'register',
                       })
                     }}
-                    className="hover:text-[#0B5CAD] transition-colors"
+                    className="hover:text-[#0757A6] transition-colors"
                   >
                     My Visit Passes
                   </button>
@@ -745,7 +745,7 @@ export default function App() {
                       setStep('why')
                       window.scrollTo({ top: 0, behavior: 'smooth' })
                     }}
-                    className="hover:text-[#0B5CAD] transition-colors"
+                    className="hover:text-[#0757A6] transition-colors"
                   >
                     Why QueueWise?
                   </button>
@@ -755,10 +755,10 @@ export default function App() {
 
             {/* Col 3: District Administration */}
             <div>
-              <h4 className="text-xs font-bold text-[#172033] uppercase tracking-wider mb-3">
+              <h4 className="text-xs font-bold text-[#0F172A] uppercase tracking-wider mb-3">
                 District Administration
               </h4>
-              <ul className="space-y-2 text-xs text-[#667085]">
+              <ul className="space-y-2 text-xs text-[#475467]">
                 <li>
                   <button
                     type="button"
@@ -766,15 +766,15 @@ export default function App() {
                       setStep('analytics')
                       window.scrollTo({ top: 0, behavior: 'smooth' })
                     }}
-                    className="flex items-center gap-1.5 text-[#0B5CAD] font-bold hover:underline"
+                    className="flex items-center gap-1.5 text-[#0757A6] font-bold hover:underline"
                   >
                     <span>District Service Monitor</span>
-                    <span className="text-[10px] px-1.5 py-0.2 bg-[#F6F8FB] border border-[#E4E7EC] rounded font-mono font-semibold">
+                    <span className="text-[10px] px-1.5 py-0.2 bg-[#EEF3F8] border border-[#CBD5E1] rounded font-mono font-semibold">
                       Admin
                     </span>
                   </button>
                 </li>
-                <li className="text-[11px] text-[#667085] pt-1 leading-snug">
+                <li className="text-[11px] text-[#475467] pt-1 leading-snug">
                   Operational console for district magistrates, department heads, and center supervisors to monitor office congestion and crowd alerts.
                 </li>
               </ul>
@@ -782,9 +782,9 @@ export default function App() {
           </div>
 
           {/* Bottom Copyright & Disclaimer */}
-          <div className="mt-8 pt-6 border-t border-[#E4E7EC] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#667085]">
+          <div className="mt-8 pt-6 border-t border-[#CBD5E1] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#475467]">
             <p>
-              © 2026 District Administration · QueueWise Prototype. Not an official government portal.
+              Â© 2026 District Administration Â· QueueWise Prototype. Not an official government portal.
             </p>
             <p className="text-[11px]">
               Civic hackathon demonstration prototype. Client-side isolated data architecture.
@@ -840,3 +840,5 @@ export default function App() {
     </div>
   )
 }
+
+

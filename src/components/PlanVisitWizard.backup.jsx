@@ -1,4 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
+﻿import { useState, useMemo, useEffect } from 'react'
 import { offices, services } from '../data/mockData'
 import { calculateQueuePrediction } from '../utils/predictionEngine'
 import {
@@ -155,8 +155,8 @@ export default function PlanVisitWizard({
       serviceName: selectedService.name,
       date: 'Today',
       status: 'Upcoming',
-      recommendedSlot: prediction?.recommendedWindow?.time ? `Today · ${prediction.recommendedWindow.time}` : 'Today · 2:00 PM – 3:00 PM',
-      expectedWait: prediction?.recommendedWindow?.expectedWait || '18–22 min',
+      recommendedSlot: prediction?.recommendedWindow?.time ? `Today Â· ${prediction.recommendedWindow.time}` : 'Today Â· 2:00 PM â€“ 3:00 PM',
+      expectedWait: prediction?.recommendedWindow?.expectedWait || '18â€“22 min',
       docsReady: `${readinessMetrics.readyCount} of ${readinessMetrics.requiredCount} ready`,
       reminderActive: true,
       savedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
@@ -169,7 +169,7 @@ export default function PlanVisitWizard({
       onLogActivity('visit', `Planned & saved visit for ${selectedService.name}`, selectedOffice.name, selectedService.name, `Slot: ${pass.recommendedSlot}`)
     }
     if (showToast) {
-      showToast('✓ Visit plan saved to your personal portfolio.', 'success')
+      showToast('âœ“ Visit plan saved to your personal portfolio.', 'success')
     }
   }
 
@@ -196,53 +196,53 @@ export default function PlanVisitWizard({
   return (
     <div className="mx-auto max-w-2xl px-4 sm:px-6 py-10 space-y-8 anim-slide-up">
 
-      {/* ── Minimal 3-Step Progress Indicator ──────────────────────── */}
-      <div className="flex items-center justify-between border-b border-[#E4E7EC] pb-4">
+      {/* â”€â”€ Minimal 3-Step Progress Indicator â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <div className="flex items-center justify-between border-b border-[#CBD5E1] pb-4">
         <div className="flex items-center gap-2 text-xs font-semibold">
           <span
             className={`px-2.5 py-1 rounded-full ${
               currentStep === 1
-                ? 'bg-[#0B5CAD] text-white'
+                ? 'bg-[#0757A6] text-white'
                 : currentStep > 1
                 ? 'bg-[#ECFDF5] text-[#059669]'
-                : 'bg-slate-100 text-[#667085]'
+                : 'bg-[#DCE7F2] text-[#475467]'
             }`}
           >
-            {currentStep > 1 ? '✓' : '1'}
+            {currentStep > 1 ? 'âœ“' : '1'}
           </span>
-          <span className={currentStep === 1 ? 'text-[#172033] font-bold' : 'text-[#667085]'}>
+          <span className={currentStep === 1 ? 'text-[#0F172A] font-bold' : 'text-[#475467]'}>
             Select Office
           </span>
 
-          <span className="text-[#E4E7EC] mx-1">/</span>
+          <span className="text-[#CBD5E1] mx-1">/</span>
 
           <span
             className={`px-2.5 py-1 rounded-full ${
               currentStep === 2
-                ? 'bg-[#0B5CAD] text-white'
+                ? 'bg-[#0757A6] text-white'
                 : currentStep > 2
                 ? 'bg-[#ECFDF5] text-[#059669]'
-                : 'bg-slate-100 text-[#667085]'
+                : 'bg-[#DCE7F2] text-[#475467]'
             }`}
           >
-            {currentStep > 2 ? '✓' : '2'}
+            {currentStep > 2 ? 'âœ“' : '2'}
           </span>
-          <span className={currentStep === 2 ? 'text-[#172033] font-bold' : 'text-[#667085]'}>
+          <span className={currentStep === 2 ? 'text-[#0F172A] font-bold' : 'text-[#475467]'}>
             Select Service
           </span>
 
-          <span className="text-[#E4E7EC] mx-1">/</span>
+          <span className="text-[#CBD5E1] mx-1">/</span>
 
           <span
             className={`px-2.5 py-1 rounded-full ${
               currentStep === 3
-                ? 'bg-[#0B5CAD] text-white'
-                : 'bg-slate-100 text-[#667085]'
+                ? 'bg-[#0757A6] text-white'
+                : 'bg-[#DCE7F2] text-[#475467]'
             }`}
           >
             3
           </span>
-          <span className={currentStep === 3 ? 'text-[#172033] font-bold' : 'text-[#667085]'}>
+          <span className={currentStep === 3 ? 'text-[#0F172A] font-bold' : 'text-[#475467]'}>
             Your Visit Plan
           </span>
         </div>
@@ -251,46 +251,46 @@ export default function PlanVisitWizard({
           <button
             type="button"
             onClick={handleResetSelection}
-            className="text-xs text-[#667085] hover:text-[#0B5CAD] font-medium"
+            className="text-xs text-[#475467] hover:text-[#0757A6] font-medium"
           >
             Start Over
           </button>
         )}
       </div>
 
-      {/* ───────────────────────────────────────────────────────────── */}
-      {/* STEP 1 — SELECT OFFICE                                        */}
-      {/* ───────────────────────────────────────────────────────────── */}
+      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* STEP 1 â€” SELECT OFFICE                                        */}
+      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {currentStep === 1 && (
         <section className="space-y-6 anim-fade-in">
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#172033] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#0F172A] tracking-tight">
               Where are you going?
             </h1>
-            <p className="text-xs sm:text-sm text-[#667085] mt-1.5 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#475467] mt-1.5 leading-relaxed">
               Select a government office in Lucknow District to check current crowd levels and plan your arrival.
             </p>
           </div>
 
           {/* Clean Dropdown Selector */}
           <div className="space-y-2">
-            <label className="block text-xs font-bold text-[#172033] uppercase tracking-wider">
+            <label className="block text-xs font-bold text-[#0F172A] uppercase tracking-wider">
               Select government office
             </label>
             <div className="relative">
-              <Building2 className="absolute left-3.5 top-3.5 h-4 w-4 text-[#667085] pointer-events-none" />
+              <Building2 className="absolute left-3.5 top-3.5 h-4 w-4 text-[#475467] pointer-events-none" />
               <select
                 value={selectedOffice?.id || ''}
                 onChange={(e) => {
                   const off = offices.find(o => o.id === e.target.value)
                   if (off) handleOfficeSelect(off)
                 }}
-                className="w-full pl-10 pr-9 py-3 rounded-lg border border-[#E4E7EC] bg-white text-sm font-semibold text-[#172033] shadow-xs focus:outline-hidden focus:ring-2 focus:ring-[#0B5CAD] focus:border-transparent transition-all"
+                className="w-full pl-10 pr-9 py-3 rounded-lg border border-[#CBD5E1] bg-white text-sm font-semibold text-[#0F172A] shadow-xs focus:outline-hidden focus:ring-2 focus:ring-[#0757A6] focus:border-transparent transition-all"
               >
                 <option value="" disabled>Select government office</option>
                 {offices.map((office) => (
                   <option key={office.id} value={office.id}>
-                    {office.name} — {office.fullName}
+                    {office.name} â€” {office.fullName}
                   </option>
                 ))}
               </select>
@@ -299,7 +299,7 @@ export default function PlanVisitWizard({
 
           {/* 5 Office Options as Clean Tap Targets */}
           <div className="space-y-2 pt-2">
-            <span className="text-[11px] font-bold text-[#667085] uppercase tracking-wider block">
+            <span className="text-[11px] font-bold text-[#475467] uppercase tracking-wider block">
               Or pick an office directly:
             </span>
             <div className="grid gap-2.5">
@@ -312,29 +312,29 @@ export default function PlanVisitWizard({
                     onClick={() => handleOfficeSelect(office)}
                     className={`w-full p-4 rounded-xl border text-left transition-all flex items-center justify-between gap-3 ${
                       isSelected
-                        ? 'border-2 border-[#0B5CAD] bg-[#EFF6FC]/50 shadow-xs'
-                        : 'border-[#E4E7EC] bg-white hover:border-slate-300'
+                        ? 'border-2 border-[#0757A6] bg-[#EFF6FC]/50 shadow-xs'
+                        : 'border-[#CBD5E1] bg-white hover:border-slate-300'
                     }`}
                   >
                     <div className="min-w-0">
                       <div className="flex items-center gap-2">
-                        <span className="text-sm font-bold text-[#172033]">
+                        <span className="text-sm font-bold text-[#0F172A]">
                           {office.name}
                         </span>
                         {isSelected && (
-                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#0B5CAD] text-white">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#0757A6] text-white">
                             Selected
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-[#667085] mt-0.5 truncate">
-                        {office.fullName} · {office.address}
+                      <p className="text-xs text-[#475467] mt-0.5 truncate">
+                        {office.fullName} Â· {office.address}
                       </p>
                     </div>
 
                     <div className="text-right shrink-0">
-                      <span className="text-xs font-semibold text-[#0B5CAD] block">
-                        {office.timings.split('–')[0]} Open
+                      <span className="text-xs font-semibold text-[#0757A6] block">
+                        {office.timings.split('â€“')[0]} Open
                       </span>
                     </div>
                   </button>
@@ -358,20 +358,20 @@ export default function PlanVisitWizard({
         </section>
       )}
 
-      {/* ───────────────────────────────────────────────────────────── */}
-      {/* STEP 2 — SELECT SERVICE                                       */}
-      {/* ───────────────────────────────────────────────────────────── */}
+      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* STEP 2 â€” SELECT SERVICE                                       */}
+      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {currentStep === 2 && (
         <section className="space-y-6 anim-fade-in">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EFF6FC] border border-[#D0E4F7] text-[11px] font-bold text-[#0B5CAD] mb-2">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#EFF6FC] border border-[#D0E4F7] text-[11px] font-bold text-[#0757A6] mb-2">
               <Building2 className="h-3.5 w-3.5" />
               <span>{selectedOffice?.name}</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-[#172033] tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-bold text-[#0F172A] tracking-tight">
               What do you need?
             </h1>
-            <p className="text-xs sm:text-sm text-[#667085] mt-1.5">
+            <p className="text-xs sm:text-sm text-[#475467] mt-1.5">
               Select the citizen service you need to complete at {selectedOffice?.name}.
             </p>
           </div>
@@ -379,7 +379,7 @@ export default function PlanVisitWizard({
           {/* Filtered Services List for Selected Office */}
           <div className="space-y-2.5">
             {availableServices.length === 0 ? (
-              <div className="p-8 text-center bg-white rounded-xl border border-[#E4E7EC] text-xs text-[#667085]">
+              <div className="p-8 text-center bg-white rounded-xl border border-[#CBD5E1] text-xs text-[#475467]">
                 No specific services cataloged for this office yet.
               </div>
             ) : (
@@ -392,31 +392,31 @@ export default function PlanVisitWizard({
                     onClick={() => handleServiceSelect(svc)}
                     className={`w-full p-4 rounded-xl border text-left transition-all flex items-start justify-between gap-3 ${
                       isSelected
-                        ? 'border-2 border-[#0B5CAD] bg-[#EFF6FC]/50 shadow-xs'
-                        : 'border-[#E4E7EC] bg-white hover:border-slate-300'
+                        ? 'border-2 border-[#0757A6] bg-[#EFF6FC]/50 shadow-xs'
+                        : 'border-[#CBD5E1] bg-white hover:border-slate-300'
                     }`}
                   >
                     <div className="min-w-0 flex-1">
                       <div className="flex items-center gap-2">
-                        <h3 className="text-sm font-bold text-[#172033]">
+                        <h3 className="text-sm font-bold text-[#0F172A]">
                           {svc.name}
                         </h3>
                         {isSelected && (
-                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#0B5CAD] text-white">
+                          <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#0757A6] text-white">
                             Selected
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-[#667085] mt-1 leading-relaxed">
+                      <p className="text-xs text-[#475467] mt-1 leading-relaxed">
                         {svc.description}
                       </p>
                     </div>
 
                     <div className="text-right shrink-0 pt-0.5">
-                      <span className="text-xs font-semibold text-[#0B5CAD] block">
+                      <span className="text-xs font-semibold text-[#0757A6] block">
                         ~{svc.avgTime} min
                       </span>
-                      <span className="text-[10px] text-[#667085]">
+                      <span className="text-[10px] text-[#475467]">
                         {svc.requiredDocuments?.length || svc.documents?.length || 4} docs
                       </span>
                     </div>
@@ -450,63 +450,63 @@ export default function PlanVisitWizard({
         </section>
       )}
 
-      {/* ───────────────────────────────────────────────────────────── */}
-      {/* STEP 3 — YOUR VISIT PLAN (SINGLE CLEAN RESULT)                */}
-      {/* ───────────────────────────────────────────────────────────── */}
+      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      {/* STEP 3 â€” YOUR VISIT PLAN (SINGLE CLEAN RESULT)                */}
+      {/* â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {currentStep === 3 && (
         <section className="space-y-6 anim-fade-in">
           {/* Main Clean Result Card */}
-          <div className="bg-white rounded-2xl border border-[#E4E7EC] shadow-sm overflow-hidden p-6 sm:p-8 space-y-6">
+          <div className="bg-white rounded-2xl border border-[#CBD5E1] shadow-sm overflow-hidden p-6 sm:p-8 space-y-6">
 
             {/* Header: RECOMMENDED VISIT */}
-            <div className="border-b border-[#E4E7EC] pb-5">
-              <span className="text-[11px] font-extrabold tracking-wider uppercase text-[#0B5CAD] bg-[#EFF6FC] border border-[#D0E4F7] px-3 py-1 rounded-full inline-block mb-3">
+            <div className="border-b border-[#CBD5E1] pb-5">
+              <span className="text-[11px] font-extrabold tracking-wider uppercase text-[#0757A6] bg-[#EFF6FC] border border-[#D0E4F7] px-3 py-1 rounded-full inline-block mb-3">
                 RECOMMENDED VISIT
               </span>
 
-              <h2 className="text-2xl font-extrabold text-[#172033] tracking-tight">
+              <h2 className="text-2xl font-extrabold text-[#0F172A] tracking-tight">
                 {selectedOffice?.name}
               </h2>
-              <p className="text-base font-semibold text-[#0B5CAD] mt-0.5">
+              <p className="text-base font-semibold text-[#0757A6] mt-0.5">
                 {selectedService?.name}
               </p>
             </div>
 
             {/* Primary Time Recommendation */}
-            <div className="p-4 rounded-xl bg-[#F6F8FB] border border-[#E4E7EC]">
-              <span className="text-xs font-bold text-[#667085] uppercase tracking-wider block">
+            <div className="p-4 rounded-xl bg-[#EEF3F8] border border-[#CBD5E1]">
+              <span className="text-xs font-bold text-[#475467] uppercase tracking-wider block">
                 Today
               </span>
-              <span className="text-2xl sm:text-3xl font-extrabold text-[#172033] mt-1 block tracking-tight">
-                {prediction?.recommendedWindow?.time || '2:00 PM – 3:00 PM'}
+              <span className="text-2xl sm:text-3xl font-extrabold text-[#0F172A] mt-1 block tracking-tight">
+                {prediction?.recommendedWindow?.time || '2:00 PM â€“ 3:00 PM'}
               </span>
             </div>
 
             {/* 4 Clean Key Metrics */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <div className="p-4 rounded-xl border border-[#E4E7EC] bg-white">
-                <span className="text-xs text-[#667085] block">Expected wait</span>
-                <span className="text-lg sm:text-xl font-bold text-[#172033] mt-1 block">
-                  {prediction?.recommendedWindow?.expectedWait || '18–22 min'}
+              <div className="p-4 rounded-xl border border-[#CBD5E1] bg-white">
+                <span className="text-xs text-[#475467] block">Expected wait</span>
+                <span className="text-lg sm:text-xl font-bold text-[#0F172A] mt-1 block">
+                  {prediction?.recommendedWindow?.expectedWait || '18â€“22 min'}
                 </span>
               </div>
 
-              <div className="p-4 rounded-xl border border-[#E4E7EC] bg-white">
-                <span className="text-xs text-[#667085] block">Current queue</span>
-                <span className="text-lg sm:text-xl font-bold text-[#172033] mt-1 block">
+              <div className="p-4 rounded-xl border border-[#CBD5E1] bg-white">
+                <span className="text-xs text-[#475467] block">Current queue</span>
+                <span className="text-lg sm:text-xl font-bold text-[#0F172A] mt-1 block">
                   {prediction?.count ? `${prediction.count} people` : '42 people'}
                 </span>
               </div>
 
-              <div className="p-4 rounded-xl border border-[#E4E7EC] bg-white">
-                <span className="text-xs text-[#667085] block">Crowd</span>
+              <div className="p-4 rounded-xl border border-[#CBD5E1] bg-white">
+                <span className="text-xs text-[#475467] block">Crowd</span>
                 <span className="text-sm sm:text-base font-bold text-[#D97706] mt-1 block">
-                  High now → Lower later
+                  High now â†’ Lower later
                 </span>
               </div>
 
-              <div className="p-4 rounded-xl border border-[#E4E7EC] bg-white">
-                <span className="text-xs text-[#667085] block">Confidence</span>
+              <div className="p-4 rounded-xl border border-[#CBD5E1] bg-white">
+                <span className="text-xs text-[#475467] block">Confidence</span>
                 <span className="text-lg sm:text-xl font-bold text-[#059669] mt-1 block">
                   {prediction?.recommendedWindow?.confidence || '87%'}
                 </span>
@@ -514,12 +514,12 @@ export default function PlanVisitWizard({
             </div>
 
             {/* Documents Readiness Section */}
-            <div className="p-4 rounded-xl border border-[#E4E7EC] bg-[#F6F8FB] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div className="p-4 rounded-xl border border-[#CBD5E1] bg-[#EEF3F8] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
               <div>
-                <span className="text-xs font-bold text-[#172033] uppercase tracking-wider block">
+                <span className="text-xs font-bold text-[#0F172A] uppercase tracking-wider block">
                   DOCUMENTS
                 </span>
-                <span className="text-sm font-semibold text-[#0F766E] mt-0.5 block">
+                <span className="text-sm font-semibold text-[#087F75] mt-0.5 block">
                   {readinessMetrics.readyCount} of {readinessMetrics.requiredCount} ready
                 </span>
               </div>
@@ -540,12 +540,12 @@ export default function PlanVisitWizard({
 
             {/* Expandable Document Checklist */}
             {showDocsDrawer && (
-              <div className="p-4 rounded-xl border border-[#E4E7EC] bg-white space-y-3 anim-scale-up">
-                <div className="flex items-center justify-between pb-2 border-b border-[#E4E7EC]">
-                  <span className="text-xs font-bold text-[#172033]">
+              <div className="p-4 rounded-xl border border-[#CBD5E1] bg-white space-y-3 anim-scale-up">
+                <div className="flex items-center justify-between pb-2 border-b border-[#CBD5E1]">
+                  <span className="text-xs font-bold text-[#0F172A]">
                     Required Paperwork for {selectedService?.name}
                   </span>
-                  <span className="text-xs font-bold text-[#0B5CAD]">
+                  <span className="text-xs font-bold text-[#0757A6]">
                     {readinessMetrics.percentage}% Verified
                   </span>
                 </div>
@@ -557,21 +557,21 @@ export default function PlanVisitWizard({
                     return (
                       <div
                         key={key}
-                        className="p-2.5 rounded-lg border border-[#E4E7EC] bg-[#F6F8FB] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs"
+                        className="p-2.5 rounded-lg border border-[#CBD5E1] bg-[#EEF3F8] flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-xs"
                       >
-                        <span className="font-semibold text-[#172033]">{doc}</span>
+                        <span className="font-semibold text-[#0F172A]">{doc}</span>
 
-                        <div className="flex items-center gap-1 bg-white p-1 rounded-md border border-[#E4E7EC] shrink-0">
+                        <div className="flex items-center gap-1 bg-white p-1 rounded-md border border-[#CBD5E1] shrink-0">
                           <button
                             type="button"
                             onClick={() => handleDocStatusChange(key, 'ready')}
                             className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                               currentStatus === 'ready'
                                 ? 'bg-[#ECFDF5] text-[#065F46] border border-[#A7F3D0]'
-                                : 'text-[#667085] hover:text-[#172033]'
+                                : 'text-[#475467] hover:text-[#0F172A]'
                             }`}
                           >
-                            ✓ Ready
+                            âœ“ Ready
                           </button>
                           <button
                             type="button"
@@ -579,21 +579,21 @@ export default function PlanVisitWizard({
                             className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                               currentStatus === 'missing'
                                 ? 'bg-[#FEF2F2] text-[#991B1B] border border-[#FECACA]'
-                                : 'text-[#667085] hover:text-[#172033]'
+                                : 'text-[#475467] hover:text-[#0F172A]'
                             }`}
                           >
-                            ⚠ Missing
+                            âš  Missing
                           </button>
                           <button
                             type="button"
                             onClick={() => handleDocStatusChange(key, 'optional')}
                             className={`px-2 py-0.5 rounded text-[10px] font-bold ${
                               currentStatus === 'optional'
-                                ? 'bg-slate-100 text-[#172033] border border-slate-300'
-                                : 'text-[#667085] hover:text-[#172033]'
+                                ? 'bg-[#DCE7F2] text-[#0F172A] border border-slate-300'
+                                : 'text-[#475467] hover:text-[#0F172A]'
                             }`}
                           >
-                            ○ Optional
+                            â—‹ Optional
                           </button>
                         </div>
                       </div>
@@ -601,7 +601,7 @@ export default function PlanVisitWizard({
                   })}
                 </div>
 
-                <p className="text-[11px] text-[#667085] italic pt-1">
+                <p className="text-[11px] text-[#475467] italic pt-1">
                   * Requirements may vary by office and service. Verify official requirements before visiting.
                 </p>
               </div>
@@ -613,9 +613,9 @@ export default function PlanVisitWizard({
                 <button
                   type="button"
                   onClick={onViewMyVisits}
-                  className="btn-secondary w-full py-3 text-sm font-bold text-[#0B5CAD] justify-center"
+                  className="btn-secondary w-full py-3 text-sm font-bold text-[#0757A6] justify-center"
                 >
-                  ✓ Plan Saved · View in My Visits →
+                  âœ“ Plan Saved Â· View in My Visits â†’
                 </button>
               ) : (
                 <button
@@ -644,3 +644,5 @@ export default function PlanVisitWizard({
     </div>
   )
 }
+
+

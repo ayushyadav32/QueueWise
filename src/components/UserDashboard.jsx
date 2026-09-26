@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+﻿import { useState, useMemo } from 'react'
 import {
   Calendar,
   Clock,
@@ -93,19 +93,19 @@ export default function UserDashboard({
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-8 anim-slide-up">
 
-      {/* ── TOP WELCOME BANNER ───────────────────────────────────────── */}
-      <div className="card p-6 bg-white border border-[#E4E7EC] space-y-4">
+      {/* â”€â”€ TOP WELCOME BANNER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <div className="card p-6 bg-white border border-[#CBD5E1] space-y-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2 mb-1">
-              <span className="text-[10px] font-bold text-[#0B5CAD] bg-[#EFF6FC] border border-[#D0E4F7] px-2 py-0.5 rounded uppercase tracking-wider">
-                PERSONAL CITIZEN DASHBOARD · LUCKNOW DISTRICT
+              <span className="text-[10px] font-bold text-[#0757A6] bg-[#EFF6FC] border border-[#D0E4F7] px-2 py-0.5 rounded uppercase tracking-wider">
+                PERSONAL CITIZEN DASHBOARD Â· LUCKNOW DISTRICT
               </span>
             </div>
-            <h1 className="text-2xl font-bold text-[#172033] tracking-tight">
+            <h1 className="text-2xl font-bold text-[#0F172A] tracking-tight">
               Welcome, {firstName}
             </h1>
-            <p className="text-xs text-[#667085] mt-1 max-w-2xl leading-relaxed">
+            <p className="text-xs text-[#475467] mt-1 max-w-2xl leading-relaxed">
               {isBrandNewUser
                 ? "Let's plan your first visit."
                 : 'Track your scheduled civic appointments, review live queue reports, and inspect your private activity log.'}
@@ -125,15 +125,15 @@ export default function UserDashboard({
         </div>
 
         {/* Navigation Tabs Bar */}
-        <div className="pt-3 border-t border-[#E4E7EC] flex flex-wrap items-center justify-between gap-3 text-xs">
-          <div className="flex items-center gap-1 bg-[#F6F8FB] p-1 rounded-lg border border-[#E4E7EC]">
+        <div className="pt-3 border-t border-[#CBD5E1] flex flex-wrap items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-1 bg-[#EEF3F8] p-1 rounded-lg border border-[#CBD5E1]">
             <button
               type="button"
               onClick={() => setActiveSection('overview')}
               className={`px-3 py-1.5 rounded-md font-semibold transition-colors ${
                 activeSection === 'overview'
-                  ? 'bg-[#0B5CAD] text-white shadow-xs'
-                  : 'text-[#667085] hover:text-[#172033]'
+                  ? 'bg-[#0757A6] text-white shadow-xs'
+                  : 'text-[#475467] hover:text-[#0F172A]'
               }`}
             >
               Dashboard Overview
@@ -143,8 +143,8 @@ export default function UserDashboard({
               onClick={() => setActiveSection('visits')}
               className={`px-3 py-1.5 rounded-md font-semibold transition-colors flex items-center gap-1.5 ${
                 activeSection === 'visits'
-                  ? 'bg-[#0B5CAD] text-white shadow-xs'
-                  : 'text-[#667085] hover:text-[#172033]'
+                  ? 'bg-[#0757A6] text-white shadow-xs'
+                  : 'text-[#475467] hover:text-[#0F172A]'
               }`}
             >
               <span>My Visits</span>
@@ -159,31 +159,31 @@ export default function UserDashboard({
               onClick={() => setActiveSection('history')}
               className={`px-3 py-1.5 rounded-md font-semibold transition-colors flex items-center gap-1.5 ${
                 activeSection === 'history'
-                  ? 'bg-[#0B5CAD] text-white shadow-xs'
-                  : 'text-[#667085] hover:text-[#172033]'
+                  ? 'bg-[#0757A6] text-white shadow-xs'
+                  : 'text-[#475467] hover:text-[#0F172A]'
               }`}
             >
               <span>History</span>
               {activities.length > 0 && (
-                <span className="px-1.5 py-0.2 rounded-full bg-slate-200 text-[#172033] text-[10px]">
+                <span className="px-1.5 py-0.2 rounded-full bg-slate-200 text-[#0F172A] text-[10px]">
                   {activities.length}
                 </span>
               )}
             </button>
           </div>
 
-          <div className="flex items-center gap-1.5 text-[#667085] text-xs">
-            <ShieldCheck className="h-3.5 w-3.5 text-[#0F766E]" />
+          <div className="flex items-center gap-1.5 text-[#475467] text-xs">
+            <ShieldCheck className="h-3.5 w-3.5 text-[#087F75]" />
             <span>Strict User Data Partition Active</span>
           </div>
         </div>
       </div>
 
-      {/* ── BRAND NEW USER EMPTY STATE (WHEN 0 VISITS AND 0 ACTIVITIES) ─── */}
+      {/* â”€â”€ BRAND NEW USER EMPTY STATE (WHEN 0 VISITS AND 0 ACTIVITIES) â”€â”€â”€ */}
       {isBrandNewUser && (
         <div className="card p-10 sm:p-14 text-center bg-white border-2 border-dashed border-slate-200 shadow-xs max-w-2xl mx-auto anim-scale-up">
           <div className="h-16 w-16 rounded-2xl bg-blue-50 border border-blue-200 text-blue-900 flex items-center justify-center mx-auto text-3xl font-bold mb-4 shadow-2xs">
-            🏛️
+            ðŸ›ï¸
           </div>
           <span className="journey-step-tag mb-2">Getting Started</span>
           <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight mt-1">
@@ -192,7 +192,7 @@ export default function UserDashboard({
           <p className="text-base font-bold text-blue-900 mt-2">
             Plan your first government visit.
           </p>
-          <p className="text-xs sm:text-sm text-slate-500 mt-2 max-w-md mx-auto leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#344054] mt-2 max-w-md mx-auto leading-relaxed">
             You don't have any saved visits or activity history yet. As you search offices, check queues, match documents, and save visit plans, your personalized civic records will dynamically appear here.
           </p>
 
@@ -208,32 +208,32 @@ export default function UserDashboard({
           </div>
 
           <div className="mt-10 pt-6 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-3 text-left">
-            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div className="p-3 rounded-lg bg-[#E8F0F8] border border-slate-200">
               <span className="text-[10px] font-bold text-blue-800 uppercase block">Step 1</span>
               <p className="text-xs font-bold text-slate-800 mt-0.5">Select Office</p>
-              <p className="text-[11px] text-slate-500 mt-0.5">Pick RTO, DM, Municipal, Tehsil, or Passport.</p>
+              <p className="text-[11px] text-[#344054] mt-0.5">Pick RTO, DM, Municipal, Tehsil, or Passport.</p>
             </div>
-            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div className="p-3 rounded-lg bg-[#E8F0F8] border border-slate-200">
               <span className="text-[10px] font-bold text-blue-800 uppercase block">Step 2</span>
               <p className="text-xs font-bold text-slate-800 mt-0.5">Inspect Queues</p>
-              <p className="text-[11px] text-slate-500 mt-0.5">View real-time lines & AI recommended window.</p>
+              <p className="text-[11px] text-[#344054] mt-0.5">View real-time lines & AI recommended window.</p>
             </div>
-            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div className="p-3 rounded-lg bg-[#E8F0F8] border border-slate-200">
               <span className="text-[10px] font-bold text-blue-800 uppercase block">Step 3</span>
               <p className="text-xs font-bold text-slate-800 mt-0.5">Verify Checklist</p>
-              <p className="text-[11px] text-slate-500 mt-0.5">Mark required documents & download your pass.</p>
+              <p className="text-[11px] text-[#344054] mt-0.5">Mark required documents & download your pass.</p>
             </div>
           </div>
         </div>
       )}
 
-      {/* ── SECTION 1: DASHBOARD OVERVIEW ───────────────────────────── */}
+      {/* â”€â”€ SECTION 1: DASHBOARD OVERVIEW â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {(!isBrandNewUser || activeSection !== 'overview') && activeSection === 'overview' && (
         <div className="space-y-6 anim-slide-up">
           {/* Quick Metrics Bar */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="card p-4 bg-white border-slate-200">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 UPCOMING VISITS
               </span>
               <div className="flex items-baseline gap-2 mt-1">
@@ -245,7 +245,7 @@ export default function UserDashboard({
             </div>
 
             <div className="card p-4 bg-white border-slate-200">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 COMPLETED VISITS
               </span>
               <div className="flex items-baseline gap-2 mt-1">
@@ -257,26 +257,26 @@ export default function UserDashboard({
             </div>
 
             <div className="card p-4 bg-white border-slate-200">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 COMMUNITY REPORTS
               </span>
               <div className="flex items-baseline gap-2 mt-1">
                 <span className="text-3xl font-extrabold text-slate-900 tabular-nums">
                   {Math.max(queueReports.length, activities.filter(a => a.type === 'queue_report').length)}
                 </span>
-                <span className="text-xs text-slate-500 font-semibold">Contributed</span>
+                <span className="text-xs text-[#344054] font-semibold">Contributed</span>
               </div>
             </div>
 
             <div className="card p-4 bg-white border-slate-200">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">
                 RECORDED ACTIVITIES
               </span>
               <div className="flex items-baseline gap-2 mt-1">
                 <span className="text-3xl font-extrabold text-slate-900 tabular-nums">
                   {activities.length}
                 </span>
-                <span className="text-xs text-slate-500 font-semibold">Audit trail</span>
+                <span className="text-xs text-[#344054] font-semibold">Audit trail</span>
               </div>
             </div>
           </div>
@@ -295,7 +295,7 @@ export default function UserDashboard({
                     onClick={() => setActiveSection('visits')}
                     className="text-xs font-bold text-blue-800 hover:underline"
                   >
-                    View all ({visits.length}) →
+                    View all ({visits.length}) â†’
                   </button>
                 )}
               </div>
@@ -309,21 +309,21 @@ export default function UserDashboard({
                         <div>
                           <span className="badge badge-low text-[10px] py-0.5 px-2">Upcoming Appointment</span>
                           <h4 className="text-base font-bold text-slate-900 mt-1">{nextVisit.serviceName}</h4>
-                          <p className="text-xs text-slate-500">{nextVisit.officeName}</p>
+                          <p className="text-xs text-[#344054]">{nextVisit.officeName}</p>
                         </div>
                         <div className="text-right">
-                          <span className="text-[10px] font-mono font-bold text-slate-400 block">{nextVisit.id}</span>
+                          <span className="text-[10px] font-mono font-bold text-[#475467] block">{nextVisit.id}</span>
                           <span className="text-xs font-bold text-blue-900">{nextVisit.recommendedSlot}</span>
                         </div>
                       </div>
 
                       <div className="grid grid-cols-2 gap-3 py-3 text-xs border-b border-slate-100">
                         <div>
-                          <span className="text-slate-500 block text-[10px]">Expected Wait:</span>
+                          <span className="text-[#344054] block text-[10px]">Expected Wait:</span>
                           <strong className="text-slate-900">{nextVisit.expectedWait}</strong>
                         </div>
                         <div>
-                          <span className="text-slate-500 block text-[10px]">Document Checklist:</span>
+                          <span className="text-[#344054] block text-[10px]">Document Checklist:</span>
                           <strong className="text-emerald-700">{nextVisit.docsReady}</strong>
                         </div>
                       </div>
@@ -352,7 +352,7 @@ export default function UserDashboard({
                 <div className="card p-8 text-center bg-white border-slate-200">
                   <Ticket className="h-8 w-8 text-slate-300 mx-auto mb-2" />
                   <p className="text-xs font-bold text-slate-700">No upcoming visits scheduled</p>
-                  <p className="text-[11px] text-slate-400 mt-0.5">Plan your next visit to receive proactive arrival advisories.</p>
+                  <p className="text-[11px] text-[#475467] mt-0.5">Plan your next visit to receive proactive arrival advisories.</p>
                   <button
                     type="button"
                     onClick={onPlanNew}
@@ -376,7 +376,7 @@ export default function UserDashboard({
                     onClick={() => setActiveSection('history')}
                     className="text-xs font-bold text-blue-800 hover:underline"
                   >
-                    Full History ({activities.length}) →
+                    Full History ({activities.length}) â†’
                   </button>
                 )}
               </div>
@@ -398,19 +398,19 @@ export default function UserDashboard({
 
                     return (
                       <div key={act.id} className="py-2.5 first:pt-0 last:pb-0 flex items-start gap-3">
-                        <div className="p-1.5 rounded-lg bg-slate-100 text-slate-700 shrink-0 mt-0.5">
+                        <div className="p-1.5 rounded-lg bg-[#DCE7F2] text-slate-700 shrink-0 mt-0.5">
                           <Icon className="h-3.5 w-3.5" />
                         </div>
                         <div className="flex-1 min-w-0">
                           <p className="text-xs font-bold text-slate-900 leading-snug">
                             {act.title}
                           </p>
-                          <div className="flex items-center gap-2 mt-0.5 text-[10px] text-slate-500">
+                          <div className="flex items-center gap-2 mt-0.5 text-[10px] text-[#344054]">
                             {act.office && <span className="font-semibold text-slate-700">{act.office}</span>}
-                            {act.details && <span>· {act.details}</span>}
+                            {act.details && <span>Â· {act.details}</span>}
                           </div>
                         </div>
-                        <span className="text-[10px] font-mono text-slate-400 shrink-0">
+                        <span className="text-[10px] font-mono text-[#475467] shrink-0">
                           {new Date(act.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </span>
                       </div>
@@ -421,7 +421,7 @@ export default function UserDashboard({
                 <div className="card p-8 text-center bg-white border-slate-200">
                   <Activity className="h-8 w-8 text-slate-300 mx-auto mb-2" />
                   <p className="text-xs font-bold text-slate-700">No recent activity</p>
-                  <p className="text-[11px] text-slate-400 mt-0.5">
+                  <p className="text-[11px] text-[#475467] mt-0.5">
                     Your actions across QueueWise will automatically be recorded here.
                   </p>
                 </div>
@@ -431,14 +431,14 @@ export default function UserDashboard({
         </div>
       )}
 
-      {/* ── SECTION 2: MY VISITS ─────────────────────────────────────── */}
+      {/* â”€â”€ SECTION 2: MY VISITS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {(!isBrandNewUser || activeSection === 'visits') && activeSection === 'visits' && (
         <div className="space-y-6 anim-slide-up">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-slate-200">
             <div>
               <span className="journey-step-tag">Active Passes</span>
               <h2 className="text-xl font-bold text-slate-900 mt-0.5">My Visits</h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-[#344054]">
                 Official digital appointment slips and verified document checklists for {currentUser?.name}.
               </p>
             </div>
@@ -451,7 +451,7 @@ export default function UserDashboard({
                 className={`px-3 py-1 rounded-md transition-all ${
                   visitStatusFilter === 'all'
                     ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-[#1D2939] hover:text-slate-900'
                 }`}
               >
                 All ({counts.all})
@@ -462,7 +462,7 @@ export default function UserDashboard({
                 className={`px-3 py-1 rounded-md transition-all ${
                   visitStatusFilter === 'Upcoming'
                     ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-[#1D2939] hover:text-slate-900'
                 }`}
               >
                 Upcoming ({counts.upcoming})
@@ -473,7 +473,7 @@ export default function UserDashboard({
                 className={`px-3 py-1 rounded-md transition-all ${
                   visitStatusFilter === 'Completed'
                     ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-[#1D2939] hover:text-slate-900'
                 }`}
               >
                 Completed ({counts.completed})
@@ -484,7 +484,7 @@ export default function UserDashboard({
                 className={`px-3 py-1 rounded-md transition-all ${
                   visitStatusFilter === 'Cancelled'
                     ? 'bg-white text-slate-900 shadow-xs'
-                    : 'text-slate-600 hover:text-slate-900'
+                    : 'text-[#1D2939] hover:text-slate-900'
                 }`}
               >
                 Cancelled ({counts.cancelled})
@@ -495,15 +495,15 @@ export default function UserDashboard({
           {/* Visits Cards Grid */}
           {filteredVisits.length === 0 ? (
             <div className="card p-12 text-center bg-white border-slate-200 max-w-lg mx-auto">
-              <div className="h-12 w-12 rounded-full bg-slate-100 text-slate-500 flex items-center justify-center mx-auto text-xl font-bold mb-3">
-                🎫
+              <div className="h-12 w-12 rounded-full bg-[#DCE7F2] text-[#344054] flex items-center justify-center mx-auto text-xl font-bold mb-3">
+                ðŸŽ«
               </div>
               <h3 className="text-base font-bold text-slate-900">
                 {visitStatusFilter === 'all'
                   ? 'No Visit Passes Saved Yet'
                   : `No ${visitStatusFilter} Visits Found`}
               </h3>
-              <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto leading-relaxed">
+              <p className="text-xs text-[#344054] mt-1 max-w-sm mx-auto leading-relaxed">
                 {visitStatusFilter === 'all'
                   ? 'Plan your visit to generate an official digital advisory pass with document checklist.'
                   : `You do not have any visits marked as ${visitStatusFilter}.`}
@@ -552,7 +552,7 @@ export default function UserDashboard({
                         <h3 className="text-base font-bold text-white tracking-wide">{pass.serviceName}</h3>
                       </div>
                       <div className="text-right">
-                        <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest block">PASS ID</span>
+                        <span className="text-[9px] font-bold text-[#475467] uppercase tracking-widest block">PASS ID</span>
                         <span className="text-xs font-mono font-bold text-blue-300">{pass.id}</span>
                       </div>
                     </div>
@@ -560,41 +560,41 @@ export default function UserDashboard({
                     {/* Pass Details */}
                     <div className="p-6 bg-white space-y-4">
                       <div className="flex items-center justify-between pb-2 border-b border-slate-100 text-xs">
-                        <span className="text-slate-500 font-medium">Citizen Name:</span>
+                        <span className="text-[#344054] font-medium">Citizen Name:</span>
                         <strong className="text-slate-900">{pass.citizenName || currentUser?.name || 'Citizen'}</strong>
                       </div>
 
                       {/* Required Fields: Office, Service, Date, Recommended Time, Expected Wait, Visit Status */}
                       <div className="grid grid-cols-2 gap-3 pb-3 border-b border-slate-100 text-xs">
                         <div>
-                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Office</span>
+                          <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">Office</span>
                           <p className="font-bold text-slate-900">{pass.officeName}</p>
-                          <p className="text-[11px] text-slate-500">Lucknow Central Hub</p>
+                          <p className="text-[11px] text-[#344054]">Lucknow Central Hub</p>
                         </div>
                         <div>
-                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Service</span>
+                          <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">Service</span>
                           <p className="font-bold text-slate-900">{pass.serviceName}</p>
                         </div>
                       </div>
 
                       <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                        <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
-                          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Date</span>
+                        <div className="p-2.5 rounded-lg bg-[#E8F0F8] border border-slate-200">
+                          <span className="text-[9px] font-bold text-[#475467] uppercase tracking-wider block">Date</span>
                           <p className="text-xs font-bold text-slate-900 mt-0.5">{pass.date || 'Today'}</p>
                         </div>
-                        <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200">
-                          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Recommended Time</span>
+                        <div className="p-2.5 rounded-lg bg-[#E8F0F8] border border-slate-200">
+                          <span className="text-[9px] font-bold text-[#475467] uppercase tracking-wider block">Recommended Time</span>
                           <p className="text-xs font-bold text-blue-900 mt-0.5">{pass.recommendedSlot}</p>
                         </div>
-                        <div className="p-2.5 rounded-lg bg-slate-50 border border-slate-200 col-span-2 sm:col-span-1">
-                          <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Expected Wait</span>
+                        <div className="p-2.5 rounded-lg bg-[#E8F0F8] border border-slate-200 col-span-2 sm:col-span-1">
+                          <span className="text-[9px] font-bold text-[#475467] uppercase tracking-wider block">Expected Wait</span>
                           <p className="text-xs font-bold text-emerald-800 mt-0.5">{pass.expectedWait}</p>
                         </div>
                       </div>
 
                       {/* Document Readiness Pill */}
-                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs">
-                        <span className="text-slate-500 font-medium">Document Readiness:</span>
+                      <div className="flex items-center justify-between p-2.5 rounded-lg bg-[#E8F0F8] border border-slate-200 text-xs">
+                        <span className="text-[#344054] font-medium">Document Readiness:</span>
                         <strong className="text-emerald-700 font-bold">{pass.docsReady || 'Verified 100%'}</strong>
                       </div>
 
@@ -648,7 +648,7 @@ export default function UserDashboard({
                             className={`p-1.5 rounded-lg border text-xs transition-colors ${
                               isReminderOn
                                 ? 'bg-blue-50 border-blue-300 text-blue-900'
-                                : 'bg-white border-slate-300 text-slate-400'
+                                : 'bg-white border-slate-300 text-[#475467]'
                             }`}
                             title={isReminderOn ? 'Reminder Active' : 'Enable Reminder'}
                           >
@@ -658,7 +658,7 @@ export default function UserDashboard({
                           <button
                             type="button"
                             onClick={() => window.print()}
-                            className="p-1.5 rounded-lg border border-slate-300 text-slate-600 hover:bg-slate-50 transition-colors"
+                            className="p-1.5 rounded-lg border border-slate-300 text-[#1D2939] hover:bg-[#E8F0F8] transition-colors"
                             title="Print Pass"
                           >
                             <Printer className="h-3.5 w-3.5" />
@@ -667,7 +667,7 @@ export default function UserDashboard({
                           <button
                             type="button"
                             onClick={() => onRemoveVisit && onRemoveVisit(pass.id)}
-                            className="p-1.5 rounded-lg border border-slate-200 text-slate-400 hover:text-red-600 hover:bg-red-50 transition-colors"
+                            className="p-1.5 rounded-lg border border-slate-200 text-[#475467] hover:text-red-600 hover:bg-red-50 transition-colors"
                             title="Delete Pass"
                           >
                             <Trash2 className="h-3.5 w-3.5" />
@@ -683,14 +683,14 @@ export default function UserDashboard({
         </div>
       )}
 
-      {/* ── SECTION 3: HISTORY ───────────────────────────────────────── */}
+      {/* â”€â”€ SECTION 3: HISTORY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {(!isBrandNewUser || activeSection === 'history') && activeSection === 'history' && (
         <div className="space-y-6 anim-slide-up">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-3 border-b border-slate-200">
             <div>
               <span className="journey-step-tag">Audit Trail</span>
               <h2 className="text-xl font-bold text-slate-900 mt-0.5">Citizen Activity History</h2>
-              <p className="text-xs text-slate-500">
+              <p className="text-xs text-[#344054]">
                 Automated local ledger recording all searches, queue inspections, document checklists, and visit plans for {currentUser?.name}.
               </p>
             </div>
@@ -705,7 +705,7 @@ export default function UserDashboard({
                   className={`px-3 py-1 rounded-md transition-all ${
                     historyFilter === cat
                       ? 'bg-white text-slate-900 shadow-xs'
-                      : 'text-slate-600 hover:text-slate-900'
+                      : 'text-[#1D2939] hover:text-slate-900'
                   }`}
                 >
                   {cat}
@@ -717,13 +717,13 @@ export default function UserDashboard({
           {/* Grouped Chronological Timeline */}
           {groupedActivities.length === 0 ? (
             <div className="card p-12 text-center bg-white border-slate-200 max-w-lg mx-auto anim-scale-up">
-              <div className="h-14 w-14 rounded-full bg-slate-100 border border-slate-200 text-slate-400 flex items-center justify-center mx-auto text-2xl font-bold mb-4">
-                🕒
+              <div className="h-14 w-14 rounded-full bg-[#DCE7F2] border border-slate-200 text-[#475467] flex items-center justify-center mx-auto text-2xl font-bold mb-4">
+                ðŸ•’
               </div>
               <h3 className="text-lg font-bold text-slate-900">
                 No activity yet
               </h3>
-              <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto leading-relaxed">
+              <p className="text-xs text-[#344054] mt-1 max-w-sm mx-auto leading-relaxed">
                 Your QueueWise activity will appear here as you use the platform.
               </p>
               <button
@@ -745,7 +745,7 @@ export default function UserDashboard({
                       {group.label}
                     </span>
                     <div className="h-px flex-1 bg-slate-200" />
-                    <span className="text-[10px] text-slate-400 font-medium">
+                    <span className="text-[10px] text-[#475467] font-medium">
                       {group.items.length} {group.items.length === 1 ? 'event' : 'events'}
                     </span>
                   </div>
@@ -753,30 +753,30 @@ export default function UserDashboard({
                   {/* Activity Item List */}
                   <div className="card bg-white border-slate-200 divide-y divide-slate-100 shadow-xs">
                     {group.items.map((item) => (
-                      <div key={item.id} className="p-3.5 sm:px-5 flex items-center justify-between gap-4 hover:bg-slate-50/60 transition-colors">
+                      <div key={item.id} className="p-3.5 sm:px-5 flex items-center justify-between gap-4 hover:bg-[#E8F0F8]/60 transition-colors">
                         <div className="flex items-start gap-3 min-w-0">
                           <span className="text-emerald-700 font-bold text-sm shrink-0 mt-0.5">
-                            ✓
+                            âœ“
                           </span>
                           <div className="min-w-0">
                             <p className="text-xs font-bold text-slate-900 leading-snug">
                               {item.title}
                             </p>
-                            <div className="flex flex-wrap items-center gap-2 mt-0.5 text-[11px] text-slate-500">
+                            <div className="flex flex-wrap items-center gap-2 mt-0.5 text-[11px] text-[#344054]">
                               {item.office && (
                                 <span className="font-semibold text-slate-700">{item.office}</span>
                               )}
                               {item.service && (
-                                <span>· {item.service}</span>
+                                <span>Â· {item.service}</span>
                               )}
                               {item.details && (
-                                <span>· {item.details}</span>
+                                <span>Â· {item.details}</span>
                               )}
                             </div>
                           </div>
                         </div>
 
-                        <span className="text-[11px] font-mono font-semibold text-slate-400 shrink-0">
+                        <span className="text-[11px] font-mono font-semibold text-[#475467] shrink-0">
                           {new Date(item.timestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                         </span>
                       </div>
@@ -790,7 +790,7 @@ export default function UserDashboard({
                   <button
                     type="button"
                     onClick={onClearHistory}
-                    className="text-xs text-slate-400 hover:text-red-700 transition-colors"
+                    className="text-xs text-[#475467] hover:text-red-700 transition-colors"
                   >
                     Clear history trail
                   </button>
@@ -804,3 +804,5 @@ export default function UserDashboard({
     </div>
   )
 }
+
+

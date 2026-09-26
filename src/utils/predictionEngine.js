@@ -1,4 +1,4 @@
-/**
+﻿/**
  * QueueWise Smart Queue Prediction Engine
  *
  * Deterministic local civic prediction model considering:
@@ -11,7 +11,7 @@
  * Designed for 100% deterministic, offline execution with zero external API dependencies.
  */
 
-// ─── 1. Office Baseline Profiles ─────────────────────────────────────────────
+// â”€â”€â”€ 1. Office Baseline Profiles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const OFFICE_PROFILES = {
   rto: {
     id: 'rto',
@@ -38,7 +38,7 @@ export const OFFICE_PROFILES = {
   passport: {
     id: 'passport',
     name: 'Passport Seva Kendra',
-    fullName: 'Passport Seva Kendra – Lucknow',
+    fullName: 'Passport Seva Kendra â€“ Lucknow',
     opensHour: 9,
     closesHour: 17,
     baseCapacity: 50,
@@ -119,7 +119,7 @@ export const OFFICE_PROFILES = {
   },
 }
 
-// ─── 2. Service Complexity Factors ───────────────────────────────────────────
+// â”€â”€â”€ 2. Service Complexity Factors â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const SERVICE_FACTORS = {
   // RTO
   'dl-new':       { complexity: 1.30, avgTime: 45, variance: 8 },
@@ -158,7 +158,7 @@ export const SERVICE_FACTORS = {
   'minor-passport': { complexity: 1.15, avgTime: 40, variance: 7 },
 }
 
-// ─── 3. Deterministic Pseudo-Random Generator (Seedable) ─────────────────────
+// â”€â”€â”€ 3. Deterministic Pseudo-Random Generator (Seedable) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function deterministicSeed(str) {
   let hash = 0
   for (let i = 0; i < str.length; i++) {
@@ -173,15 +173,15 @@ function deterministicNoise(seedVal, min = -2, max = 2) {
   return min + normalized * (max - min)
 }
 
-// ─── 4. Status Determination ────────────────────────────────────────────────
+// â”€â”€â”€ 4. Status Determination â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export function computeCrowdStatus(count) {
   if (count <= 10) return { level: 'low',      label: 'Low',      color: 'emerald', hex: '#16a34a', description: 'Minimal wait expected' }
   if (count <= 24) return { level: 'moderate', label: 'Moderate', color: 'amber',   hex: '#d97706', description: 'Moderate line movement' }
-  if (count <= 38) return { level: 'high',     label: 'High',     color: 'orange',  hex: '#ea580c', description: 'Heavy crowd · plan ahead' }
-  return                  { level: 'critical', label: 'Critical', color: 'red',     hex: '#dc2626', description: 'Severe congestion · recommend delay' }
+  if (count <= 38) return { level: 'high',     label: 'High',     color: 'orange',  hex: '#ea580c', description: 'Heavy crowd Â· plan ahead' }
+  return                  { level: 'critical', label: 'Critical', color: 'red',     hex: '#dc2626', description: 'Severe congestion Â· recommend delay' }
 }
 
-// ─── 5. Core Queue Prediction Calculation ───────────────────────────────────
+// â”€â”€â”€ 5. Core Queue Prediction Calculation â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 /**
  * Computes deterministic queue state, hourly forecasts, and travel-style recommendation.
  */
@@ -221,7 +221,7 @@ export function calculateQueuePrediction({
     calculatedQueue = Math.max(2, Math.round(rawQueue + noise))
   }
 
-  // ── Community Reports Impact ──
+  // â”€â”€ Community Reports Impact â”€â”€
   // Process crowdsourced reports for this office
   let reportedQueueAnchor = null
   let reportedWaitAnchor = null
@@ -239,15 +239,15 @@ export function calculateQueuePrediction({
       latestReportTime = latest.ago || 'Just now'
 
       // Map structured range inputs
-      if (latest.waitingRange === '0–10' || latest.waitingCount <= 10) reportedQueueAnchor = 7
-      else if (latest.waitingRange === '11–25' || (latest.waitingCount > 10 && latest.waitingCount <= 25)) reportedQueueAnchor = 18
-      else if (latest.waitingRange === '26–50' || (latest.waitingCount > 25 && latest.waitingCount <= 50)) reportedQueueAnchor = 36
+      if (latest.waitingRange === '0â€“10' || latest.waitingCount <= 10) reportedQueueAnchor = 7
+      else if (latest.waitingRange === '11â€“25' || (latest.waitingCount > 10 && latest.waitingCount <= 25)) reportedQueueAnchor = 18
+      else if (latest.waitingRange === '26â€“50' || (latest.waitingCount > 25 && latest.waitingCount <= 50)) reportedQueueAnchor = 36
       else if (latest.waitingRange === '50+' || latest.waitingCount > 50) reportedQueueAnchor = 54
 
       // Map structured wait times
       if (latest.estimatedWait === 'Under 15 min' || latest.waitMinutes < 15) reportedWaitAnchor = 10
-      else if (latest.estimatedWait === '15–30 min' || (latest.waitMinutes >= 15 && latest.waitMinutes <= 30)) reportedWaitAnchor = 22
-      else if (latest.estimatedWait === '30–60 min' || (latest.waitMinutes > 30 && latest.waitMinutes <= 60)) reportedWaitAnchor = 45
+      else if (latest.estimatedWait === '15â€“30 min' || (latest.waitMinutes >= 15 && latest.waitMinutes <= 30)) reportedWaitAnchor = 22
+      else if (latest.estimatedWait === '30â€“60 min' || (latest.waitMinutes > 30 && latest.waitMinutes <= 60)) reportedWaitAnchor = 45
       else if (latest.estimatedWait === '60+ min' || latest.waitMinutes > 60) reportedWaitAnchor = 68
 
       // Map crowd condition
@@ -286,7 +286,7 @@ export function calculateQueuePrediction({
     )
   }
 
-  // ── 6. Today's Hourly Forecast Generation (9:00 AM to 5:00 PM) ──
+  // â”€â”€ 6. Today's Hourly Forecast Generation (9:00 AM to 5:00 PM) â”€â”€
   const hoursToForecast = [9, 11, 13, 15, 17] // Standard 5 visual checkpoints
   let bestSlotIndex = 0
   let lowestProjectedWait = Infinity
@@ -350,10 +350,10 @@ export function calculateQueuePrediction({
     hourlyForecast[bestSlotIndex].isBest = true
   }
 
-  // ── 7. Recommended Visit Window Details ──
+  // â”€â”€ 7. Recommended Visit Window Details â”€â”€
   // Calculate recommended window window
-  const recSlotTime = '2:00 PM – 3:00 PM'
-  const recWaitRange = `${Math.max(10, Math.round(lowestProjectedWait * 0.85))}–${Math.max(16, Math.round(lowestProjectedWait * 1.15))} min`
+  const recSlotTime = '2:00 PM â€“ 3:00 PM'
+  const recWaitRange = `${Math.max(10, Math.round(lowestProjectedWait * 0.85))}â€“${Math.max(16, Math.round(lowestProjectedWait * 1.15))} min`
   const peakWait = Math.max(calculatedWaitMinutes, 55)
   const savingsMinutes = Math.max(15, peakWait - Math.round(lowestProjectedWait))
 
@@ -389,7 +389,7 @@ export function calculateQueuePrediction({
     recommendedWindow: {
       time: recSlotTime,
       expectedWait: recWaitRange,
-      expectedQueue: `${Math.max(6, Math.round(finalQueueCount * 0.4))}–${Math.max(12, Math.round(finalQueueCount * 0.6))} people`,
+      expectedQueue: `${Math.max(6, Math.round(finalQueueCount * 0.4))}â€“${Math.max(12, Math.round(finalQueueCount * 0.6))} people`,
       crowdLevel: 'Low',
       confidence: `${confidencePct}%`,
       explanation,
@@ -397,6 +397,8 @@ export function calculateQueuePrediction({
     },
     serviceComplexity: sFactor.complexity,
     isSimulated: true,
-    disclaimer: 'Community reported civic data · Not an official government record',
+    disclaimer: 'Community reported civic data Â· Not an official government record',
   }
 }
+
+

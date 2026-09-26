@@ -1,33 +1,33 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
 @theme {
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --color-primary: #0B5CAD;
+  --color-primary: #0757A6;
   --color-primary-hover: #094B8F;
-  --color-secondary: #0F766E;
-  --color-bg: #F6F8FB;
+  --color-secondary: #087F75;
+  --color-bg: #EEF3F8;
   --color-surface: #FFFFFF;
-  --color-text: #172033;
-  --color-muted: #667085;
-  --color-border: #E4E7EC;
+  --color-text: #0F172A;
+  --color-muted: #475467;
+  --color-border: #CBD5E1;
 }
 
-/* ─── Global Reset & Typography ──────────────────────────────────── */
+/* â”€â”€â”€ Global Reset & Typography â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
 
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: #F6F8FB;
-    color: #172033;
+    background-color: #EEF3F8;
+    color: #0F172A;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     letter-spacing: -0.01em;
   }
 
   ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: #F6F8FB; }
+  ::-webkit-scrollbar-track { background: #EEF3F8; }
   ::-webkit-scrollbar-thumb { background: #D0D5DD; border-radius: 99px; }
   ::-webkit-scrollbar-thumb:hover { background: #98A2B3; }
 
@@ -42,12 +42,12 @@
   }
 }
 
-/* ─── Premium Civic Design Utilities ─────────────────────────────── */
+/* â”€â”€â”€ Premium Civic Design Utilities â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @layer utilities {
   /* Standard card surface */
   .card {
     background: #FFFFFF;
-    border: 1px solid #E4E7EC;
+    border: 1px solid #CBD5E1;
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
   }
@@ -64,7 +64,7 @@
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: #0B5CAD;
+    color: #0757A6;
     background: #EFF6FC;
     padding: 3px 8px;
     border-radius: 6px;
@@ -77,7 +77,7 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #667085;
+    color: #475467;
   }
 
   /* Status badges */
@@ -107,7 +107,7 @@
 
   /* Primary Civic Button */
   .btn-primary {
-    background: #0B5CAD;
+    background: #0757A6;
     color: #FFFFFF;
     font-weight: 600;
     border-radius: 6px;
@@ -132,12 +132,12 @@
   /* Secondary Civic Button */
   .btn-secondary {
     background: #FFFFFF;
-    color: #172033;
+    color: #0F172A;
     font-weight: 600;
     border-radius: 6px;
     padding: 9px 16px;
     font-size: 14px;
-    border: 1px solid #E4E7EC;
+    border: 1px solid #CBD5E1;
     transition: background-color 0.15s, border-color 0.15s;
     cursor: pointer;
     white-space: nowrap;
@@ -153,7 +153,7 @@
 
   /* Teal Accent Button */
   .btn-teal {
-    background: #0F766E;
+    background: #087F75;
     color: #FFFFFF;
     font-weight: 600;
     border-radius: 6px;
@@ -171,33 +171,33 @@
   /* Input / select */
   .form-input {
     background: #FFFFFF;
-    border: 1px solid #E4E7EC;
+    border: 1px solid #CBD5E1;
     border-radius: 6px;
     padding: 10px 14px;
     font-size: 14px;
-    color: #172033;
+    color: #0F172A;
     width: 100%;
     outline: none;
     transition: border-color 0.15s, box-shadow 0.15s;
   }
   .form-input:focus {
-    border-color: #0B5CAD;
+    border-color: #0757A6;
     box-shadow: 0 0 0 3px rgba(11, 92, 173, 0.12);
   }
   .form-input::placeholder { color: #98A2B3; }
 
   /* Focus ring */
-  .focus-ring:focus-visible { outline: 2px solid #0B5CAD; outline-offset: 2px; }
+  .focus-ring:focus-visible { outline: 2px solid #0757A6; outline-offset: 2px; }
 
   /* Progress bar track */
-  .progress-track { height: 6px; background: #E4E7EC; border-radius: 99px; overflow: hidden; }
+  .progress-track { height: 6px; background: #CBD5E1; border-radius: 99px; overflow: hidden; }
   .progress-fill-low      { background: #10B981; }
   .progress-fill-moderate { background: #F59E0B; }
   .progress-fill-high     { background: #EF4444; }
   .progress-fill-critical { background: #DC2626; }
 }
 
-/* ─── Animations ──────────────────────────────────────────────────── */
+/* â”€â”€â”€ Animations â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -214,3 +214,5 @@
 .anim-fade-in  { animation: fadeIn  0.15s ease-out both; }
 .anim-slide-up { animation: slideUp 0.2s ease-out both; }
 .anim-scale-in { animation: scaleIn 0.15s ease-out both; }
+
+

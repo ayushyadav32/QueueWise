@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import {
   Users, Clock, Activity, MessageSquarePlus, X, Check,
   AlertTriangle, ShieldCheck, Info, RefreshCw
@@ -7,8 +7,8 @@ import {
 const COOLDOWN_SECONDS = 60
 
 export default function CommunityReportModal({ office, onClose, onSubmit, showToast }) {
-  const [waitingRange, setWaitingRange] = useState('11–25')
-  const [estimatedWait, setEstimatedWait] = useState('15–30 min')
+  const [waitingRange, setWaitingRange] = useState('11â€“25')
+  const [estimatedWait, setEstimatedWait] = useState('15â€“30 min')
   const [crowdCondition, setCrowdCondition] = useState('Moderate')
   const [note, setNote] = useState('')
   const [submitted, setSubmitted] = useState(false)
@@ -86,21 +86,21 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs anim-fade-in">
       <div className="w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-200 anim-scale-in overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50/50">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-[#E8F0F8]/50">
           <div>
             <div className="flex items-center gap-1.5">
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest block">
+              <span className="text-[10px] font-bold text-[#344054] uppercase tracking-widest block">
                 CIVIC REPORTING SYSTEM
               </span>
             </div>
             <h3 className="text-base font-bold text-slate-900 mt-0.5">
-              Report Current Queue · {office.name}
+              Report Current Queue Â· {office.name}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 rounded-lg hover:bg-slate-200/70 text-slate-400 hover:text-slate-700 transition-colors"
+            className="p-1.5 rounded-lg hover:bg-slate-200/70 text-[#475467] hover:text-slate-700 transition-colors"
           >
             <X className="h-5 w-5" />
           </button>
@@ -136,7 +136,7 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
                 1. Number of People Waiting
               </label>
               <div className="grid grid-cols-4 gap-2">
-                {['0–10', '11–25', '26–50', '50+'].map(range => (
+                {['0â€“10', '11â€“25', '26â€“50', '50+'].map(range => (
                   <button
                     type="button"
                     key={range}
@@ -144,7 +144,7 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
                     className={`py-2 px-2 rounded-lg border text-xs font-bold transition-all ${
                       waitingRange === range
                         ? 'bg-blue-900 border-blue-900 text-white shadow-xs'
-                        : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                        : 'bg-[#E8F0F8] border-slate-200 text-slate-700 hover:bg-[#DCE7F2]'
                     }`}
                   >
                     {range}
@@ -159,7 +159,7 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
                 2. Estimated Waiting Time
               </label>
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                {['Under 15 min', '15–30 min', '30–60 min', '60+ min'].map(wait => (
+                {['Under 15 min', '15â€“30 min', '30â€“60 min', '60+ min'].map(wait => (
                   <button
                     type="button"
                     key={wait}
@@ -167,7 +167,7 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
                     className={`py-2 px-2 rounded-lg border text-xs font-bold transition-all ${
                       estimatedWait === wait
                         ? 'bg-blue-900 border-blue-900 text-white shadow-xs'
-                        : 'bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100'
+                        : 'bg-[#E8F0F8] border-slate-200 text-slate-700 hover:bg-[#DCE7F2]'
                     }`}
                   >
                     {wait}
@@ -195,7 +195,7 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
                     className={`py-2 px-2 rounded-lg border text-xs font-bold transition-all ${
                       crowdCondition === cond.label
                         ? 'bg-blue-900 border-blue-900 text-white shadow-xs'
-                        : `bg-slate-50 border-slate-200 text-slate-700 hover:bg-slate-100 ${cond.color}`
+                        : `bg-[#E8F0F8] border-slate-200 text-slate-700 hover:bg-[#DCE7F2] ${cond.color}`
                     }`}
                   >
                     {cond.label}
@@ -219,7 +219,7 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
             </div>
 
             {/* Transparency Disclaimer */}
-            <div className="p-3 bg-slate-50 border border-slate-200 rounded-lg text-[11px] text-slate-500 leading-snug">
+            <div className="p-3 bg-[#E8F0F8] border border-slate-200 rounded-lg text-[11px] text-[#344054] leading-snug">
               <span className="font-semibold text-slate-700">Citizen Transparency:</span> Community reported data calibrates public wait forecasts. Reports do not represent official government declarations.
             </div>
 
@@ -244,11 +244,11 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
         ) : (
           <div className="p-8 text-center space-y-3">
             <div className="h-12 w-12 rounded-full bg-emerald-100 border border-emerald-200 text-emerald-700 flex items-center justify-center mx-auto text-xl font-bold">
-              ✓
+              âœ“
             </div>
             <h4 className="text-base font-bold text-slate-900">Community Report Logged</h4>
-            <p className="text-xs text-slate-600 max-w-sm mx-auto">
-              "Thanks — your report updated the live queue estimate and arrival recommendation for fellow citizens."
+            <p className="text-xs text-[#1D2939] max-w-sm mx-auto">
+              "Thanks â€” your report updated the live queue estimate and arrival recommendation for fellow citizens."
             </p>
           </div>
         )}
@@ -256,3 +256,5 @@ export default function CommunityReportModal({ office, onClose, onSubmit, showTo
     </div>
   )
 }
+
+

@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+﻿import { useState, useMemo } from 'react'
 import { offices, services, popularServices, getQueueStatus } from '../data/mockData'
 import { calculateQueuePrediction } from '../utils/predictionEngine'
 import {
@@ -68,23 +68,23 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
   return (
     <div className="space-y-12 pb-16">
 
-      {/* ── 1. HERO / PLANNING SECTION ───────────────────────────────── */}
-      <section className="bg-white border-b border-[#E4E7EC] py-14 lg:py-18">
+      {/* â”€â”€ 1. HERO / PLANNING SECTION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+      <section className="bg-white border-b border-[#CBD5E1] py-14 lg:py-18">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-12 gap-10 items-center">
 
             {/* Left Headline & 2 CTAs */}
             <div className="lg:col-span-7 space-y-5">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#EFF6FC] border border-[#D0E4F7] px-3.5 py-1 text-xs font-semibold text-[#0B5CAD]">
-                <span className="h-2 w-2 rounded-full bg-[#0B5CAD]" />
+              <div className="inline-flex items-center gap-2 rounded-full bg-[#EFF6FC] border border-[#D0E4F7] px-3.5 py-1 text-xs font-semibold text-[#0757A6]">
+                <span className="h-2 w-2 rounded-full bg-[#0757A6]" />
                 Lucknow District Citizen Queue Portal
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#172033] tracking-tight leading-tight">
+              <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-bold text-[#0F172A] tracking-tight leading-tight">
                 Plan your government visit before you leave home.
               </h1>
 
-              <p className="text-base text-[#667085] leading-relaxed max-w-xl">
+              <p className="text-base text-[#475467] leading-relaxed max-w-xl">
                 Check queues, prepare documents, and find a better time to visit.
               </p>
 
@@ -108,13 +108,13 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
                 </button>
               </div>
 
-              <div className="pt-4 flex items-center gap-6 text-xs text-[#667085]">
+              <div className="pt-4 flex items-center gap-6 text-xs text-[#475467]">
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-[#0F766E]" />
+                  <CheckCircle2 className="h-4 w-4 text-[#087F75]" />
                   5 Monitored District Offices
                 </span>
                 <span className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-[#0F766E]" />
+                  <CheckCircle2 className="h-4 w-4 text-[#087F75]" />
                   Verified Document Checklists
                 </span>
               </div>
@@ -122,44 +122,44 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
 
             {/* Right: Clean 3-Step Summary Card */}
             <div className="lg:col-span-5">
-              <div className="card p-6 border border-[#E4E7EC] bg-[#F6F8FB]/50">
-                <div className="flex items-center justify-between pb-3 border-b border-[#E4E7EC] mb-4">
-                  <span className="text-xs font-bold text-[#172033] uppercase tracking-wider">
+              <div className="card p-6 border border-[#CBD5E1] bg-[#EEF3F8]/50">
+                <div className="flex items-center justify-between pb-3 border-b border-[#CBD5E1] mb-4">
+                  <span className="text-xs font-bold text-[#0F172A] uppercase tracking-wider">
                     How You Save Time
                   </span>
-                  <span className="text-[11px] font-semibold text-[#0F766E]">
+                  <span className="text-[11px] font-semibold text-[#087F75]">
                     Avg ~45 min saved
                   </span>
                 </div>
 
                 <div className="space-y-3.5">
-                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-[#E4E7EC]">
-                    <div className="h-6 w-6 rounded bg-[#EFF6FC] text-[#0B5CAD] font-bold text-xs flex items-center justify-center shrink-0">
+                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-[#CBD5E1]">
+                    <div className="h-6 w-6 rounded bg-[#EFF6FC] text-[#0757A6] font-bold text-xs flex items-center justify-center shrink-0">
                       1
                     </div>
                     <div>
-                      <h3 className="text-xs font-bold text-[#172033]">Select Office & Procedure</h3>
-                      <p className="text-[11px] text-[#667085] mt-0.5">Choose your destination and service.</p>
+                      <h3 className="text-xs font-bold text-[#0F172A]">Select Office & Procedure</h3>
+                      <p className="text-[11px] text-[#475467] mt-0.5">Choose your destination and service.</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-[#E4E7EC]">
-                    <div className="h-6 w-6 rounded bg-[#EFF6FC] text-[#0B5CAD] font-bold text-xs flex items-center justify-center shrink-0">
+                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-[#CBD5E1]">
+                    <div className="h-6 w-6 rounded bg-[#EFF6FC] text-[#0757A6] font-bold text-xs flex items-center justify-center shrink-0">
                       2
                     </div>
                     <div>
-                      <h3 className="text-xs font-bold text-[#172033]">Inspect Queue & Documents</h3>
-                      <p className="text-[11px] text-[#667085] mt-0.5">Verify required paperwork before leaving.</p>
+                      <h3 className="text-xs font-bold text-[#0F172A]">Inspect Queue & Documents</h3>
+                      <p className="text-[11px] text-[#475467] mt-0.5">Verify required paperwork before leaving.</p>
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-[#E4E7EC]">
-                    <div className="h-6 w-6 rounded bg-[#EFF6FC] text-[#0B5CAD] font-bold text-xs flex items-center justify-center shrink-0">
+                  <div className="flex items-start gap-3 bg-white p-3 rounded-lg border border-[#CBD5E1]">
+                    <div className="h-6 w-6 rounded bg-[#EFF6FC] text-[#0757A6] font-bold text-xs flex items-center justify-center shrink-0">
                       3
                     </div>
                     <div>
-                      <h3 className="text-xs font-bold text-[#172033]">Visit at Low-Crowd Hours</h3>
-                      <p className="text-[11px] text-[#667085] mt-0.5">Avoid peak delays with recommended arrival slots.</p>
+                      <h3 className="text-xs font-bold text-[#0F172A]">Visit at Low-Crowd Hours</h3>
+                      <p className="text-[11px] text-[#475467] mt-0.5">Avoid peak delays with recommended arrival slots.</p>
                     </div>
                   </div>
                 </div>
@@ -178,23 +178,23 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
         </div>
       </section>
 
-      {/* ── 2. POPULAR GOVERNMENT SERVICES ───────────────────────────── */}
+      {/* â”€â”€ 2. POPULAR GOVERNMENT SERVICES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section id="popular-services-section" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-xs font-bold text-[#667085] uppercase tracking-wider">
+            <h2 className="text-xs font-bold text-[#475467] uppercase tracking-wider">
               Popular Government Services
             </h2>
-            <p className="text-base font-bold text-[#172033] mt-0.5">
+            <p className="text-base font-bold text-[#0F172A] mt-0.5">
               Frequently requested citizen procedures
             </p>
           </div>
           <button
             type="button"
             onClick={() => onGetStarted(null, null)}
-            className="text-xs font-semibold text-[#0B5CAD] hover:underline hidden sm:inline"
+            className="text-xs font-semibold text-[#0757A6] hover:underline hidden sm:inline"
           >
-            View all services →
+            View all services â†’
           </button>
         </div>
 
@@ -206,30 +206,30 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
                 key={item.id}
                 type="button"
                 onClick={() => handlePopularSelect(item)}
-                className="card p-4 text-left transition-colors hover:border-[#0B5CAD] group flex flex-col justify-between"
+                className="card p-4 text-left transition-colors hover:border-[#0757A6] group flex flex-col justify-between"
               >
                 <div>
                   <div className="flex items-start justify-between gap-2 mb-2">
-                    <span className="text-lg p-1.5 rounded bg-[#F6F8FB] border border-[#E4E7EC]">
+                    <span className="text-lg p-1.5 rounded bg-[#EEF3F8] border border-[#CBD5E1]">
                       {item.icon}
                     </span>
                     <span className={st.badge}>{st.label}</span>
                   </div>
-                  <h3 className="text-xs font-bold text-[#172033] group-hover:text-[#0B5CAD] transition-colors leading-snug line-clamp-2">
+                  <h3 className="text-xs font-bold text-[#0F172A] group-hover:text-[#0757A6] transition-colors leading-snug line-clamp-2">
                     {item.serviceName}
                   </h3>
-                  <p className="text-[11px] text-[#667085] mt-1 truncate">
+                  <p className="text-[11px] text-[#475467] mt-1 truncate">
                     {item.officeName}
                   </p>
                 </div>
 
-                <div className="mt-3 pt-2.5 border-t border-[#E4E7EC] flex items-center justify-between text-[11px] text-[#667085]">
+                <div className="mt-3 pt-2.5 border-t border-[#CBD5E1] flex items-center justify-between text-[11px] text-[#475467]">
                   <span className="flex items-center gap-1 font-medium">
-                    <Users className="h-3 w-3 text-[#667085]" />
+                    <Users className="h-3 w-3 text-[#475467]" />
                     {item.currentQueue} waiting
                   </span>
-                  <span className="flex items-center gap-1 font-bold text-[#172033]">
-                    <Clock className="h-3 w-3 text-[#667085]" />
+                  <span className="flex items-center gap-1 font-bold text-[#0F172A]">
+                    <Clock className="h-3 w-3 text-[#475467]" />
                     ~{item.avgWait}m
                   </span>
                 </div>
@@ -239,18 +239,18 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
         </div>
       </section>
 
-      {/* ── 3. CURRENT QUEUE HIGHLIGHTS ──────────────────────────────── */}
+      {/* â”€â”€ 3. CURRENT QUEUE HIGHLIGHTS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-4">
           <div>
-            <h2 className="text-xs font-bold text-[#667085] uppercase tracking-wider">
+            <h2 className="text-xs font-bold text-[#475467] uppercase tracking-wider">
               Current Queue Highlights
             </h2>
-            <p className="text-base font-bold text-[#172033] mt-0.5">
+            <p className="text-base font-bold text-[#0F172A] mt-0.5">
               Live waiting conditions across district offices
             </p>
           </div>
-          <span className="text-xs text-[#667085] font-medium hidden sm:inline">
+          <span className="text-xs text-[#475467] font-medium hidden sm:inline">
             Updated continuously
           </span>
         </div>
@@ -270,30 +270,30 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
               >
                 <div>
                   <div className="flex items-center justify-between gap-1 mb-2">
-                    <span className="text-xs font-bold text-[#172033] truncate">
+                    <span className="text-xs font-bold text-[#0F172A] truncate">
                       {office.name}
                     </span>
                     <span className={st.badge}>{st.label}</span>
                   </div>
 
-                  <div className="my-3 p-2.5 bg-[#F6F8FB] rounded border border-[#E4E7EC]">
+                  <div className="my-3 p-2.5 bg-[#EEF3F8] rounded border border-[#CBD5E1]">
                     <div className="flex items-baseline justify-between">
-                      <span className="text-2xl font-extrabold text-[#172033] tabular-nums">
-                        {snap ? snap.count : '—'}
+                      <span className="text-2xl font-extrabold text-[#0F172A] tabular-nums">
+                        {snap ? snap.count : 'â€”'}
                       </span>
-                      <span className="text-xs font-bold text-[#0B5CAD] tabular-nums">
+                      <span className="text-xs font-bold text-[#0757A6] tabular-nums">
                         ~{waitTime} min wait
                       </span>
                     </div>
-                    <div className="text-[10px] text-[#667085] mt-0.5">
+                    <div className="text-[10px] text-[#475467] mt-0.5">
                       people waiting in line
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <div className="flex items-center justify-between text-[10px] text-[#667085] mb-2.5">
-                    <span>{office.timings.split('–')[0]} Open</span>
+                  <div className="flex items-center justify-between text-[10px] text-[#475467] mb-2.5">
+                    <span>{office.timings.split('â€“')[0]} Open</span>
                     <span>{snap?.updated || 'Just now'}</span>
                   </div>
 
@@ -302,7 +302,7 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
                     onClick={() => onGetStarted(office, null)}
                     className="w-full btn-secondary py-1.5 text-xs font-bold justify-center"
                   >
-                    Plan Visit →
+                    Plan Visit â†’
                   </button>
                 </div>
               </div>
@@ -311,55 +311,55 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
         </div>
       </section>
 
-      {/* ── 4. HOW QUEUEWISE WORKS ───────────────────────────────────── */}
+      {/* â”€â”€ 4. HOW QUEUEWISE WORKS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="card p-6 sm:p-8 bg-white border border-[#E4E7EC]">
+        <div className="card p-6 sm:p-8 bg-white border border-[#CBD5E1]">
           <div className="max-w-2xl mb-6">
             <span className="section-label">Citizen Workflow</span>
-            <h2 className="text-lg font-bold text-[#172033] mt-1">
+            <h2 className="text-lg font-bold text-[#0F172A] mt-1">
               How QueueWise Works
             </h2>
-            <p className="text-xs text-[#667085] mt-0.5">
+            <p className="text-xs text-[#475467] mt-0.5">
               QueueWise turns unpredictable government visits into planned visits.
             </p>
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="p-4 bg-[#F6F8FB] rounded-lg border border-[#E4E7EC]">
-              <div className="text-xs font-bold text-[#0B5CAD] mb-1">01</div>
-              <h3 className="text-xs font-bold text-[#172033]">Select Office & Service</h3>
-              <p className="text-[11px] text-[#667085] mt-1 leading-relaxed">
+            <div className="p-4 bg-[#EEF3F8] rounded-lg border border-[#CBD5E1]">
+              <div className="text-xs font-bold text-[#0757A6] mb-1">01</div>
+              <h3 className="text-xs font-bold text-[#0F172A]">Select Office & Service</h3>
+              <p className="text-[11px] text-[#475467] mt-1 leading-relaxed">
                 Choose the district office and exact citizen procedure you need.
               </p>
             </div>
 
-            <div className="p-4 bg-[#F6F8FB] rounded-lg border border-[#E4E7EC]">
-              <div className="text-xs font-bold text-[#0B5CAD] mb-1">02</div>
-              <h3 className="text-xs font-bold text-[#172033]">Check Live Queue</h3>
-              <p className="text-[11px] text-[#667085] mt-1 leading-relaxed">
+            <div className="p-4 bg-[#EEF3F8] rounded-lg border border-[#CBD5E1]">
+              <div className="text-xs font-bold text-[#0757A6] mb-1">02</div>
+              <h3 className="text-xs font-bold text-[#0F172A]">Check Live Queue</h3>
+              <p className="text-[11px] text-[#475467] mt-1 leading-relaxed">
                 View real-time waiting times and crowd levels before leaving home.
               </p>
             </div>
 
-            <div className="p-4 bg-[#F6F8FB] rounded-lg border border-[#E4E7EC]">
-              <div className="text-xs font-bold text-[#0B5CAD] mb-1">03</div>
-              <h3 className="text-xs font-bold text-[#172033]">Verify Document Checklist</h3>
-              <p className="text-[11px] text-[#667085] mt-1 leading-relaxed">
+            <div className="p-4 bg-[#EEF3F8] rounded-lg border border-[#CBD5E1]">
+              <div className="text-xs font-bold text-[#0757A6] mb-1">03</div>
+              <h3 className="text-xs font-bold text-[#0F172A]">Verify Document Checklist</h3>
+              <p className="text-[11px] text-[#475467] mt-1 leading-relaxed">
                 Ensure all certificates and proofs are ready to prevent repeated trips.
               </p>
             </div>
 
-            <div className="p-4 bg-[#F6F8FB] rounded-lg border border-[#E4E7EC]">
-              <div className="text-xs font-bold text-[#0B5CAD] mb-1">04</div>
-              <h3 className="text-xs font-bold text-[#172033]">Arrive at Optimal Time</h3>
-              <p className="text-[11px] text-[#667085] mt-1 leading-relaxed">
+            <div className="p-4 bg-[#EEF3F8] rounded-lg border border-[#CBD5E1]">
+              <div className="text-xs font-bold text-[#0757A6] mb-1">04</div>
+              <h3 className="text-xs font-bold text-[#0F172A]">Arrive at Optimal Time</h3>
+              <p className="text-[11px] text-[#475467] mt-1 leading-relaxed">
                 Follow AI timing recommendations to visit during lowest footfall hours.
               </p>
             </div>
           </div>
 
-          <div className="mt-6 pt-5 border-t border-[#E4E7EC] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-            <p className="text-xs font-semibold text-[#172033]">
+          <div className="mt-6 pt-5 border-t border-[#CBD5E1] flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <p className="text-xs font-semibold text-[#0F172A]">
               "QueueWise turns unpredictable government visits into planned visits."
             </p>
             <button
@@ -376,3 +376,5 @@ export default function LandingHero({ onGetStarted, onNavigate, currentUser }) {
     </div>
   )
 }
+
+

@@ -1,17 +1,17 @@
-import { calculateQueuePrediction, computeCrowdStatus } from '../utils/predictionEngine'
+﻿import { calculateQueuePrediction, computeCrowdStatus } from '../utils/predictionEngine'
 
-// ─── Office data ──────────────────────────────────────────────────────────────
+// â”€â”€â”€ Office data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const offices = [
   {
     id: 'rto',
     name: 'RTO Office',
     fullName: 'Regional Transport Office',
-    emoji: '🚗',
+    emoji: 'ðŸš—',
     address: 'Transport Nagar, Civil Lines',
     city: 'Lucknow, UP 226001',
     phone: '+91-522-2238600',
-    timings: '10:00 AM – 5:00 PM',
+    timings: '10:00 AM â€“ 5:00 PM',
     opens: 10,
     offDays: 'Sat, Sun & Holidays',
     rating: 3.8,
@@ -23,11 +23,11 @@ export const offices = [
     id: 'dm',
     name: 'DM Office',
     fullName: 'District Magistrate Office',
-    emoji: '🏛️',
+    emoji: 'ðŸ›ï¸',
     address: 'Collectorate Building, Civil Lines',
     city: 'Lucknow, UP 226001',
     phone: '+91-522-2239100',
-    timings: '10:00 AM – 5:00 PM',
+    timings: '10:00 AM â€“ 5:00 PM',
     opens: 10,
     offDays: 'Sat, Sun & Holidays',
     rating: 3.5,
@@ -39,11 +39,11 @@ export const offices = [
     id: 'municipal',
     name: 'Municipal Corporation',
     fullName: 'Lucknow Municipal Corporation',
-    emoji: '🏙️',
+    emoji: 'ðŸ™ï¸',
     address: 'Nagar Nigam Building, Lalbagh',
     city: 'Lucknow, UP 226001',
     phone: '+91-522-2622200',
-    timings: '9:00 AM – 5:00 PM',
+    timings: '9:00 AM â€“ 5:00 PM',
     opens: 9,
     offDays: 'Sun & Holidays',
     rating: 3.2,
@@ -55,11 +55,11 @@ export const offices = [
     id: 'tehsil',
     name: 'Tehsil Office',
     fullName: 'Sadar Tehsil Office',
-    emoji: '📋',
+    emoji: 'ðŸ“‹',
     address: 'Tehsil Road, Hazratganj',
     city: 'Lucknow, UP 226001',
     phone: '+91-522-2230500',
-    timings: '10:00 AM – 5:00 PM',
+    timings: '10:00 AM â€“ 5:00 PM',
     opens: 10,
     offDays: 'Sat, Sun & Holidays',
     rating: 3.6,
@@ -70,12 +70,12 @@ export const offices = [
   {
     id: 'passport',
     name: 'Passport Seva Kendra',
-    fullName: 'Passport Seva Kendra – Lucknow',
-    emoji: '🛂',
+    fullName: 'Passport Seva Kendra â€“ Lucknow',
+    emoji: 'ðŸ›‚',
     address: 'PSK Building, Vibhuti Khand, Gomti Nagar',
     city: 'Lucknow, UP 226010',
     phone: '1800-258-1800',
-    timings: '9:00 AM – 5:00 PM',
+    timings: '9:00 AM â€“ 5:00 PM',
     opens: 9,
     offDays: 'Sat, Sun & Holidays',
     rating: 4.2,
@@ -85,13 +85,13 @@ export const offices = [
   },
 ];
 
-// ─── Queue status helper ───────────────────────────────────────────────────────
+// â”€â”€â”€ Queue status helper â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function getQueueStatus(count) {
   return computeCrowdStatus(count)
 }
 
-// ─── Services ─────────────────────────────────────────────────────────────────
+// â”€â”€â”€ Services â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const services = {
   rto: [
@@ -102,12 +102,12 @@ export const services = {
       officeName: 'RTO Office',
       name: 'New Driving Licence',
       avgTime: 45,
-      approximateProcessingTime: '~40–50 min',
+      approximateProcessingTime: '~40â€“50 min',
       description: 'Apply for a fresh driving licence (LMV / MCWG)',
       requiredDocuments: [
         'Aadhaar Card (original + 2 photocopies)',
         "Learner's Licence (valid, completed 30-day mandatory period)",
-        'Passport-size photographs — 6 copies (recent, white background)',
+        'Passport-size photographs â€” 6 copies (recent, white background)',
         'Address proof (utility bill / bank passbook / registered rent deed)',
         'Age proof (birth certificate / 10th CBSE or ICSE mark sheet)',
         'Form 4 Application Confirmation (printed and signed)',
@@ -120,7 +120,7 @@ export const services = {
       documents: [
         'Aadhaar Card (original + 2 photocopies)',
         "Learner's Licence (valid, completed 30-day mandatory period)",
-        'Passport-size photographs — 6 copies (recent, white background)',
+        'Passport-size photographs â€” 6 copies (recent, white background)',
         'Address proof (utility bill / bank passbook / registered rent deed)',
         'Age proof (birth certificate / 10th CBSE or ICSE mark sheet)',
         'Form 4 Application Confirmation (printed and signed)',
@@ -142,12 +142,12 @@ export const services = {
       officeName: 'RTO Office',
       name: 'Driving Licence Renewal',
       avgTime: 30,
-      approximateProcessingTime: '~25–35 min',
+      approximateProcessingTime: '~25â€“35 min',
       description: 'Renew an expiring or expired permanent licence',
       requiredDocuments: [
         'Original Expiring / Expired Driving Licence card',
         'Aadhaar Card (original + 1 photocopy)',
-        'Passport-size photographs — 4 copies',
+        'Passport-size photographs â€” 4 copies',
         'Form 9 (Renewal Application filled and signed)',
         'Online Fee Payment Receipt from Parivahan portal',
       ],
@@ -158,7 +158,7 @@ export const services = {
       documents: [
         'Original Expiring / Expired Driving Licence card',
         'Aadhaar Card (original + 1 photocopy)',
-        'Passport-size photographs — 4 copies',
+        'Passport-size photographs â€” 4 copies',
         'Form 9 (Renewal Application filled and signed)',
         'Online Fee Payment Receipt from Parivahan portal',
         'Medical Fitness Certificate (Form 1A, mandatory if applicant is over 40 years)',
@@ -178,7 +178,7 @@ export const services = {
       officeName: 'RTO Office',
       name: 'Vehicle Registration',
       avgTime: 50,
-      approximateProcessingTime: '~45–60 min',
+      approximateProcessingTime: '~45â€“60 min',
       description: 'Register a newly purchased private or commercial vehicle',
       requiredDocuments: [
         'Form 20 (signed by vehicle owner & authorized dealer)',
@@ -218,7 +218,7 @@ export const services = {
       officeName: 'RTO Office',
       name: 'RC Transfer (Ownership)',
       avgTime: 40,
-      approximateProcessingTime: '~35–45 min',
+      approximateProcessingTime: '~35â€“45 min',
       description: 'Transfer vehicle title and ownership to new buyer',
       requiredDocuments: [
         'Original Vehicle Registration Certificate (RC Smart Card)',
@@ -258,7 +258,7 @@ export const services = {
       officeName: 'RTO Office',
       name: 'NOC for Vehicle',
       avgTime: 25,
-      approximateProcessingTime: '~20–30 min',
+      approximateProcessingTime: '~20â€“30 min',
       description: 'No Objection Certificate for inter-state vehicle migration',
       requiredDocuments: [
         'Original RC Smart Card / Certificate of Registration',
@@ -295,13 +295,13 @@ export const services = {
       officeName: 'District Magistrate Office',
       name: 'Income Certificate',
       avgTime: 20,
-      approximateProcessingTime: '~15–25 min',
+      approximateProcessingTime: '~15â€“25 min',
       description: 'Annual family income certificate for subsidies, scholarships & schemes',
       requiredDocuments: [
         'Aadhaar Card of Applicant & Family Head (original + photocopy)',
         'Ration Card / Family BPL or Antyodaya Card',
         'Salary Slips (last 3 months) or Form 16 / ITR acknowledgement copy',
-        'Income Self-Declaration Affidavit on ₹10 non-judicial stamp paper',
+        'Income Self-Declaration Affidavit on â‚¹10 non-judicial stamp paper',
         'Application Form countersigned by Ward Councilor or Gram Pradhan',
       ],
       optionalDocuments: [
@@ -313,7 +313,7 @@ export const services = {
         'Aadhaar Card of Applicant & Family Head (original + photocopy)',
         'Ration Card / Family BPL or Antyodaya Card',
         'Salary Slips (last 3 months) or Form 16 / ITR acknowledgement copy',
-        'Income Self-Declaration Affidavit on ₹10 non-judicial stamp paper',
+        'Income Self-Declaration Affidavit on â‚¹10 non-judicial stamp paper',
         'Application Form countersigned by Ward Councilor or Gram Pradhan',
         'Khasra / Agricultural land revenue records (for rural agricultural families)',
         'Electricity Utility Bill of applicant residence (last 2 billing cycles)',
@@ -333,7 +333,7 @@ export const services = {
       officeName: 'District Magistrate Office',
       name: 'Caste Certificate',
       avgTime: 25,
-      approximateProcessingTime: '~20–30 min',
+      approximateProcessingTime: '~20â€“30 min',
       description: 'Official SC / ST / OBC / EWS caste verification certificate',
       requiredDocuments: [
         'Aadhaar Card of Applicant',
@@ -370,14 +370,14 @@ export const services = {
       officeName: 'District Magistrate Office',
       name: 'Domicile Certificate',
       avgTime: 20,
-      approximateProcessingTime: '~15–25 min',
+      approximateProcessingTime: '~15â€“25 min',
       description: 'State domicile / permanent resident verification certificate',
       requiredDocuments: [
         'Aadhaar Card / Voter ID Card of Applicant',
         '3+ years continuous residence proof (Electricity / Water / Gas bills)',
         'Education marksheet proving schooling within Uttar Pradesh',
-        'Notarized Residence Affidavit on ₹10 stamp paper',
-        'Passport-size photographs — 2 copies',
+        'Notarized Residence Affidavit on â‚¹10 stamp paper',
+        'Passport-size photographs â€” 2 copies',
       ],
       optionalDocuments: [
         "Parents' UP Domicile Certificate or Government Service Record",
@@ -388,8 +388,8 @@ export const services = {
         'Aadhaar Card / Voter ID Card of Applicant',
         '3+ years continuous residence proof (Electricity / Water / Gas bills)',
         'Education marksheet proving schooling within Uttar Pradesh',
-        'Notarized Residence Affidavit on ₹10 stamp paper',
-        'Passport-size photographs — 2 copies',
+        'Notarized Residence Affidavit on â‚¹10 stamp paper',
+        'Passport-size photographs â€” 2 copies',
         "Parents' UP Domicile Certificate or Government Service Record",
         'Registered House Tax Assessment Receipt in applicant/parent name',
         'Rental agreement showing continuous residency',
@@ -407,7 +407,7 @@ export const services = {
       officeName: 'District Magistrate Office',
       name: 'Land Record Verification',
       avgTime: 35,
-      approximateProcessingTime: '~30–40 min',
+      approximateProcessingTime: '~30â€“40 min',
       description: 'Khasra / Khatauni / Jamabandi verification and revenue court records',
       requiredDocuments: [
         'Khasra / Khatauni Gata Account Number',
@@ -442,7 +442,7 @@ export const services = {
       officeName: 'District Magistrate Office',
       name: 'Arms Licence Attestation',
       avgTime: 45,
-      approximateProcessingTime: '~40–55 min',
+      approximateProcessingTime: '~40â€“55 min',
       description: 'Application verification and renewal for civilian arms licences',
       requiredDocuments: [
         'Aadhaar Card & PAN Card of Applicant',
@@ -481,7 +481,7 @@ export const services = {
       officeName: 'Municipal Corporation',
       name: 'Birth Certificate',
       avgTime: 20,
-      approximateProcessingTime: '~15–25 min',
+      approximateProcessingTime: '~15â€“25 min',
       description: 'Official birth certificate for newborns or official municipal register corrections',
       requiredDocuments: [
         'Hospital / Nursing Home Discharge Summary & Form 1',
@@ -517,7 +517,7 @@ export const services = {
       officeName: 'Municipal Corporation',
       name: 'Death Certificate',
       avgTime: 20,
-      approximateProcessingTime: '~15–25 min',
+      approximateProcessingTime: '~15â€“25 min',
       description: 'Official registration and certified copies of death certificates',
       requiredDocuments: [
         'Hospital Death Summary or Cremation / Burial Ground Slip',
@@ -550,7 +550,7 @@ export const services = {
       officeName: 'Municipal Corporation',
       name: 'Property Tax Assessment',
       avgTime: 30,
-      approximateProcessingTime: '~25–35 min',
+      approximateProcessingTime: '~25â€“35 min',
       description: 'Municipal property tax assessment, reassessment & title mutation',
       requiredDocuments: [
         'Registered Sale Deed / Title Registry Document',
@@ -585,7 +585,7 @@ export const services = {
       officeName: 'Municipal Corporation',
       name: 'Trade Licence',
       avgTime: 40,
-      approximateProcessingTime: '~35–45 min',
+      approximateProcessingTime: '~35â€“45 min',
       description: 'Statutory commercial licence for shops, trading establishments & restaurants',
       requiredDocuments: [
         'Municipal Trade Licence Application Form with NIC classification code',
@@ -622,7 +622,7 @@ export const services = {
       officeName: 'Municipal Corporation',
       name: 'Water Connection',
       avgTime: 35,
-      approximateProcessingTime: '~30–40 min',
+      approximateProcessingTime: '~30â€“40 min',
       description: 'New water supply and municipal sewerage pipeline connection',
       requiredDocuments: [
         'Proof of Property Ownership (Sale Deed / Municipal House Tax Receipt)',
@@ -659,14 +659,14 @@ export const services = {
       officeName: 'Tehsil Office',
       name: 'Property Mutation (Namami)',
       avgTime: 30,
-      approximateProcessingTime: '~25–35 min',
+      approximateProcessingTime: '~25â€“35 min',
       description: 'Dakhil Kharij / title change in official state revenue records',
       requiredDocuments: [
         'Original Registered Sale Deed / Gift Deed copy',
         'Certified Khasra / Khatauni extract from Bhulekh portal',
         'Aadhaar Cards of both Seller and Buyer (self-attested)',
         'Form 31 Mutation Application',
-        'Affidavit on ₹100 stamp paper acknowledging undisputed peaceful possession',
+        'Affidavit on â‚¹100 stamp paper acknowledging undisputed peaceful possession',
       ],
       optionalDocuments: [
         'Succession Certificate / Legal Heir Certificate (in inheritance cases)',
@@ -678,7 +678,7 @@ export const services = {
         'Certified Khasra / Khatauni extract from Bhulekh portal',
         'Aadhaar Cards of both Seller and Buyer (self-attested)',
         'Form 31 Mutation Application',
-        'Affidavit on ₹100 stamp paper acknowledging undisputed peaceful possession',
+        'Affidavit on â‚¹100 stamp paper acknowledging undisputed peaceful possession',
         'Succession Certificate / Legal Heir Certificate (in inheritance cases)',
         'Gram Panchayat No-Dues Certificate',
         'Certified Copy of Title Search Report from registered advocate',
@@ -697,7 +697,7 @@ export const services = {
       officeName: 'Tehsil Office',
       name: 'Tenant Verification',
       avgTime: 20,
-      approximateProcessingTime: '~15–25 min',
+      approximateProcessingTime: '~15â€“25 min',
       description: 'Official revenue and police verification of residential tenants',
       requiredDocuments: [
         'Notarized / Registered Residential Rent Agreement',
@@ -732,7 +732,7 @@ export const services = {
       officeName: 'Tehsil Office',
       name: 'Encumbrance Certificate',
       avgTime: 25,
-      approximateProcessingTime: '~20–30 min',
+      approximateProcessingTime: '~20â€“30 min',
       description: '12 to 30 years property search confirming freedom from legal mortgage and claims',
       requiredDocuments: [
         'Complete Property Schedule (Survey No., Gata No., boundaries, dimensions)',
@@ -767,13 +767,13 @@ export const services = {
       officeName: 'Tehsil Office',
       name: 'Legal Heir / Warisan Certificate',
       avgTime: 35,
-      approximateProcessingTime: '~30–40 min',
+      approximateProcessingTime: '~30â€“40 min',
       description: 'Certified succession statement of legal heirs for property and pensions',
       requiredDocuments: [
         'Original Death Certificate of the Deceased',
         'Aadhaar Cards of all surviving legal heirs',
         'Family Register Copy (Parivar Register Nakal) from Gram Panchayat / Nagar Nigam',
-        'Affidavit on ₹100 stamp paper depicting complete genealogical family tree',
+        'Affidavit on â‚¹100 stamp paper depicting complete genealogical family tree',
       ],
       optionalDocuments: [
         'Registered Will (if deceased bequeathed property)',
@@ -783,7 +783,7 @@ export const services = {
         'Original Death Certificate of the Deceased',
         'Aadhaar Cards of all surviving legal heirs',
         'Family Register Copy (Parivar Register Nakal) from Gram Panchayat / Nagar Nigam',
-        'Affidavit on ₹100 stamp paper depicting complete genealogical family tree',
+        'Affidavit on â‚¹100 stamp paper depicting complete genealogical family tree',
         'Registered Will (if deceased bequeathed property)',
         'Relinquishment Affidavits from surviving heirs forfeiting inheritance share',
       ],
@@ -800,7 +800,7 @@ export const services = {
       officeName: 'Tehsil Office',
       name: 'Solvency Certificate',
       avgTime: 45,
-      approximateProcessingTime: '~40–50 min',
+      approximateProcessingTime: '~40â€“50 min',
       description: 'Official net-worth solvency certificate for government tenders and contracts',
       requiredDocuments: [
         'Audited Balance Sheets & Income Tax Returns (ITR) for the past 3 financial years',
@@ -837,7 +837,7 @@ export const services = {
       officeName: 'Passport Seva Kendra',
       name: 'Fresh Passport',
       avgTime: 50,
-      approximateProcessingTime: '~45–60 min',
+      approximateProcessingTime: '~45â€“60 min',
       description: 'First-time passport application under Normal or Tatkal category',
       requiredDocuments: [
         'Aadhaar Card with full date of birth (original + photocopy)',
@@ -873,7 +873,7 @@ export const services = {
       officeName: 'Passport Seva Kendra',
       name: 'Passport Renewal',
       avgTime: 35,
-      approximateProcessingTime: '~30–40 min',
+      approximateProcessingTime: '~30â€“40 min',
       description: 'Re-issue of expiring or expired passport booklet',
       requiredDocuments: [
         'Old Original Passport booklet with self-attested copies of first and last 2 pages',
@@ -906,7 +906,7 @@ export const services = {
       officeName: 'Passport Seva Kendra',
       name: 'Police Clearance Certificate',
       avgTime: 30,
-      approximateProcessingTime: '~25–35 min',
+      approximateProcessingTime: '~25â€“35 min',
       description: 'Police Clearance Certificate (PCC) for overseas employment and immigration visas',
       requiredDocuments: [
         'Original Valid Passport with self-attested copies of personal details pages',
@@ -939,7 +939,7 @@ export const services = {
       officeName: 'Passport Seva Kendra',
       name: 'Lost / Damaged Passport',
       avgTime: 45,
-      approximateProcessingTime: '~40–50 min',
+      approximateProcessingTime: '~40â€“50 min',
       description: 'Application for re-issue of lost, stolen, or mutilated passport booklet',
       requiredDocuments: [
         'Police FIR / Non-Cognizable Report (NCR) reporting passport loss',
@@ -974,7 +974,7 @@ export const services = {
       officeName: 'Passport Seva Kendra',
       name: 'Minor Passport (Under 18)',
       avgTime: 40,
-      approximateProcessingTime: '~35–45 min',
+      approximateProcessingTime: '~35â€“45 min',
       description: 'First-time or renewal passport for infants, children and minors under 18',
       requiredDocuments: [
         'Original Birth Certificate of Minor with parent names',
@@ -1005,13 +1005,13 @@ export const services = {
   ],
 };
 
-// ─── Helper to retrieve full service metadata ─────────────────────────────────
+// â”€â”€â”€ Helper to retrieve full service metadata â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export function getServiceDetails(officeId, serviceId) {
   const officeServices = services[officeId] || []
   return officeServices.find(s => s.id === serviceId) || officeServices[0] || null
 }
 
-// ─── Queue generation (Deterministic Smart Prediction Engine) ───────────────
+// â”€â”€â”€ Queue generation (Deterministic Smart Prediction Engine) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function generateQueueData(officeId, serviceId, communityReports = []) {
   return calculateQueuePrediction({
@@ -1022,7 +1022,7 @@ export function generateQueueData(officeId, serviceId, communityReports = []) {
   })
 }
 
-// ─── Weekly crowd data ─────────────────────────────────────────────────────────
+// â”€â”€â”€ Weekly crowd data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const weeklyPattern = {
   rto:      [82, 58, 42, 54, 72],
@@ -1032,16 +1032,16 @@ export const weeklyPattern = {
   passport: [94, 78, 63, 72, 84],
 }
 
-// ─── Community reports ─────────────────────────────────────────────────────────
+// â”€â”€â”€ Community reports â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const seedReports = [
-  { id: 1, ago: '3 min ago',  text: 'Queue has dropped — only about 8 people waiting now.', type: 'decrease', votes: 18 },
+  { id: 1, ago: '3 min ago',  text: 'Queue has dropped â€” only about 8 people waiting now.', type: 'decrease', votes: 18 },
   { id: 2, ago: '11 min ago', text: 'Biometric machine working fine. Counter 2 & 3 open.',   type: 'info',     votes: 11 },
   { id: 3, ago: '29 min ago', text: '~40 people in queue; expect 60+ min wait.',             type: 'increase', votes: 24 },
-  { id: 4, ago: '44 min ago', text: 'Counter 4 closed for lunch — slightly slower.',          type: 'warning',  votes: 9  },
+  { id: 4, ago: '44 min ago', text: 'Counter 4 closed for lunch â€” slightly slower.',          type: 'warning',  votes: 9  },
 ]
 
-// ─── Analytics mock data ──────────────────────────────────────────────────────
+// â”€â”€â”€ Analytics mock data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export const analyticsData = {
   summary: {
@@ -1072,7 +1072,7 @@ export const analyticsData = {
       queueCount: 42,
       estWait: '68 min',
       level: 'high',
-      trend: '↑ Escalating (+14/hr)',
+      trend: 'â†‘ Escalating (+14/hr)',
       actionNeeded: 'Deploy overflow registration counter & send arrival advisory',
       reportedAt: '4 min ago',
       reliefStatus: 'Action Required',
@@ -1085,7 +1085,7 @@ export const analyticsData = {
       queueCount: 31,
       estWait: '48 min',
       level: 'high',
-      trend: '↑ Steady surge (+9/hr)',
+      trend: 'â†‘ Steady surge (+9/hr)',
       actionNeeded: 'Verify revenue clerk counter capacity and biometric token stations',
       reportedAt: '14 min ago',
       reliefStatus: 'Investigation Underway',
@@ -1098,7 +1098,7 @@ export const analyticsData = {
       queueCount: 54,
       estWait: '75 min',
       level: 'critical',
-      trend: '↑ Critical peak (+22/hr)',
+      trend: 'â†‘ Critical peak (+22/hr)',
       actionNeeded: 'Open reserve biometric verification counters 5 & 6',
       reportedAt: '2 min ago',
       reliefStatus: 'Pending Dispatch',
@@ -1115,7 +1115,7 @@ export const analyticsData = {
       waitMinutes: 68,
       crowd: 'HIGH',
       crowdLevel: 'high',
-      trend: '↑',
+      trend: 'â†‘',
       trendDirection: 'up',
       trendText: 'Surge (+14/hr)',
       lastUpdated: '4 min ago',
@@ -1130,7 +1130,7 @@ export const analyticsData = {
       waitMinutes: 75,
       crowd: 'CRITICAL',
       crowdLevel: 'critical',
-      trend: '↑',
+      trend: 'â†‘',
       trendDirection: 'up',
       trendText: 'Surge (+22/hr)',
       lastUpdated: '2 min ago',
@@ -1145,7 +1145,7 @@ export const analyticsData = {
       waitMinutes: 48,
       crowd: 'HIGH',
       crowdLevel: 'high',
-      trend: '↑',
+      trend: 'â†‘',
       trendDirection: 'up',
       trendText: 'Rising (+9/hr)',
       lastUpdated: '6 min ago',
@@ -1160,7 +1160,7 @@ export const analyticsData = {
       waitMinutes: 34,
       crowd: 'MODERATE',
       crowdLevel: 'moderate',
-      trend: '→',
+      trend: 'â†’',
       trendDirection: 'stable',
       trendText: 'Stable flow',
       lastUpdated: '1 min ago',
@@ -1175,7 +1175,7 @@ export const analyticsData = {
       waitMinutes: 18,
       crowd: 'LOW',
       crowdLevel: 'low',
-      trend: '↓',
+      trend: 'â†“',
       trendDirection: 'down',
       trendText: 'Clearing (-8/hr)',
       lastUpdated: '8 min ago',
@@ -1217,7 +1217,7 @@ export const analyticsData = {
       queue: 54,
       threshold: 40,
       timestamp: '2 min ago',
-      status: 'Active · Action Needed',
+      status: 'Active Â· Action Needed',
     },
     {
       id: 'alt-2',
@@ -1229,10 +1229,10 @@ export const analyticsData = {
       queue: 42,
       threshold: 30,
       timestamp: '4 min ago',
-      status: 'Active · Relief In Review',
+      status: 'Active Â· Relief In Review',
     },
   ],
-  // Heatmap: 5 days × 8 hours (0=low, 1=moderate, 2=high, 3=critical)
+  // Heatmap: 5 days Ã— 8 hours (0=low, 1=moderate, 2=high, 3=critical)
   heatmap: {
     days:  ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
     hours: ['9AM', '10AM', '11AM', '12PM', '1PM', '2PM', '3PM', '4PM'],
@@ -1246,7 +1246,7 @@ export const analyticsData = {
   },
 }
 
-// ─── Popular Services for Quick Planning ──────────────────────────────────────
+// â”€â”€â”€ Popular Services for Quick Planning â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const popularServices = [
   {
     id: 'dl-renew',
@@ -1258,7 +1258,7 @@ export const popularServices = [
     currentQueue: 24,
     avgWait: 30,
     status: 'moderate',
-    icon: '🚗',
+    icon: 'ðŸš—',
   },
   {
     id: 'fresh-passport',
@@ -1270,7 +1270,7 @@ export const popularServices = [
     currentQueue: 42,
     avgWait: 50,
     status: 'critical',
-    icon: '🛂',
+    icon: 'ðŸ›‚',
   },
   {
     id: 'birth-cert',
@@ -1282,7 +1282,7 @@ export const popularServices = [
     currentQueue: 18,
     avgWait: 20,
     status: 'moderate',
-    icon: '🏙️',
+    icon: 'ðŸ™ï¸',
   },
   {
     id: 'income-cert',
@@ -1294,7 +1294,7 @@ export const popularServices = [
     currentQueue: 11,
     avgWait: 20,
     status: 'low',
-    icon: '🏛️',
+    icon: 'ðŸ›ï¸',
   },
   {
     id: 'mutation',
@@ -1306,11 +1306,11 @@ export const popularServices = [
     currentQueue: 6,
     avgWait: 25,
     status: 'low',
-    icon: '📋',
+    icon: 'ðŸ“‹',
   },
 ]
 
-// ─── Default Seed Notifications for Notification Center ────────────────────────
+// â”€â”€â”€ Default Seed Notifications for Notification Center â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 export const seedNotifications = [
   {
     id: 'notif-1',
@@ -1333,7 +1333,7 @@ export const seedNotifications = [
     officeId: 'dm',
     queueCount: 19,
     estimatedWait: 22,
-    message: 'Upcoming slot today · 2:00 PM. All 5 documents verified ready.',
+    message: 'Upcoming slot today Â· 2:00 PM. All 5 documents verified ready.',
     timestamp: new Date(Date.now() - 25 * 60 * 1000).toISOString(),
     timeAgo: '25m ago',
     read: true,
@@ -1352,4 +1352,6 @@ export const seedNotifications = [
     read: true,
   }
 ]
+
+
 

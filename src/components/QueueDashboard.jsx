@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, useMemo } from 'react'
+﻿import { useState, useEffect, useCallback, useMemo } from 'react'
 import {
   RefreshCw, TrendingUp, TrendingDown, Minus, Clock, Users, Activity,
   Bell, MessageSquarePlus, FileText, CheckCheck, ChevronDown, ChevronUp,
@@ -103,7 +103,7 @@ export default function QueueDashboard({
   useEffect(() => {
     if (alertFired) {
       const timer = setTimeout(() => {
-        showToast(`🔔 Queue Alert: Queue at ${office.name} dropped below 15 people! Expected wait now 12 min.`, 'success')
+        showToast(`ðŸ”” Queue Alert: Queue at ${office.name} dropped below 15 people! Expected wait now 12 min.`, 'success')
         setAlertFired(false)
       }, 8000)
       return () => clearTimeout(timer)
@@ -155,8 +155,8 @@ export default function QueueDashboard({
       serviceName: service.name,
       date: 'Today',
       status: 'Upcoming',
-      recommendedSlot: data?.recommendedWindow ? `Today · ${data.recommendedWindow.time}` : 'Today · 2:00 – 3:00 PM',
-      expectedWait: data?.recommendedWindow?.expectedWait || '18–22 min',
+      recommendedSlot: data?.recommendedWindow ? `Today Â· ${data.recommendedWindow.time}` : 'Today Â· 2:00 â€“ 3:00 PM',
+      expectedWait: data?.recommendedWindow?.expectedWait || '18â€“22 min',
       docsReady: `${readinessMetrics.readyCount} / ${readinessMetrics.requiredTotal} ready (${readinessMetrics.percentage}%)`,
       savedAt: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     }
@@ -175,21 +175,21 @@ export default function QueueDashboard({
   return (
     <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 space-y-10">
 
-      {/* ── SECTION 1: WHERE ARE YOU GOING? ────────────────────────── */}
+      {/* â”€â”€ SECTION 1: WHERE ARE YOU GOING? â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="card p-5 bg-white border-slate-200">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="flex items-start sm:items-center gap-3.5">
-            <div className="h-12 w-12 rounded-xl bg-slate-100 border border-slate-200 flex items-center justify-center text-2xl shrink-0">
+            <div className="h-12 w-12 rounded-xl bg-[#DCE7F2] border border-slate-200 flex items-center justify-center text-2xl shrink-0">
               {office.emoji}
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="journey-step-tag">1. Destination</span>
-                <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider">{office.category}</span>
+                <span className="text-xs font-semibold text-[#344054] uppercase tracking-wider">{office.category}</span>
               </div>
               <h1 className="text-xl sm:text-2xl font-bold text-slate-900 mt-0.5">{office.fullName}</h1>
-              <p className="text-xs text-slate-500 flex items-center gap-2 mt-1">
-                <MapPin className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+              <p className="text-xs text-[#344054] flex items-center gap-2 mt-1">
+                <MapPin className="h-3.5 w-3.5 text-[#475467] shrink-0" />
                 {office.address}, {office.city}
               </p>
             </div>
@@ -197,17 +197,17 @@ export default function QueueDashboard({
 
           {/* Office Quick Metadata */}
           <div className="flex flex-wrap items-center gap-4 text-xs pt-3 md:pt-0 border-t md:border-t-0 border-slate-100">
-            <div className="bg-slate-50 px-3 py-2 rounded-lg border border-slate-200/80">
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Office Hours</span>
+            <div className="bg-[#E8F0F8] px-3 py-2 rounded-lg border border-slate-200/80">
+              <span className="text-[#475467] block text-[10px] uppercase font-bold">Office Hours</span>
               <span className="font-semibold text-slate-800 flex items-center gap-1.5 mt-0.5">
-                <Clock className="h-3.5 w-3.5 text-slate-500" />
+                <Clock className="h-3.5 w-3.5 text-[#344054]" />
                 {office.timings}
               </span>
             </div>
-            <div className="bg-slate-50 px-3 py-2 rounded-lg border border-slate-200/80">
-              <span className="text-slate-400 block text-[10px] uppercase font-bold">Helpline</span>
+            <div className="bg-[#E8F0F8] px-3 py-2 rounded-lg border border-slate-200/80">
+              <span className="text-[#475467] block text-[10px] uppercase font-bold">Helpline</span>
               <span className="font-semibold text-slate-800 flex items-center gap-1.5 mt-0.5">
-                <Phone className="h-3.5 w-3.5 text-slate-500" />
+                <Phone className="h-3.5 w-3.5 text-[#344054]" />
                 {office.phone}
               </span>
             </div>
@@ -215,7 +215,7 @@ export default function QueueDashboard({
               <span className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-bold ${
                 data?.isOpen
                   ? 'border-emerald-200 bg-emerald-50 text-emerald-800'
-                  : 'border-slate-200 bg-slate-100 text-slate-500'
+                  : 'border-slate-200 bg-[#DCE7F2] text-[#344054]'
               }`}>
                 <span className={`h-2 w-2 rounded-full ${data?.isOpen ? 'bg-emerald-600' : 'bg-slate-400'}`}
                   style={data?.isOpen ? { animation: 'pulse-dot 2s infinite' } : {}} />
@@ -226,16 +226,16 @@ export default function QueueDashboard({
         </div>
       </section>
 
-      {/* ── SECTION 2: WHAT DO YOU NEED? ───────────────────────────── */}
+      {/* â”€â”€ SECTION 2: WHAT DO YOU NEED? â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="card p-5 bg-white border-slate-200">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <div className="flex items-center gap-2">
               <span className="journey-step-tag">2. Service Details</span>
-              <span className="text-xs font-semibold text-slate-500">Official Citizen Procedure</span>
+              <span className="text-xs font-semibold text-[#344054]">Official Citizen Procedure</span>
             </div>
             <h2 className="text-lg font-bold text-slate-900 mt-1">{service.name}</h2>
-            <p className="text-xs text-slate-500 mt-0.5">{service.description}</p>
+            <p className="text-xs text-[#344054] mt-0.5">{service.description}</p>
           </div>
 
           <div className="flex items-center gap-3">
@@ -243,15 +243,15 @@ export default function QueueDashboard({
               <span className="text-[10px] font-bold text-blue-800 uppercase tracking-wider block">Standard Counter Time</span>
               <span className="text-base font-bold text-blue-950 tabular-nums">~{service.avgTime} minutes</span>
             </div>
-            <div className="bg-slate-50 border border-slate-200 px-3 py-2 rounded-lg text-right">
-              <span className="text-[10px] font-bold text-slate-600 uppercase tracking-wider block">Required Documents</span>
+            <div className="bg-[#E8F0F8] border border-slate-200 px-3 py-2 rounded-lg text-right">
+              <span className="text-[10px] font-bold text-[#1D2939] uppercase tracking-wider block">Required Documents</span>
               <span className="text-base font-bold text-slate-900 tabular-nums">{service.documents.length} verified items</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── SECTION 3: HOW BUSY IS IT? (VISUALLY DOMINANT QUEUE MONITOR) ── */}
+      {/* â”€â”€ SECTION 3: HOW BUSY IS IT? (VISUALLY DOMINANT QUEUE MONITOR) â”€â”€ */}
       <section className="card p-6 border-2 border-slate-300 shadow-md bg-white">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
           <div>
@@ -261,17 +261,17 @@ export default function QueueDashboard({
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
                 Community reported
               </span>
-              <span className="text-xs font-semibold text-slate-500">
+              <span className="text-xs font-semibold text-[#344054]">
                 {data?.communityReportsToday || 24} updates today
               </span>
             </div>
-            <h2 className="text-xl font-extrabold text-slate-900 mt-1">{office.name.toUpperCase()} · CURRENT STATUS</h2>
+            <h2 className="text-xl font-extrabold text-slate-900 mt-1">{office.name.toUpperCase()} Â· CURRENT STATUS</h2>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
             <div className="text-left sm:text-right">
-              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Trust & Recency</span>
-              <span className="text-xs text-slate-600 font-medium">
+              <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">Trust & Recency</span>
+              <span className="text-xs text-[#1D2939] font-medium">
                 Last community update: <strong className="text-slate-900">{data?.lastCommunityUpdate || '4 minutes ago'}</strong>
               </span>
             </div>
@@ -281,7 +281,7 @@ export default function QueueDashboard({
               className="btn-secondary text-xs py-1.5 px-3"
             >
               <RefreshCw className={`h-3.5 w-3.5 ${refreshing ? 'animate-spin' : ''}`} />
-              {refreshing ? 'Syncing…' : 'Refresh Feed'}
+              {refreshing ? 'Syncingâ€¦' : 'Refresh Feed'}
             </button>
           </div>
         </div>
@@ -296,21 +296,21 @@ export default function QueueDashboard({
           <div className="py-6">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 items-end">
               {/* People waiting */}
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-1">
+              <div className="bg-[#E8F0F8] p-4 rounded-xl border border-slate-200">
+                <span className="text-xs font-bold text-[#344054] uppercase tracking-wider block mb-1">
                   People Waiting
                 </span>
                 <div className="flex items-baseline gap-2">
                   <span className="text-5xl font-extrabold text-slate-900 tabular-nums leading-none">
                     {data?.isOpen ? data.count : '0'}
                   </span>
-                  <span className="text-xs font-semibold text-slate-500">citizens in line</span>
+                  <span className="text-xs font-semibold text-[#344054]">citizens in line</span>
                 </div>
               </div>
 
               {/* Estimated Wait */}
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-1">
+              <div className="bg-[#E8F0F8] p-4 rounded-xl border border-slate-200">
+                <span className="text-xs font-bold text-[#344054] uppercase tracking-wider block mb-1">
                   Estimated Wait Time
                 </span>
                 <div className="flex items-baseline gap-1.5">
@@ -322,14 +322,14 @@ export default function QueueDashboard({
               </div>
 
               {/* Crowd Level */}
-              <div className="bg-slate-50 p-4 rounded-xl border border-slate-200">
-                <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-1">
+              <div className="bg-[#E8F0F8] p-4 rounded-xl border border-slate-200">
+                <span className="text-xs font-bold text-[#344054] uppercase tracking-wider block mb-1">
                   Crowd Level
                 </span>
                 <div className="flex items-center gap-2 mt-1">
                   {st && <span className={`${st.badge} text-xs py-1 px-3`}>{st.label}</span>}
-                  <span className="text-xs text-slate-500 font-medium capitalize">
-                    {data?.trend === 'rising' ? '↑ Rising surge' : data?.trend === 'falling' ? '↓ Queue easing' : '→ Stable'}
+                  <span className="text-xs text-[#344054] font-medium capitalize">
+                    {data?.trend === 'rising' ? 'â†‘ Rising surge' : data?.trend === 'falling' ? 'â†“ Queue easing' : 'â†’ Stable'}
                   </span>
                 </div>
               </div>
@@ -354,7 +354,7 @@ export default function QueueDashboard({
                 >
                   <Bell className="h-4 w-4 shrink-0" />
                   <span className="truncate">
-                    {isWatching ? `Watching Queue Drops (<${currentThreshold}) ✓` : 'Notify me when queue becomes shorter'}
+                    {isWatching ? `Watching Queue Drops (<${currentThreshold}) âœ“` : 'Notify me when queue becomes shorter'}
                   </span>
                 </button>
                 <button
@@ -367,7 +367,7 @@ export default function QueueDashboard({
                   }}
                   className="btn-secondary py-2 text-xs font-bold w-full justify-center"
                 >
-                  <MessageSquarePlus className="h-4 w-4 text-slate-600" />
+                  <MessageSquarePlus className="h-4 w-4 text-[#1D2939]" />
                   Report Current Queue
                 </button>
               </div>
@@ -375,27 +375,27 @@ export default function QueueDashboard({
 
             {/* Horizontal Live Queue Meter */}
             <div className="mt-8 pt-6 border-t border-slate-100">
-              <div className="flex items-center justify-between text-xs font-semibold text-slate-600 mb-2">
+              <div className="flex items-center justify-between text-xs font-semibold text-[#1D2939] mb-2">
                 <span>Station Capacity Threshold: {data?.capacityPct}% full</span>
-                <span className="text-slate-400">Normal operating limit: 50 people</span>
+                <span className="text-[#475467]">Normal operating limit: 50 people</span>
               </div>
-              <div className="h-4 rounded-full bg-slate-100 p-0.5 border border-slate-200 overflow-hidden">
+              <div className="h-4 rounded-full bg-[#DCE7F2] p-0.5 border border-slate-200 overflow-hidden">
                 <div
                   className={`h-full rounded-full ${st?.bar} transition-all duration-1000 shadow-inner`}
                   style={{ width: `${data?.capacityPct || 0}%` }}
                 />
               </div>
-              <div className="flex justify-between text-[11px] font-bold text-slate-400 mt-1.5 uppercase tracking-wide">
-                <span>0 · Empty</span>
-                <span>25 · Moderate</span>
-                <span>40 · High Surge</span>
-                <span>50+ · Critical</span>
+              <div className="flex justify-between text-[11px] font-bold text-[#475467] mt-1.5 uppercase tracking-wide">
+                <span>0 Â· Empty</span>
+                <span>25 Â· Moderate</span>
+                <span>40 Â· High Surge</span>
+                <span>50+ Â· Critical</span>
               </div>
             </div>
 
             {/* Citizen Queue Visualizer Dots */}
             {data?.isOpen && data.count > 0 && (
-              <div className="mt-6 p-4 bg-slate-50 rounded-lg border border-slate-200">
+              <div className="mt-6 p-4 bg-[#E8F0F8] rounded-lg border border-slate-200">
                 <p className="text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">
                   Physical Queue Simulation ({Math.min(data.count, 45)} people represented)
                 </p>
@@ -416,21 +416,21 @@ export default function QueueDashboard({
                     )
                   })}
                   {data.count > 45 && (
-                    <span className="text-xs font-bold text-slate-500 ml-2">+{data.count - 45} more waiting</span>
+                    <span className="text-xs font-bold text-[#344054] ml-2">+{data.count - 45} more waiting</span>
                   )}
                 </div>
               </div>
             )}
 
             {/* Civic Transparency Notice */}
-            <div className="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-slate-500">
+            <div className="mt-6 pt-4 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-[11px] text-[#344054]">
               <div className="flex items-center gap-1.5">
-                <Info className="h-3.5 w-3.5 text-slate-400 shrink-0" />
+                <Info className="h-3.5 w-3.5 text-[#475467] shrink-0" />
                 <span>
                   <strong>Civic Data Notice:</strong> Live queue counts & wait estimates combine historical sensor models with real-time community reports from citizens on site. Not an official government record.
                 </span>
               </div>
-              <span className="font-mono text-[10px] text-slate-400 shrink-0 uppercase">
+              <span className="font-mono text-[10px] text-[#475467] shrink-0 uppercase">
                 {data?.disclaimer || 'Verified Crowdsource Engine'}
               </span>
             </div>
@@ -438,13 +438,13 @@ export default function QueueDashboard({
         )}
       </section>
 
-      {/* ── SECTION 4: WHEN SHOULD YOU GO? (FORECAST & RECOMMENDED VISIT) ── */}
+      {/* â”€â”€ SECTION 4: WHEN SHOULD YOU GO? (FORECAST & RECOMMENDED VISIT) â”€â”€ */}
       <section className="card p-6 bg-white border-slate-200">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-slate-200 mb-6">
           <div>
             <div className="flex items-center gap-2">
               <span className="journey-step-tag">4. Optimal Timing</span>
-              <span className="text-xs font-semibold text-slate-500">90-Day Trend Intelligence</span>
+              <span className="text-xs font-semibold text-[#344054]">90-Day Trend Intelligence</span>
             </div>
             <h2 className="text-lg font-bold text-slate-900 mt-1">Today's Crowd Forecast & Arrival Windows</h2>
           </div>
@@ -459,7 +459,7 @@ export default function QueueDashboard({
             <div>
               <span className="text-[10px] font-bold text-blue-700 uppercase tracking-widest block">Recommended Visit Window</span>
               <p className="text-2xl font-extrabold text-blue-950 mt-0.5">
-                {data?.recommendedWindow ? `Today · ${data.recommendedWindow.time}` : 'Today · 2:00 PM – 3:00 PM'}
+                {data?.recommendedWindow ? `Today Â· ${data.recommendedWindow.time}` : 'Today Â· 2:00 PM â€“ 3:00 PM'}
               </p>
               <p className="text-xs text-blue-800 font-medium mt-1">
                 Reason: "{data?.recommendedWindow?.explanation || 'Historical traffic is typically lower during this post-lunch clearance period.'}"
@@ -468,13 +468,13 @@ export default function QueueDashboard({
 
             <div className="flex items-center gap-4 bg-white p-3 rounded-lg border border-blue-200 shadow-2xs self-start sm:self-auto">
               <div>
-                <span className="text-[10px] font-bold text-slate-500 uppercase block">Expected Wait</span>
+                <span className="text-[10px] font-bold text-[#344054] uppercase block">Expected Wait</span>
                 <span className="text-lg font-extrabold text-slate-900 tabular-nums">
-                  {data?.recommendedWindow?.expectedWait || '18–22 min'}
+                  {data?.recommendedWindow?.expectedWait || '18â€“22 min'}
                 </span>
               </div>
               <div className="border-l border-slate-200 pl-4">
-                <span className="text-[10px] font-bold text-slate-500 uppercase block">Confidence</span>
+                <span className="text-[10px] font-bold text-[#344054] uppercase block">Confidence</span>
                 <span className="text-lg font-extrabold text-emerald-700">
                   {data?.recommendedWindow?.confidence || '87%'}
                 </span>
@@ -514,11 +514,11 @@ export default function QueueDashboard({
                     </span>
                   )}
                   <span className="text-xs font-bold text-slate-900 block">{slot.time}</span>
-                  <div className="h-1.5 w-full bg-slate-100 rounded-full my-2 overflow-hidden">
+                  <div className="h-1.5 w-full bg-[#DCE7F2] rounded-full my-2 overflow-hidden">
                     <div className={`h-full ${slot.color}`} style={{ width: `${slot.capacityPct || 50}%` }} />
                   </div>
                   <span className="text-[11px] font-semibold text-slate-700 block">{slot.crowdLevel}</span>
-                  <span className="text-[10px] text-slate-500 block">~{slot.projectedWait}m wait</span>
+                  <span className="text-[10px] text-[#344054] block">~{slot.projectedWait}m wait</span>
                 </div>
               ))}
             </div>
@@ -526,10 +526,10 @@ export default function QueueDashboard({
         </div>
 
         {/* Weekly Day-by-Day Crowd Bar Chart */}
-        <div className="card p-4 bg-slate-50 border-slate-200">
+        <div className="card p-4 bg-[#E8F0F8] border-slate-200">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-xs font-bold text-slate-700 uppercase tracking-wider">Weekly Historical Busyness</h3>
-            <span className="text-[11px] text-slate-500">Wednesday typically sees lowest queue volume</span>
+            <span className="text-[11px] text-[#344054]">Wednesday typically sees lowest queue volume</span>
           </div>
           <div className="flex items-end gap-3 h-20">
             {['Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day, i) => {
@@ -544,7 +544,7 @@ export default function QueueDashboard({
                       title={`${day}: ${val}% full`}
                     />
                   </div>
-                  <span className={`text-[11px] font-bold ${isBestDay ? 'text-blue-900' : 'text-slate-500'}`}>{day}</span>
+                  <span className={`text-[11px] font-bold ${isBestDay ? 'text-blue-900' : 'text-[#344054]'}`}>{day}</span>
                 </div>
               )
             })}
@@ -552,11 +552,11 @@ export default function QueueDashboard({
         </div>
       </section>
 
-      {/* ── SECTION 5: ARE YOU READY? (DOCUMENT CHECKLIST & VISIT PLAN SLIP) ── */}
+      {/* â”€â”€ SECTION 5: ARE YOU READY? (DOCUMENT CHECKLIST & VISIT PLAN SLIP) â”€â”€ */}
       <section className="space-y-4">
         <div className="flex items-center gap-2">
           <span className="journey-step-tag">5. Preparedness & Slip</span>
-          <span className="text-xs font-semibold text-slate-500">Document Verification & Citizen Pass</span>
+          <span className="text-xs font-semibold text-[#344054]">Document Verification & Citizen Pass</span>
         </div>
 
         <div className="grid lg:grid-cols-12 gap-8 items-start">
@@ -566,14 +566,14 @@ export default function QueueDashboard({
             {/* Header: Exact Required Text */}
             <div className="flex items-center justify-between pb-3 border-b border-slate-200 mb-4">
               <div>
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">CHECKLIST AUDIT</span>
+                <span className="text-[10px] font-bold text-[#475467] uppercase tracking-widest block">CHECKLIST AUDIT</span>
                 <h3 className="text-base font-extrabold text-slate-900 tracking-tight">DOCUMENT READINESS</h3>
                 <p className="text-xs font-semibold text-slate-700 mt-0.5">
-                  <span className="text-blue-900 font-bold">{readinessMetrics.readyCount} / {readinessMetrics.requiredTotal} ready</span> · <span className="text-emerald-700 font-extrabold">{readinessMetrics.percentage}%</span>
+                  <span className="text-blue-900 font-bold">{readinessMetrics.readyCount} / {readinessMetrics.requiredTotal} ready</span> Â· <span className="text-emerald-700 font-extrabold">{readinessMetrics.percentage}%</span>
                 </p>
               </div>
               <span className={`badge ${readinessMetrics.percentage === 100 ? 'badge-low' : 'badge-moderate'} text-xs font-bold py-1 px-2.5`}>
-                {readinessMetrics.percentage === 100 ? '✓ Ready to Visit' : `${readinessMetrics.missingCount} Missing`}
+                {readinessMetrics.percentage === 100 ? 'âœ“ Ready to Visit' : `${readinessMetrics.missingCount} Missing`}
               </span>
             </div>
 
@@ -589,9 +589,9 @@ export default function QueueDashboard({
 
             {/* Required Documents Section */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-wider px-1">
+              <div className="flex items-center justify-between text-xs font-bold text-[#1D2939] uppercase tracking-wider px-1">
                 <span>Required Documents ({reqDocs.length})</span>
-                <span className="text-[10px] text-slate-400 font-semibold">Mandatory for counter processing</span>
+                <span className="text-[10px] text-[#475467] font-semibold">Mandatory for counter processing</span>
               </div>
 
               {reqDocs.map((doc, idx) => {
@@ -605,7 +605,7 @@ export default function QueueDashboard({
                         ? 'bg-emerald-50/50 border-emerald-200 text-slate-900'
                         : status === 'missing'
                         ? 'bg-orange-50/60 border-orange-200 text-slate-900'
-                        : 'bg-slate-50 border-slate-200 text-slate-700'
+                        : 'bg-[#E8F0F8] border-slate-200 text-slate-700'
                     }`}
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
@@ -617,11 +617,11 @@ export default function QueueDashboard({
                             ? 'bg-orange-600 text-white'
                             : 'bg-slate-300 text-slate-700'
                         }`}>
-                          {status === 'ready' ? '✓' : status === 'missing' ? '⚠' : '○'}
+                          {status === 'ready' ? 'âœ“' : status === 'missing' ? 'âš ' : 'â—‹'}
                         </span>
                         <div className="min-w-0">
                           <p className="text-xs font-semibold leading-snug">{doc}</p>
-                          <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wide">
+                          <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wide">
                             {status === 'ready' ? 'In hand' : status === 'missing' ? 'Pending obtainment' : 'Exempted'}
                           </span>
                         </div>
@@ -635,7 +635,7 @@ export default function QueueDashboard({
                           className={`py-1 px-2.5 rounded-md text-xs font-bold transition-all flex items-center gap-1 ${
                             status === 'ready'
                               ? 'bg-emerald-700 text-white shadow-xs'
-                              : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                              : 'bg-white border border-slate-200 text-[#1D2939] hover:bg-[#DCE7F2]'
                           }`}
                         >
                           <Check className="h-3 w-3 stroke-[3]" /> Ready
@@ -646,7 +646,7 @@ export default function QueueDashboard({
                           className={`py-1 px-2.5 rounded-md text-xs font-bold transition-all flex items-center gap-1 ${
                             status === 'missing'
                               ? 'bg-orange-600 text-white shadow-xs'
-                              : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                              : 'bg-white border border-slate-200 text-[#1D2939] hover:bg-[#DCE7F2]'
                           }`}
                         >
                           <AlertTriangle className="h-3 w-3 stroke-[2.5]" /> Missing
@@ -657,7 +657,7 @@ export default function QueueDashboard({
                           className={`py-1 px-2.5 rounded-md text-xs font-bold transition-all flex items-center gap-1 ${
                             status === 'optional'
                               ? 'bg-slate-700 text-white shadow-xs'
-                              : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                              : 'bg-white border border-slate-200 text-[#1D2939] hover:bg-[#DCE7F2]'
                           }`}
                         >
                           <Circle className="h-3 w-3 stroke-[2.5]" /> Optional
@@ -672,9 +672,9 @@ export default function QueueDashboard({
             {/* Optional / Supporting Documents Section (if any) */}
             {optDocs.length > 0 && (
               <div className="mt-4 pt-3 border-t border-slate-100 space-y-2">
-                <div className="flex items-center justify-between text-xs font-bold text-slate-600 uppercase tracking-wider px-1">
+                <div className="flex items-center justify-between text-xs font-bold text-[#1D2939] uppercase tracking-wider px-1">
                   <span>Supporting Documents ({optDocs.length})</span>
-                  <span className="text-[10px] text-slate-400 font-semibold">Conditional or situational</span>
+                  <span className="text-[10px] text-[#475467] font-semibold">Conditional or situational</span>
                 </div>
 
                 {optDocs.map((doc, idx) => {
@@ -688,7 +688,7 @@ export default function QueueDashboard({
                           ? 'bg-emerald-50/50 border-emerald-200 text-slate-900'
                           : status === 'missing'
                           ? 'bg-orange-50/60 border-orange-200 text-slate-900'
-                          : 'bg-slate-50/80 border-slate-200 text-slate-600'
+                          : 'bg-[#E8F0F8]/80 border-slate-200 text-[#1D2939]'
                       }`}
                     >
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
@@ -700,11 +700,11 @@ export default function QueueDashboard({
                               ? 'bg-orange-600 text-white'
                               : 'bg-slate-300 text-slate-700'
                           }`}>
-                            {status === 'ready' ? '✓' : status === 'missing' ? '⚠' : '○'}
+                            {status === 'ready' ? 'âœ“' : status === 'missing' ? 'âš ' : 'â—‹'}
                           </span>
                           <div className="min-w-0">
                             <p className="text-xs font-medium leading-snug">{doc}</p>
-                            <span className="text-[10px] font-semibold text-slate-400">Optional · Attach if applicable</span>
+                            <span className="text-[10px] font-semibold text-[#475467]">Optional Â· Attach if applicable</span>
                           </div>
                         </div>
 
@@ -716,7 +716,7 @@ export default function QueueDashboard({
                             className={`py-1 px-2.5 rounded-md text-xs font-bold transition-all flex items-center gap-1 ${
                               status === 'ready'
                                 ? 'bg-emerald-700 text-white shadow-xs'
-                                : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                                : 'bg-white border border-slate-200 text-[#1D2939] hover:bg-[#DCE7F2]'
                             }`}
                           >
                             <Check className="h-3 w-3 stroke-[3]" /> Ready
@@ -727,7 +727,7 @@ export default function QueueDashboard({
                             className={`py-1 px-2.5 rounded-md text-xs font-bold transition-all flex items-center gap-1 ${
                               status === 'missing'
                                 ? 'bg-orange-600 text-white shadow-xs'
-                              : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                              : 'bg-white border border-slate-200 text-[#1D2939] hover:bg-[#DCE7F2]'
                             }`}
                           >
                             <AlertTriangle className="h-3 w-3 stroke-[2.5]" /> Missing
@@ -738,7 +738,7 @@ export default function QueueDashboard({
                             className={`py-1 px-2.5 rounded-md text-xs font-bold transition-all flex items-center gap-1 ${
                               status === 'optional'
                                 ? 'bg-slate-700 text-white shadow-xs'
-                              : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                              : 'bg-white border border-slate-200 text-[#1D2939] hover:bg-[#DCE7F2]'
                             }`}
                           >
                             <Circle className="h-3 w-3 stroke-[2.5]" /> Optional
@@ -751,7 +751,7 @@ export default function QueueDashboard({
               </div>
             )}
 
-            {/* ── Before you visit: Concise Preparation Tips ───────────────── */}
+            {/* â”€â”€ Before you visit: Concise Preparation Tips â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <div className="mt-5 p-4 rounded-xl bg-blue-50/70 border border-blue-200/90">
               <div className="flex items-center gap-2 mb-2">
                 <Sparkles className="h-4 w-4 text-blue-800" />
@@ -764,14 +764,14 @@ export default function QueueDashboard({
                   'Check that name and date of birth spellings match identically across all identity proofs.'
                 ]).map((tip, idx) => (
                   <li key={idx} className="text-xs text-blue-900/90 flex items-start gap-2 leading-relaxed">
-                    <span className="text-blue-600 font-bold">•</span>
+                    <span className="text-blue-600 font-bold">â€¢</span>
                     <span>{tip}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* ── Official Warning ─────────────────────────────────────────── */}
+            {/* â”€â”€ Official Warning â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <div className="mt-3.5 p-3 rounded-lg bg-amber-50 border border-amber-200/90 flex items-start gap-2.5">
               <AlertTriangle className="h-4 w-4 text-amber-700 shrink-0 mt-0.5" />
               <p className="text-xs text-amber-900 leading-relaxed font-medium">
@@ -779,10 +779,10 @@ export default function QueueDashboard({
               </p>
             </div>
 
-            {/* ── Demo Civic Information Notice ─────────────────────────────── */}
+            {/* â”€â”€ Demo Civic Information Notice â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
             <div className="mt-3 text-center">
-              <span className="text-[11px] text-slate-400 font-medium">
-                Demo civic database · Not an official government integration · For visit optimization only
+              <span className="text-[11px] text-[#475467] font-medium">
+                Demo civic database Â· Not an official government integration Â· For visit optimization only
               </span>
             </div>
           </div>
@@ -794,12 +794,12 @@ export default function QueueDashboard({
               <div className="flex items-center justify-between">
                 <div>
                   <span className="text-[10px] uppercase font-bold tracking-widest text-slate-300 block">
-                    GOVERNMENT OF UTTAR PRADESH · OFFICIAL VISIT ADVISORY
+                    GOVERNMENT OF UTTAR PRADESH Â· OFFICIAL VISIT ADVISORY
                   </span>
                   <h3 className="text-lg font-bold text-white tracking-wide mt-0.5">QUEUEWISE VISIT PLAN</h3>
                 </div>
                 <div className="text-right">
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">PASS ID</span>
+                  <span className="text-[10px] font-bold text-[#475467] uppercase tracking-widest block">PASS ID</span>
                   <span className="text-xs font-mono font-bold text-blue-300">QW-7829-UP</span>
                 </div>
               </div>
@@ -809,36 +809,36 @@ export default function QueueDashboard({
             <div className="p-6 bg-white space-y-4">
               <div className="grid grid-cols-2 gap-4 pb-4 border-b border-slate-100">
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Office Location</span>
+                  <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">Office Location</span>
                   <p className="text-sm font-bold text-slate-900">{office.name}</p>
-                  <p className="text-[11px] text-slate-500 truncate">{office.address}</p>
+                  <p className="text-[11px] text-[#344054] truncate">{office.address}</p>
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Target Service</span>
+                  <span className="text-[10px] font-bold text-[#475467] uppercase tracking-wider block">Target Service</span>
                   <p className="text-sm font-bold text-slate-900">{service.name}</p>
-                  <p className="text-[11px] text-slate-500">{office.category}</p>
+                  <p className="text-[11px] text-[#344054]">{office.category}</p>
                 </div>
               </div>
 
               <div className="grid grid-cols-3 gap-3">
-                <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Scheduled Slot</span>
+                <div className="bg-[#E8F0F8] p-2.5 rounded-lg border border-slate-200">
+                  <span className="text-[9px] font-bold text-[#475467] uppercase tracking-wider block">Scheduled Slot</span>
                   <p className="text-xs font-bold text-blue-900 mt-0.5">Today</p>
                   <p className="text-[11px] font-semibold text-slate-700">
-                    {data?.recommendedWindow?.time || '2:00–3:00 PM'}
+                    {data?.recommendedWindow?.time || '2:00â€“3:00 PM'}
                   </p>
                 </div>
 
-                <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Expected Wait</span>
+                <div className="bg-[#E8F0F8] p-2.5 rounded-lg border border-slate-200">
+                  <span className="text-[9px] font-bold text-[#475467] uppercase tracking-wider block">Expected Wait</span>
                   <p className="text-xs font-bold text-emerald-800 mt-0.5">
-                    {data?.recommendedWindow?.expectedWait || '18–22 min'}
+                    {data?.recommendedWindow?.expectedWait || '18â€“22 min'}
                   </p>
-                  <p className="text-[10px] text-slate-500">Low Congestion</p>
+                  <p className="text-[10px] text-[#344054]">Low Congestion</p>
                 </div>
 
-                <div className="bg-slate-50 p-2.5 rounded-lg border border-slate-200">
-                  <span className="text-[9px] font-bold text-slate-400 uppercase tracking-wider block">Readiness</span>
+                <div className="bg-[#E8F0F8] p-2.5 rounded-lg border border-slate-200">
+                  <span className="text-[9px] font-bold text-[#475467] uppercase tracking-wider block">Readiness</span>
                   <p className="text-xs font-bold text-slate-900 mt-0.5">
                     {readinessMetrics.readyCount} / {readinessMetrics.requiredTotal} Ready
                   </p>
@@ -854,8 +854,8 @@ export default function QueueDashboard({
               {/* Barcode & Security Elements */}
               <div className="flex items-center justify-between pt-1">
                 <div>
-                  <p className="text-[10px] font-mono text-slate-500">VALID ON: {new Date().toLocaleDateString('en-GB')}</p>
-                  <p className="text-[9px] text-slate-400">NON-TRANSFERABLE · VERIFY AT COUNTER ENTRY</p>
+                  <p className="text-[10px] font-mono text-[#344054]">VALID ON: {new Date().toLocaleDateString('en-GB')}</p>
+                  <p className="text-[9px] text-[#475467]">NON-TRANSFERABLE Â· VERIFY AT COUNTER ENTRY</p>
                 </div>
 
                 {/* Simulated Barcode */}
@@ -878,14 +878,14 @@ export default function QueueDashboard({
                   className="btn-primary flex-1 py-2 text-xs font-bold justify-center"
                 >
                   <Bookmark className="h-3.5 w-3.5" />
-                  {isSaved ? 'Saved in My Visits ✓' : 'Save Visit Plan'}
+                  {isSaved ? 'Saved in My Visits âœ“' : 'Save Visit Plan'}
                 </button>
                 <button
                   type="button"
                   onClick={() => setShowAlert(true)}
                   className="btn-secondary py-2 text-xs font-bold justify-center"
                 >
-                  <Bell className="h-3.5 w-3.5 text-slate-600" />
+                  <Bell className="h-3.5 w-3.5 text-[#1D2939]" />
                   Set Reminder
                 </button>
                 <button
@@ -894,7 +894,7 @@ export default function QueueDashboard({
                   className="btn-secondary py-2 text-xs font-bold px-3"
                   title="Print Visit Pass"
                 >
-                  <Printer className="h-3.5 w-3.5 text-slate-600" />
+                  <Printer className="h-3.5 w-3.5 text-[#1D2939]" />
                 </button>
               </div>
             </div>
@@ -903,12 +903,12 @@ export default function QueueDashboard({
         </div>
       </section>
 
-      {/* ── Community Civic Reports Feed ─────────────────────────────── */}
+      {/* â”€â”€ Community Civic Reports Feed â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       <section className="card p-5 bg-white border-slate-200">
         <div className="flex items-center justify-between pb-3 border-b border-slate-100 mb-4">
           <div>
             <h3 className="text-sm font-bold text-slate-900">VERIFIED CITIZEN REPORTS</h3>
-            <p className="text-xs text-slate-500 mt-0.5">Crowdsourced updates from citizens currently at {office.name}</p>
+            <p className="text-xs text-[#344054] mt-0.5">Crowdsourced updates from citizens currently at {office.name}</p>
           </div>
           <button
             onClick={() => {
@@ -926,19 +926,19 @@ export default function QueueDashboard({
 
         <div className="grid sm:grid-cols-2 gap-3">
           {reports.map(r => (
-            <div key={r.id} className="p-3 rounded-lg border border-slate-200 bg-slate-50/70 flex items-start gap-3">
+            <div key={r.id} className="p-3 rounded-lg border border-slate-200 bg-[#E8F0F8]/70 flex items-start gap-3">
               <div className="p-1.5 rounded bg-white border border-slate-200 text-xs">
-                {r.type === 'decrease' ? '↓' : r.type === 'increase' ? '↑' : 'ℹ'}
+                {r.type === 'decrease' ? 'â†“' : r.type === 'increase' ? 'â†‘' : 'â„¹'}
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-xs text-slate-800 leading-snug">{r.text}</p>
-                <span className="text-[10px] text-slate-400 mt-1 block font-medium">{r.ago}</span>
+                <span className="text-[10px] text-[#475467] mt-1 block font-medium">{r.ago}</span>
               </div>
               <button
                 onClick={() => {
                   setReports(prev => prev.map(item => item.id === r.id ? { ...item, votes: item.votes + 1 } : item))
                 }}
-                className="flex items-center gap-1 text-[11px] font-bold text-slate-600 bg-white border border-slate-200 px-2 py-1 rounded hover:bg-slate-100"
+                className="flex items-center gap-1 text-[11px] font-bold text-[#1D2939] bg-white border border-slate-200 px-2 py-1 rounded hover:bg-[#DCE7F2]"
               >
                 <ThumbsUp className="h-3 w-3" />
                 {r.votes}
@@ -948,7 +948,7 @@ export default function QueueDashboard({
         </div>
       </section>
 
-      {/* ── MODAL: Community Civic Queue Report ────────────── */}
+      {/* â”€â”€ MODAL: Community Civic Queue Report â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {showReport && (
         <CommunityReportModal
           office={office}
@@ -985,14 +985,14 @@ export default function QueueDashboard({
               })
             }
             if (onLogActivity) {
-              onLogActivity('queue_report', `Reported queue at ${office.name}`, office.name, service.name, `${reportData.waitingRange} waiting · ${reportData.estimatedWait}`)
+              onLogActivity('queue_report', `Reported queue at ${office.name}`, office.name, service.name, `${reportData.waitingRange} waiting Â· ${reportData.estimatedWait}`)
             }
-            showToast('✓ Community update received. Queue prediction calibrated!', 'success')
+            showToast('âœ“ Community update received. Queue prediction calibrated!', 'success')
           }}
         />
       )}
 
-      {/* ── MODAL: Queue Alert ────────────────────────────────────────── */}
+      {/* â”€â”€ MODAL: Queue Alert â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
       {showAlert && (
         <QueueAlertModal
           office={office}
@@ -1020,25 +1020,25 @@ export default function QueueDashboard({
   )
 }
 
-// ─── Component: Queue Alert Modal ─────────────────────────────────────────────
+// â”€â”€â”€ Component: Queue Alert Modal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 function QueueAlertModal({ office, isWatching, initialThreshold = 18, onClose, onConfirm, onSimulateNow }) {
   const [threshold, setThreshold] = useState(initialThreshold)
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs anim-fade-in">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl border border-slate-200 anim-scale-in overflow-hidden">
-        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-slate-50">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 bg-[#E8F0F8]">
           <div>
-            <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest block">CIVIC NOTIFICATION</span>
+            <span className="text-[10px] font-bold text-[#475467] uppercase tracking-widest block">CIVIC NOTIFICATION</span>
             <h3 className="text-base font-bold text-slate-900">Notify Me When Queue Becomes Shorter</h3>
           </div>
-          <button onClick={onClose} className="p-1 rounded-lg hover:bg-slate-200 text-slate-400 hover:text-slate-700">
+          <button onClick={onClose} className="p-1 rounded-lg hover:bg-slate-200 text-[#475467] hover:text-slate-700">
             <X className="h-5 w-5" />
           </button>
         </div>
 
         <div className="p-6 space-y-4">
-          <p className="text-xs text-slate-600 leading-relaxed">
+          <p className="text-xs text-[#1D2939] leading-relaxed">
             We will monitor queue fluctuations at <strong>{office.name}</strong> and deliver an in-app notification & toast alert as soon as the line drops below your comfort threshold.
           </p>
 
@@ -1056,7 +1056,7 @@ function QueueAlertModal({ office, isWatching, initialThreshold = 18, onClose, o
               onChange={e => setThreshold(Number(e.target.value))}
               className="w-full accent-blue-900 cursor-pointer"
             />
-            <div className="flex justify-between text-[10px] font-bold text-slate-400 mt-1">
+            <div className="flex justify-between text-[10px] font-bold text-[#475467] mt-1">
               <span>5 (Fastest)</span>
               <span>15 (Comfortable)</span>
               <span>30 (Standard)</span>
@@ -1064,8 +1064,8 @@ function QueueAlertModal({ office, isWatching, initialThreshold = 18, onClose, o
           </div>
 
           {/* Sample Notification Preview */}
-          <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl space-y-1">
-            <span className="text-[9px] font-extrabold text-slate-400 uppercase tracking-wider block">
+          <div className="p-3 bg-[#E8F0F8] border border-slate-200 rounded-xl space-y-1">
+            <span className="text-[9px] font-extrabold text-[#475467] uppercase tracking-wider block">
               ALERT PREVIEW (WHEN TRIGGERED)
             </span>
             <div className="p-2.5 bg-white rounded-lg border border-emerald-200/80 text-xs shadow-2xs">
@@ -1074,7 +1074,7 @@ function QueueAlertModal({ office, isWatching, initialThreshold = 18, onClose, o
                 Queue is getting shorter
               </div>
               <p className="text-slate-900 font-semibold">{office.name}</p>
-              <p className="text-[11px] text-slate-600">Current queue: 14 people · Estimated wait: 17 minutes</p>
+              <p className="text-[11px] text-[#1D2939]">Current queue: 14 people Â· Estimated wait: 17 minutes</p>
               <p className="text-[11px] text-emerald-700 font-medium italic mt-1">"Now may be a good time to visit."</p>
             </div>
           </div>
@@ -1100,7 +1100,7 @@ function QueueAlertModal({ office, isWatching, initialThreshold = 18, onClose, o
               className="w-full py-2 px-3 text-xs font-bold text-blue-900 bg-blue-50 hover:bg-blue-100 border border-blue-200 rounded-lg transition-colors flex items-center justify-center gap-1.5"
             >
               <Sparkles className="h-3.5 w-3.5 text-blue-600" />
-              ⚡ Activate & Trigger Simulated Alert Now
+              âš¡ Activate & Trigger Simulated Alert Now
             </button>
           </div>
         </div>
@@ -1108,3 +1108,5 @@ function QueueAlertModal({ office, isWatching, initialThreshold = 18, onClose, o
     </div>
   )
 }
+
+

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+﻿import { useState, useEffect } from 'react'
 import { CheckCircle2, Info, AlertTriangle, Bell, X } from 'lucide-react'
 
 const TYPE = {
@@ -62,7 +62,7 @@ export default function Toast({ message, type = 'info', onClose }) {
         <p className="flex-1 text-xs font-semibold text-slate-900 leading-snug">{message}</p>
         <button
           onClick={dismiss}
-          className="shrink-0 h-5 w-5 flex items-center justify-center rounded text-slate-400 hover:text-slate-700 transition-colors focus-ring"
+          className="shrink-0 h-5 w-5 flex items-center justify-center rounded text-[#475467] hover:text-slate-700 transition-colors focus-ring"
           aria-label="Dismiss toast"
         >
           <X className="h-3.5 w-3.5" />
@@ -70,7 +70,7 @@ export default function Toast({ message, type = 'info', onClose }) {
       </div>
 
       {/* Progress bar countdown */}
-      <div className="h-0.5 bg-slate-100">
+      <div className="h-0.5 bg-[#DCE7F2]">
         <div
           className={`h-0.5 ${cfg.bar}`}
           style={{ animation: 'progress-shrink 4.5s linear forwards' }}
@@ -79,3 +79,5 @@ export default function Toast({ message, type = 'info', onClose }) {
     </div>
   )
 }
+
+

@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+﻿import { useCallback } from 'react'
 
 /**
  * Reusable authentication guard hook.
@@ -49,3 +49,5 @@ export function useAuthGuard({ currentUser, onOpenAuth }) {
     requireAuth,
   }
 }
+
+
