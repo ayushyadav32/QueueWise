@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --color-primary: #0B5CAD;
+  --color-primary-hover: #094B8F;
+  --color-secondary: #0F766E;
+  --color-bg: #F6F8FB;
+  --color-surface: #FFFFFF;
+  --color-text: #172033;
+  --color-muted: #667085;
+  --color-border: #E4E7EC;
+}
+
+/* ─── Global Reset & Typography ──────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #F6F8FB;
+    color: #172033;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: -0.01em;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: #F6F8FB; }
+  ::-webkit-scrollbar-thumb { background: #D0D5DD; border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: #98A2B3; }
+
+  /* Native select styling */
+  select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23667085' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+  }
+}
+
+/* ─── Premium Civic Design Utilities ─────────────────────────────── */
+@layer utilities {
+  /* Standard card surface */
+  .card {
+    background: #FFFFFF;
+    border: 1px solid #E4E7EC;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04);
+  }
+  .card:hover {
+    border-color: #D0D5DD;
+  }
+
+  /* Journey Step Tag */
+  .journey-step-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #0B5CAD;
+    background: #EFF6FC;
+    padding: 3px 8px;
+    border-radius: 6px;
+    border: 1px solid #D0E4F7;
+  }
+
+  /* Section label style */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #667085;
+  }
+
+  /* Status badges */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-width: 1px;
+    border-style: solid;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+  .badge-low      { background: #ECFDF5; color: #065F46; border-color: #A7F3D0; }
+  .badge-moderate { background: #FFFBEB; color: #92400E; border-color: #FDE68A; }
+  .badge-high     { background: #FEF2F2; color: #991B1B; border-color: #FECACA; }
+  .badge-critical { background: #FEF2F2; color: #991B1B; border-color: #FECACA; }
+
+  /* Dot indicators */
+  .dot-low      { background: #10B981; }
+  .dot-moderate { background: #F59E0B; }
+  .dot-high     { background: #EF4444; }
+  .dot-critical { background: #DC2626; }
+
+  /* Primary Civic Button */
+  .btn-primary {
+    background: #0B5CAD;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 9px 18px;
+    font-size: 14px;
+    transition: background-color 0.15s, border-color 0.15s;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 1px 2px rgba(11, 92, 173, 0.1);
+  }
+  .btn-primary:hover {
+    background: #094B8F;
+  }
+  .btn-primary:active { transform: scale(0.99); }
+  .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  /* Secondary Civic Button */
+  .btn-secondary {
+    background: #FFFFFF;
+    color: #172033;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 9px 16px;
+    font-size: 14px;
+    border: 1px solid #E4E7EC;
+    transition: background-color 0.15s, border-color 0.15s;
+    cursor: pointer;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-secondary:hover {
+    background: #F9FAFB;
+    border-color: #D0D5DD;
+  }
+
+  /* Teal Accent Button */
+  .btn-teal {
+    background: #0F766E;
+    color: #FFFFFF;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 9px 16px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    transition: background-color 0.15s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+  .btn-teal:hover { background: #0D655E; }
+
+  /* Input / select */
+  .form-input {
+    background: #FFFFFF;
+    border: 1px solid #E4E7EC;
+    border-radius: 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #172033;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .form-input:focus {
+    border-color: #0B5CAD;
+    box-shadow: 0 0 0 3px rgba(11, 92, 173, 0.12);
+  }
+  .form-input::placeholder { color: #98A2B3; }
+
+  /* Focus ring */
+  .focus-ring:focus-visible { outline: 2px solid #0B5CAD; outline-offset: 2px; }
+
+  /* Progress bar track */
+  .progress-track { height: 6px; background: #E4E7EC; border-radius: 99px; overflow: hidden; }
+  .progress-fill-low      { background: #10B981; }
+  .progress-fill-moderate { background: #F59E0B; }
+  .progress-fill-high     { background: #EF4444; }
+  .progress-fill-critical { background: #DC2626; }
+}
+
+/* ─── Animations ──────────────────────────────────────────────────── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.99); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.anim-fade-in  { animation: fadeIn  0.15s ease-out both; }
+.anim-slide-up { animation: slideUp 0.2s ease-out both; }
+.anim-scale-in { animation: scaleIn 0.15s ease-out both; }
