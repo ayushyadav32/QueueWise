@@ -216,3 +216,40 @@
 .anim-scale-in { animation: scaleIn 0.15s ease-out both; }
 
 
+
+/* QueueWise Auth Modal - input alignment fix */
+.auth-modal input[type="text"],
+.auth-modal input[type="email"],
+.auth-modal input[type="password"] {
+  padding-left: 48px !important;
+  box-sizing: border-box !important;
+}
+
+.auth-modal input::placeholder {
+  opacity: 1;
+}
+
+.auth-modal .input-icon {
+  left: 14px !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+
+
+/* Auth form input alignment */
+.auth-modal .form-input {
+  padding-left: 48px !important;
+  padding-right: 16px !important;
+  box-sizing: border-box !important;
+}
+
+.auth-modal .form-input::placeholder {
+  opacity: 1;
+}
+
+.auth-modal .relative > svg {
+  left: 14px !important;
+  z-index: 2 !important;
+  pointer-events: none !important;
+}
+

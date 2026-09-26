@@ -97,7 +97,7 @@ export default function AuthModal({
   const displaySubtitle = subtitle || (mode === 'register' ? defaultRegisterSubtitle : defaultLoginSubtitle)
 
   const content = (
-    <div className="w-full max-w-md bg-white rounded-xl border border-[#CBD5E1] shadow-lg overflow-hidden anim-scale-up">
+    <div className="auth-modal w-full max-w-md bg-white rounded-xl border border-[#CBD5E1] shadow-lg overflow-hidden anim-scale-up">
       {/* Modal Header */}
       <div className="p-6 border-b border-[#CBD5E1] bg-white relative">
         {!isPage && onClose && (
@@ -232,7 +232,7 @@ export default function AuthModal({
               <input
                 type="password"
                 required
-                placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                placeholder="••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="form-input pl-9 text-sm"
@@ -251,7 +251,7 @@ export default function AuthModal({
                 <input
                   type="password"
                   required
-                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
+                  placeholder="••••••"
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="form-input pl-9 text-sm"
@@ -332,5 +332,6 @@ export default function AuthModal({
     </div>
   )
 }
+
 
 
